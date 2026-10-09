@@ -1,0 +1,911 @@
+{
+  "reports": [
+    {
+      "report_id": "P01",
+      "assessment": {
+        "report_id": "P01",
+        "status": "APT_RESULT_LIST_RECEIPT_AND_FOLLOWUP_USE_PARTIAL_NO_ORIGINAL_CUSTOMER_PDF",
+        "source_ids": [
+          "U06",
+          "U13",
+          "U14",
+          "U15",
+          "U18",
+          "U22",
+          "U34",
+          "U39"
+        ],
+        "gap": "아파트 결과물·추천 목록을 읽고 추가 질문·지역 검토한 공개 고객 기록 확인. 고객별 PDF 원본·전체 내용·서면 보고서로 인한 계약 행동은 미확인",
+        "round13_finding": "국내 상담 리포트 반복 열람·거래 순서 실행이라는 제공사 게시 후기를 확인. 물건·문서 원문·구체적 행동이 연결되지 않아 인접 주장으로만 기록.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U18"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U14",
+            "U15",
+            "U34",
+            "U39"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "round16_finding": "실제 특정 단지 보고서 게시물과 그 보고서를 지칭한 독자의 잘 보겠다는 댓글 U39 확인. 교육 커뮤니티 공유·부분 작성 사례로 유료 맞춤 납품과 구분.",
+        "report_type": "아파트 매수·후보 비교"
+      },
+      "references": [
+        {
+          "title": "부동산 임장 내집마련 아파트 투자 고민 해결 컨설팅",
+          "url": "https://kmong.com/gig/702241",
+          "evidence_strength": "REPORT_OFFER_AND_CONSULTATION_USE_ONLY",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "부동산 내편 — 매물 3건 비교자료 활용 인용",
+          "url": "https://homeside.co.kr/",
+          "evidence_strength": "PROVIDER_ATTRIBUTED_COMPARISON_MATERIAL_RECEIPT_AND_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "따부스 전국 입지 분석 리포트 — 구매 파일과 임장 활용 후기",
+          "url": "https://kmong.com/gig/526088",
+          "evidence_strength": "PUBLIC_PURCHASER_SELF_REPORT_FILE_RECEIPT_AND_FIELD_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "부부가 함께 부자 되는 가장 확실한 방법[부마니]",
+          "url": "https://weolbu.com/community/4354798",
+          "evidence_strength": "COMMUNITY_SELF_AUTHORED_REPORT_BRIEFING_AND_FEEDBACK",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "댑쏭 아파트 매매 컨설팅 — 결과물·추천 목록 수령 및 추가 검토 후기",
+          "url": "https://kmong.com/gig/428558",
+          "evidence_strength": "CUSTOMER_RESULT_AND_LIST_RECEIPT_FOLLOWUP_USE_NO_ORIGINAL_PDF",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "호두네 부동산 — 2025.3.29 투자 금액대별 물건 리포트 공개 판본",
+          "url": "https://files-scs.pstatic.net/2025/05/20/le8M9dE4sh/%ED%98%B8%EB%91%90%EB%84%A4%EB%A6%AC%ED%8F%AC%ED%8A%B8%20%EC%A2%85%ED%95%A9_2025.3.29%20%EB%84%B7%EC%A7%B8%EC%A3%BC_%ED%98%B8%EB%91%90%EB%A7%98_%EA%B3%B5%EA%B0%9C%EC%9A%A9.pdf",
+          "evidence_strength": "ACTUAL_PUBLIC_REPORT_EDITION_ONLY_NO_CUSTOMER_RECEIPT_OR_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "아파트사우루스 재롬노트 — 리포트 반복 열람과 거래 순서 실행 후기",
+          "url": "https://aptsau.com/부동산상담/재롬노트-103/후기",
+          "evidence_strength": "PROVIDER_PLATFORM_MASKED_REVIEW_REPORT_READING_AND_UNSPECIFIED_SEQUENCE_ACTION_NO_MATCHED_PROPERTY_OR_ORIGINAL",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "신림푸르지오1차 내집마련 보고서 — 실제 게시물에 연결된 독자의 잘 보겠다는 댓글",
+          "url": "https://weolbu.com/community/4324045/서울시-관악구-신림푸르지오1차-아파트-내집마련-보고서",
+          "evidence_strength": "ACTUAL_PARTLY_COMPLETED_APARTMENT_REPORT_POST_WITH_MATCHED_READER_ACKNOWLEDGMENT_COMMUNITY_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        }
+      ]
+    },
+    {
+      "report_id": "P02",
+      "assessment": {
+        "report_id": "P02",
+        "status": "SAME_PURPOSE_PARTIAL_INSTITUTIONAL_APARTMENT_SELLER_REVIEW_AND_COMMITTEE_USE_CONFIRMED",
+        "source_ids": [
+          "U11",
+          "U34",
+          "U50",
+          "U59"
+        ],
+        "gap": "U59 기관 소유 아파트 처분 검토보고서 원문과 실제 심의 활용 확인. 개인 매도 고객용 경쟁매물 비교·호가 제안·협상 전략 및 유료 납품 근거는 여전히 미확인.",
+        "domestic_round07_finding": "매도 코칭 후 가격 조정·거래 자기진술은 확인. 문서 수령 기록이 없어 국내 매도 보고서 사용은 여전히 미확인.",
+        "round13_finding": "국내 상담 리포트 반복 열람·거래 순서 실행이라는 제공사 게시 후기를 확인. 물건·문서 원문·구체적 행동이 연결되지 않아 인접 주장으로만 기록.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U59"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U11",
+            "U34",
+            "U50"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "아파트 매도·경쟁 매물 비교",
+        "round23_finding": "U50의 실제 열람자는 사진·표 대비 매도 이유와 물건 매력 설명 부족을 지적. 같은 자료의 활용 반응은 인정하되 잠재 매수자용 미분양 묶음 매각 제안이므로 소유자용 경쟁·가격 분석의 인접 근거.",
+        "round31_finding": "아파트 소유자의 처분 검토라는 목적은 일부 일치. 기관의 매각 필요성·가격 기준·보유 비용·처분방법 심의에만 한정하며 개인 매도 보고서 전체 검증으로 확대하지 않음.",
+        "verified_partial_scope": {
+          "accepted": "P02 아파트 소유자의 매각 필요성·가격 기준·비용·방법·시기 검토와 동일 안건의 심의 활용",
+          "not_established": "개인 고객에게 제공되는 경쟁 매물 비교·개별 호실 호가 제안·협상 전략 보고서, 유료 고객 납품, 최종 46세대 매각 성과"
+        }
+      },
+      "references": [
+        {
+          "title": "Wyre Forest Cabinet 2024-09-10 Appendix 2 — Empty Homes Doctor 수령·매도 사례",
+          "url": "https://forms.wyreforestdc.gov.uk/council/docs/doc59736_20240910_cabinet_agenda.pdf",
+          "evidence_strength": "FOREIGN_PUBLIC_BODY_DOCUMENTED_CASE_CHAIN_ADJACENT_ONLY",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "아파트사우루스 재롬노트 — 리포트 반복 열람과 거래 순서 실행 후기",
+          "url": "https://aptsau.com/부동산상담/재롬노트-103/후기",
+          "evidence_strength": "PROVIDER_PLATFORM_MASKED_REVIEW_REPORT_READING_AND_UNSPECIFIED_SEQUENCE_ACTION_NO_MATCHED_PROPERTY_OR_ORIGINAL",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "천호동 아파트·오피스텔 미분양분 매도 제안서 — 동일 자료 열람자의 설명 부족 지적",
+          "url": "https://www.thinkzon.com/share_theme/38426",
+          "evidence_strength": "APARTMENT_OFFICETEL_BULK_SALES_PROPOSAL_MATCHED_READER_CONTENT_CRITICISM_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "산청군 공무원아파트 처분(매각) 검토보고서 5쪽과 총무위원회의 질의·토론·의결",
+          "url": "https://www.sancheong.go.kr/council/viewer/minutes/2478.do?schwrd=&speaker=",
+          "evidence_strength": "OFFICIAL_APARTMENT_SELLER_DISPOSAL_REVIEW_ORIGINAL_WITH_RECORDED_COMMITTEE_USE",
+          "match": "SAME_PURPOSE_PARTIAL_INSTITUTIONAL_APARTMENT_DISPOSAL"
+        }
+      ]
+    },
+    {
+      "report_id": "P03",
+      "assessment": {
+        "report_id": "P03",
+        "status": "SAME_PURPOSE_PARTIAL_PURCHASE_PROPOSAL_REFERENCE_RECIPIENT_ACKNOWLEDGMENT",
+        "source_ids": [
+          "U22",
+          "U40",
+          "U42"
+        ],
+        "gap": "매입가치 검토 제안서와 같은 자료의 수령·열람 반응으로 기본 활용 확인. 원발주 고객 맞춤 납품·전체 본문·기획한 모든 분석의 검증은 별도 미확인.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U42"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "round17_finding": "실제 화곡동 빌라 경매 현장 보고서 U40 확인. 교육·경매의 인접 사례이며 비밀댓글로 수신 반응은 미확인. 이전 회차의 P06 연결을 P03으로 정정.",
+        "report_type": "빌라·연립·다세대 매수 검토",
+        "round18_finding": "신현리 빌라 매입제안서 자료 수령·잘 보겠다는 후기와 구체성 부족 평가 U42 확인. 자료 참고 이용자의 활용으로 인정하며 원발주 고객·실제 거래·전체 원문은 미확인.",
+        "round20_finding": "기존 U42를 같은 목적의 부분 범위로 정정. 보고서 목적과 수신자의 참고자료 이용 방식을 별개 축으로 기록. 새 고객이나 새 보고서를 발견한 것으로 집계하지 않음."
+      },
+      "references": [
+        {
+          "title": "호두네 부동산 — 2025.3.29 투자 금액대별 물건 리포트 공개 판본",
+          "url": "https://files-scs.pstatic.net/2025/05/20/le8M9dE4sh/%ED%98%B8%EB%91%90%EB%84%A4%EB%A6%AC%ED%8F%AC%ED%8A%B8%20%EC%A2%85%ED%95%A9_2025.3.29%20%EB%84%B7%EC%A7%B8%EC%A3%BC_%ED%98%B8%EB%91%90%EB%A7%98_%EA%B3%B5%EA%B0%9C%EC%9A%A9.pdf",
+          "evidence_strength": "ACTUAL_PUBLIC_REPORT_EDITION_ONLY_NO_CUSTOMER_RECEIPT_OR_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "더낙찰 실전반15기 제2조 — 화곡동 빌라 현장 보고서 공개 본문",
+          "url": "https://ecosystemair.tistory.com/entry/더낙찰-실전반15기제2조-화곡동-빌라-임장후기",
+          "evidence_strength": "ACTUAL_VILLA_AUCTION_FIELD_REPORT_PUBLIC_TEXT_EDUCATION_ADJACENT_NO_READABLE_RECIPIENT_RESPONSE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "광주시 오포읍 신현리 빌라 매입제안서 — 자료 수령·열람 의사와 내용 평가",
+          "url": "https://www.thinkzon.com/share_contest/135511",
+          "evidence_strength": "PROPERTY_SPECIFIC_VILLA_PURCHASE_PROPOSAL_MATCHED_REFERENCE_USER_RECEIPT_WILL_READ_SAME_PURPOSE_PARTIAL",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        }
+      ]
+    },
+    {
+      "report_id": "P04",
+      "assessment": {
+        "report_id": "P04",
+        "status": "RECEIPT_AND_USE_PUBLIC_ACCOUNTS_FOUND",
+        "source_ids": [
+          "U01",
+          "U02",
+          "U30",
+          "U37",
+          "U38"
+        ],
+        "gap": "전체 납품본, 거래·작성자 독립 증빙 및 자산 세부유형별 확인",
+        "round16_finding": "사용자 기준으로 생성·열람·평가 블로그 U37와 리포트 분석 감사 리뷰 U38를 추가. 계약 실행·전체 수령본은 활용 인정을 위한 필수 조건으로 요구하지 않음.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U01",
+            "U02",
+            "U37",
+            "U38"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "주거 전세 계약 전 점검"
+      },
+      "references": [
+        {
+          "title": "내집스캔 바이럴로 써본 후기",
+          "url": "https://crofflelover.tistory.com/2",
+          "evidence_strength": "PARTIAL_RECEIVED_ARTIFACT_AND_PREPARATION_SELF_REPORT",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "내집스캔 App Store 이용자 리뷰",
+          "url": "https://apps.apple.com/kr/app/%EB%82%B4%EC%A7%91%EC%8A%A4%EC%BA%94/id1671547897",
+          "evidence_strength": "RECEIPT_AND_CONTRACT_DECISION_SELF_REPORT",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "집고 당산역해링턴타워 — 전월세·생활환경 공개 리포트 예시",
+          "url": "https://zgc.kr/example-report/dangsan-haerington-tower",
+          "evidence_strength": "PUBLIC_RENTAL_EXAMPLE_NO_MATCHED_CUSTOMER_RECEIPT_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "집지켜 전월세 보증금 안전한지 5분안에 확인하는 방법 — 생성·열람 자기기록 재평가",
+          "url": "https://mrbaek3.tistory.com/35",
+          "evidence_strength": "FIRST_PERSON_REPORT_GENERATION_READING_AND_EVALUATION_NO_SUBSEQUENT_TRANSACTION_REQUIRED",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "세이프홈즈 App Store — 리포트 분석·확인에 대한 이용자 감사 리뷰",
+          "url": "https://apps.apple.com/kr/app/%EC%84%B8%EC%9D%B4%ED%94%84%ED%99%88%EC%A6%88-%EC%A0%84%EC%9B%94%EC%84%B8-%EC%83%81%EA%B0%80-%EB%A7%A4%EB%A7%A4-%EC%95%88%EC%8B%AC%EB%93%B1%EA%B8%B0/id1631931223",
+          "evidence_strength": "PUBLIC_USER_REPORT_ANALYSIS_READING_AND_THANKS_REVIEW_NO_MATCHED_CUSTOMER_ORIGINAL",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        }
+      ]
+    },
+    {
+      "report_id": "P05",
+      "assessment": {
+        "report_id": "P05",
+        "status": "SAME_PURPOSE_PARTIAL_MONTHLY_COST_CONTRACT_COMPARISON_WITH_READER_USE",
+        "source_ids": [
+          "U17",
+          "U28",
+          "U30",
+          "U45",
+          "U60",
+          "U61",
+          "U62",
+          "U63",
+          "U64"
+        ],
+        "gap": "기본 자료 실재·열람은 U64로 확인. 개별 호실 실제 계약금액, 동일 시점·면적, 보증금·공과금·초기비용·기간별 총액 및 맞춤 고객 납품은 별도 미확인. 추정 비용과 다른 연도 비교의 한계 유지.",
+        "round07_finding": "보증금 위험 리포트·계산기·앱 기능과 월세 총비용 비교 보고서 수령·선택 행동을 구분. 새 동일 목적 활용 사례 없음.",
+        "round11_finding": "원룸 네 곳 비교 사후 공개 리포트와 전월세 예시 확인. 계약 전에 고객이 받아 활용했는지는 미확인.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U64"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U45",
+            "U60",
+            "U61",
+            "U62"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "round17_finding": "실제 세 단지 주거 현장 비교 글은 확인했으나 댓글 0. 외부 수신자 반응·월세 총비용 표는 미확인.",
+        "report_type": "주거 월세 총비용·계약 비교",
+        "round18_finding": "전월세 비교 PPTX 소개는 확인했으나 후기 0건. 상가 수익률 자료 활용을 주거 월세 총비용 비교 근거로 전용하지 않음.",
+        "round19_finding": "U45 같은 글의 15개 댓글에서 비교 내용 감사·열람 반응 확인. 일반 참고 가이드의 인접 활용이며 맞춤 후보 보고서 수령으로 확대하지 않음.",
+        "round32_finding": "교육용 비용 비교표의 공개 열람 확인. 대상 식별·가정과 사실·월 지출 소계와 계약기간 총비용을 분리해야 함. 댓글 수를 고객 수로 확대하거나 남은 유형을 0개로 만들지 않음.",
+        "round33_finding": "공개 월세 소개·계약사례의 독자 열람2개와 제공사 리포트 수령 인용1개 추가. 월세 총비용·계약 비교의 같은 목적 근거로 승격하지 않음. 남은 유형P05 1개 유지.",
+        "round34_finding": "U64에서 식별 가능한 주거 후보의 월세·관리비·계약 비교자료와 동일 글 독자의 명시적 열람 확인. 같은 목적 부분 근거13→14개, 기본 활용 검토 잔여1→0개. 유료 납품·전체 내용·정확성 검증은 별개."
+      },
+      "references": [
+        {
+          "title": "집보기노트 — 월 비용 비교 및 비교 PDF 기능 안내",
+          "url": "https://play.google.com/store/apps/details?hl=ko&id=com.ahtkd.housechecklist",
+          "evidence_strength": "MATCHED_FUNCTION_OFFER_NO_GENERATED_REPORT_OR_RECIPIENT_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "청주 복대동 원룸 네 곳 — 계약 다음 날 공개된 비교 리포트",
+          "url": "https://1stland24.tistory.com/m/442",
+          "evidence_strength": "PUBLIC_RETROSPECTIVE_COMPARISON_PROVIDER_CONTRACT_ACCOUNT_NO_REPORT_RECEIPT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "집고 당산역해링턴타워 — 전월세·생활환경 공개 리포트 예시",
+          "url": "https://zgc.kr/example-report/dangsan-haerington-tower",
+          "evidence_strength": "PUBLIC_RENTAL_EXAMPLE_NO_MATCHED_CUSTOMER_RECEIPT_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "월부 전월세 주택유형 비교표·월 고정비 체크리스트 — 같은 글의 독자 열람·감사 댓글",
+          "url": "https://weolbu.com/community/3939801",
+          "evidence_strength": "PUBLIC_MONTHLY_RENT_HOUSING_TYPE_COMPARISON_GUIDE_LINKED_READER_THANKS_AND_READING_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "Proh1 사당동 전세·월세 비교 교육용 분석과 동일 글의 공개 열람 댓글",
+          "url": "https://proh1.tistory.com/entry/청년-버팀목-전세자금-대출-청년-지원-월세-탈출의-열쇠가-되다",
+          "evidence_strength": "EDUCATIONAL_MONTHLY_VS_JEONSE_COST_EXAMPLE_WITH_SAME_POST_READER_ACKNOWLEDGMENTS",
+          "match": "ADJACENT_EDUCATIONAL_COMPARISON_WITH_READER_USE"
+        },
+        {
+          "title": "전월세월부기 문정시영 월세 소개자료와 동일 게시물의 독자 댓글",
+          "url": "https://weolbu.com/community/225029",
+          "evidence_strength": "IDENTIFIED_RENTAL_PROPERTY_PUBLIC_BRIEF_WITH_HISTORICAL_READER_USE_VERSION_MISMATCH",
+          "match": "ADJACENT_OR_UNVERIFIED_RECEIPT_CLAIM"
+        },
+        {
+          "title": "1순위부동산 충북대 서문 원룸 두 계약 비교자료와 공개 독자 댓글",
+          "url": "https://blog.naver.com/1stland24/224321655050",
+          "evidence_strength": "BROKER_CLAIMED_RENTAL_CASE_COMPARISON_WITH_READER_USE_UNIDENTIFIED_PROPERTIES",
+          "match": "ADJACENT_OR_UNVERIFIED_RECEIPT_CLAIM"
+        },
+        {
+          "title": "부톡 공식 후기의 임장·매물 리포트 수령 고객 인용",
+          "url": "https://bootalk.co.kr/review",
+          "evidence_strength": "PROVIDER_REPUBLISHED_REPORT_RECEIPT_CLAIM_ORIGINAL_AND_PURPOSE_UNVERIFIED",
+          "match": "ADJACENT_OR_UNVERIFIED_RECEIPT_CLAIM"
+        },
+        {
+          "title": "신촌 맹그로브·에피소드 월세·관리비·계약방식 비교와 동일 글의 독자 열람 댓글",
+          "url": "https://theyeonjin.tistory.com/239",
+          "evidence_strength": "SAME_PURPOSE_PARTIAL_IDENTIFIED_MONTHLY_RENT_COST_CONTRACT_COMPARISON_WITH_EXPLICIT_READER_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        }
+      ]
+    },
+    {
+      "report_id": "P06",
+      "assessment": {
+        "report_id": "P06",
+        "status": "SAME_PURPOSE_PARTIAL_OFFICETEL_PURCHASE_ANALYSIS_AND_READER_FEEDBACK_CONFIRMED",
+        "source_ids": [
+          "U29",
+          "U41",
+          "U47",
+          "U55"
+        ],
+        "gap": "U55 특정 오피스텔 매수 검토 글·가격 비교표와 독자 평가 연결 확인. 월세 순현금흐름·공실·비용을 다룬 임대수익 부분과 일반 유료 고객 납품은 미검증. 교육 사례의 수치·대상 식별 정확성을 검증 완료로 처리하지 않음.",
+        "round11_finding": "2011년 공식 매거진의 다섯 쪽을 시각 검증. 사례 표가 존재하지만 요청 목적과 실제 최종 행동은 구분.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U55"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U41",
+            "U47"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "round17_finding": "오피스텔 PF 소개 원문에 댓글 0 표시. 검색 감사 문구는 미연결이고 PF 투자와 호실 매수의 목적도 다름. 이전 회차의 P03 분류를 정정.",
+        "report_type": "오피스텔 매수·임대수익 검토",
+        "round18_finding": "오피스텔 시장·수익률 연구자료의 업무 참고·감사 후기 U41 확인. 일반 연구자료 이용이며 특정 호실 맞춤 매수 분석과 구분.",
+        "round21_finding": "U47 비교표 활용 의사 확인. 미리보기 흐림 처리로 대상·수치 확인 불가하므로 인접 근거로 한정.",
+        "round23_finding": "크몽 809170은 수익·공실·관리비·금리 분석 교육자료지만 자체 리뷰 0건. 상단 다른 상품 후기를 전용하지 않음. 481028은 27쪽 투자 경험담 전자책의 열람 반응은 있으나 개별 호실의 수익 분석 보고서 내용은 미확인.",
+        "round28_finding": "P06의 매수 검토 부분과 같은 목적의 실제 작성물·열람 평가를 확인. 제목의 수익률을 연 임대수익률로 오인하지 않고, 교육 커뮤니티 활용이라는 수신 맥락을 유지.",
+        "verified_partial_scope": {
+          "accepted": "P06 매수 검토 부분: 특정 대상의 가격·투자금·환금성 분석과 독자 반응",
+          "not_established": "월세 순현금흐름·공실·수선·세금·대출을 반영한 임대수익 분석"
+        }
+      },
+      "references": [
+        {
+          "title": "미래에셋 2011년 4월 — 오피스텔 청약 고객 투자 분석 공개 사례",
+          "url": "https://securities.miraeasset.com/upload/fund_pds/magazine/portfolios_201104.pdf",
+          "evidence_strength": "OFFICIAL_PUBLIC_ANALYSIS_ARTIFACT_PROVIDER_REQUEST_ACCOUNT_NO_RECEIPT_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "오피스텔 시장분석과 수익률 추정 — 실제 문서 이용자의 업무 참고·감사 후기",
+          "url": "https://www.thinkzon.com/share_biz/21520",
+          "evidence_strength": "PUBLIC_OFFICETEL_MARKET_RESEARCH_DOCUMENT_LINKED_USER_WORK_REFERENCE_AND_THANKS_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "오피스텔 경매수익분석 비교표 — 같은 자료의 활용 의사 후기",
+          "url": "https://www.thinkzon.com/share_biz/33221",
+          "evidence_strength": "OFFICETEL_AUCTION_PROFIT_WORKSHEET_LINKED_READER_INTENT_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "목동 파라곤 오피스텔 수익률 분석 보고서 — 교육 커뮤니티 공개본과 독자 평가",
+          "url": "https://weolbu.com/community/1254854",
+          "evidence_strength": "FILLED_OFFICETEL_PURCHASE_ANALYSIS_WITH_LINKED_READER_EVALUATION_EDUCATIONAL_CONTEXT",
+          "match": "SAME_PURPOSE_PARTIAL_PURCHASE_EDUCATIONAL_READER_FEEDBACK"
+        }
+      ]
+    },
+    {
+      "report_id": "P07",
+      "assessment": {
+        "report_id": "P07",
+        "status": "ANALYSIS_MATERIAL_RECEIPT_AND_USE_FOUND_REPORT_IDENTITY_PARTIAL",
+        "source_ids": [
+          "U04",
+          "U25",
+          "U27"
+        ],
+        "gap": "리뷰에서 언급한 자료와 실제 납품 보고서 원문의 연결",
+        "round09_finding": "공공 의뢰 보고서 원문과 의뢰기관의 최종보고 청취·질의응답 연결 추가. 정책 상권분석으로 개인 입점·임대 의사결정 직접 증거는 아님.",
+        "round10_finding": "카페 운영자의 70쪽 상권분석 보고서 수령→근무배치·홍보·메뉴 변경 취재 기록 추가. 2011년 운영 개선 사례로 계약 전 입점 판단과 인접.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U04"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U25",
+            "U27"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "상가 임차·출점 검토"
+      },
+      "references": [
+        {
+          "title": "소상공인을 위한 빅데이터기반 상권분석 컨설팅",
+          "url": "https://kmong.com/gig/262454",
+          "evidence_strength": "MATCHED_SERVICE_CUSTOMER_MATERIAL_RECEIPT_AND_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "부평 상권활성화 연구용역 — 공개 최종보고서와 의뢰기관 보고·질의응답 기록",
+          "url": "https://byff.icbp.go.kr/kr/data/bbs_process?bbs_id=membergroup&reform=download&uid=60172",
+          "evidence_strength": "PUBLIC_COMMISSIONED_ARTIFACT_PLUS_RECEIVING_INSTITUTION_PRESENTATION_QA_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "마이비즈니스 상권분석 — 카페 운영자의 수령·운영 변경 취재 기록",
+          "url": "https://cbiz.chosun.com/svc/bulletin/bulletin_art.html?contid=2011062301620",
+          "evidence_strength": "JOURNALISTIC_RECIPIENT_INTERVIEW_REPORT_RECEIPT_AND_OPERATING_ACTIONS_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        }
+      ]
+    },
+    {
+      "report_id": "P08",
+      "assessment": {
+        "report_id": "P08",
+        "status": "SAME_PURPOSE_PARTIAL_COMMERCIAL_ACQUISITION_COMPARISON_READER_THANKS",
+        "source_ids": [
+          "U09",
+          "U05",
+          "U12",
+          "U43",
+          "U46",
+          "U48"
+        ],
+        "gap": "상가건물 구입 후보 비교와 임대수익·인수금액 항목이 있는 U48 및 같은 자료의 감사·활용 의사로 기본 활용 확인. 전체 원문·계산 정확성·개별 구분상가 범위·맞춤 납품은 별도 미확인.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U48"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U09",
+            "U05",
+            "U43",
+            "U46"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "상가 매수·임대수익 검토",
+        "round18_finding": "임대수익률 계산자료로 상담 설명에 도움을 받았다는 실무자 후기 U43 확인. 계산 구성요소의 활용이며 전체 매수 보고서·거래 효과와 구분.",
+        "round20_finding": "U46 상가 분양전략 제안서의 업무 참고·열람 반응 추가. 분양자 관점이므로 개별 투자자의 매수·임대수익 판단 활용으로 전용하지 않음.",
+        "round21_finding": "신규 U48은 분양자 마케팅 자료가 아닌 상가건물 매수 후보 비교 자료. 동일 문서의 감사·활용 의사 후기까지 연결되어 같은 목적의 부분 범위로 인정."
+      },
+      "references": [
+        {
+          "title": "조심2016중2745 — 상가 매수 관련 컨설팅 자료 수령과 매수결정 주장의 구분",
+          "url": "https://www.taxcanvas.kr/core/case/000000000000229011",
+          "evidence_strength": "RECEIPT_DOCUMENTED_PURCHASE_DECISION_USE_REJECTED",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "대한변협 역삼동 회관 실태 보고서",
+          "url": "https://img.koreanbar.or.kr/finance/2.pdf",
+          "evidence_strength": "INSTITUTIONAL_RECIPIENT_DOCUMENTARY_CHAIN",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "조심2019부3280 — 상업건물 컨설팅 성과물과 활용 주장",
+          "url": "https://www.taxcanvas.kr/core/case/000000000000514750",
+          "evidence_strength": "DELIVERABLES_IN_DISPUTE_RECORD_BUSINESS_USE_PARTY_CLAIM_ONLY",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "상가 임대수익률·전월세 전환 계산자료 — 상담 실무 활용과 열람 반응",
+          "url": "https://www.thinkzon.com/share_biz/36564",
+          "evidence_strength": "COMMERCIAL_RENT_YIELD_WORKSHEET_LINKED_PRACTITIONER_CONSULTATION_USE_AND_READER_ACKNOWLEDGMENTS_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "분당 정자동 플라자 상가 분양제안서 — 동일 자료의 업무 활용·열람 후기",
+          "url": "https://www.thinkzon.com/share_biz/40810",
+          "evidence_strength": "PROPERTY_SPECIFIC_COMMERCIAL_SALES_STRATEGY_DOCUMENT_MATCHED_WORK_USE_AND_THANKS_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "상가건물 구입 후보 4개 비교 분석표 — 동일 자료의 감사·활용 의사 후기",
+          "url": "https://www.thinkzon.com/share_biz/54074",
+          "evidence_strength": "COMMERCIAL_BUILDING_ACQUISITION_CANDIDATE_COMPARISON_MATCHED_THANKS_USE_INTENT_SAME_PURPOSE_PARTIAL",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        }
+      ]
+    },
+    {
+      "report_id": "P09",
+      "assessment": {
+        "report_id": "P09",
+        "status": "SAME_PURPOSE_PARTIAL_LAND_ACQUISITION_USE_CONDITIONS_READER_THANKS",
+        "source_ids": [
+          "U03",
+          "U19",
+          "U20",
+          "U21",
+          "U24",
+          "U49"
+        ],
+        "gap": "특정 지역 토지 매매 조사 자료에 시세·금융 하자·이용계획 항목이 있고 동일 문서에 감사·참고 의사가 있어 기본 활용 확인. 전체 원본·정확한 필지·현재 수치·맞춤 납품은 별도 미확인.",
+        "round08_finding": "시세 비교 리포트의 가격 협상 활용이라는 제공사 익명 인용 추가. 수령자 직접 확인·실제 보고서 원문과의 연결이 없어 검증 완료로 승격하지 않음.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U49"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U03",
+            "U21"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "토지 매수·이용조건 검토",
+        "round22_finding": "신규 U49는 토지 매매 시세와 이용조건 조사 목적이 직접 연결된 자료. 같은 문서의 단일 이용후기까지 확인하여 부분 범위 활용으로 인정."
+      },
+      "references": [
+        {
+          "title": "설계자동화 서비스를 활용한 건축사무소의 규모검토 실행 사례",
+          "url": "https://forumdnp.blogspot.com/2021/03/feasibility-study.html",
+          "evidence_strength": "PROJECT_SPECIFIC_PROFESSIONAL_USE_ACCOUNT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "대한제29호 파주금촌 매입 실사보고서·제출 공문·주주총회 의사록",
+          "url": "https://www.reitpia.com/community/03_view.php?no=2875&page=112&reits_free_type=&reits_type=&search=",
+          "evidence_strength": "FULL_PRIMARY_ARTIFACT_OUTGOING_REGULATORY_SUBMISSION_NO_DECISION_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "고양삼송자이더빌리지주택리츠 2019년 1분기 투자보고서 — 토지 매입 실사 제출 기록",
+          "url": "https://www.lh.or.kr/boardDownload.es?bid=0028&list_no=652026&seq=1",
+          "evidence_strength": "PRIMARY_REGULATORY_SUBMISSION_RECORD_NO_UNDERLYING_DD_OR_DECISION_CHAIN",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "B012 — 토지·건물 매입 검토 고객의 개발 대안 수령·수정 요청",
+          "url": "https://kmong.com/gig/560444",
+          "evidence_strength": "CUSTOMER_ALTERNATIVE_RECEIPT_AND_REVISION_USE_WITH_SEPARATE_PUBLIC_SAMPLES",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "제주삼춘부동산 — 토지·건축 이주 고객의 리포트 가격 비교 활용 인용",
+          "url": "https://www.jejusamchun.com/",
+          "evidence_strength": "PROVIDER_ATTRIBUTED_ANONYMOUS_LAND_PRICE_COMPARISON_USE_UNVERIFIED",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "부동산 매매 조사 보고서(경기도 평택양교리) — 동일 문서의 감사·참고 의사 후기",
+          "url": "https://www.thinkzon.com/share_biz/339976",
+          "evidence_strength": "LAND_ACQUISITION_PRICE_USE_CONDITIONS_REPORT_MATCHED_READER_THANKS_SAME_PURPOSE_PARTIAL",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        }
+      ]
+    },
+    {
+      "report_id": "P10",
+      "assessment": {
+        "report_id": "P10",
+        "status": "PROJECT_PROFESSIONAL_USE_AND_CUSTOMER_ALTERNATIVE_REVISION_USE_FOUND",
+        "source_ids": [
+          "U03",
+          "U20",
+          "U21",
+          "U22",
+          "U35"
+        ],
+        "gap": "실무 프로젝트 활용과 고객의 개발 대안 수령·수정 기록 확인. 전체 실제 납품본 및 공개 샘플과 고객 결과물의 동일성은 미확인",
+        "round14_finding": "공식 감사 원문에서 목감 사업타당성 용역 결과가 직접 운영 대비 민간투자 방식 선택과 임대 협약으로 이어진 기관 사례 확인. 위탁 용역 원문·개인 고객 수령은 미확인.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U03",
+            "U21"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U35"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "토지·건축 개발 사업성 예비 검토"
+      },
+      "references": [
+        {
+          "title": "설계자동화 서비스를 활용한 건축사무소의 규모검토 실행 사례",
+          "url": "https://forumdnp.blogspot.com/2021/03/feasibility-study.html",
+          "evidence_strength": "PROJECT_SPECIFIC_PROFESSIONAL_USE_ACCOUNT",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "고양삼송자이더빌리지주택리츠 2019년 1분기 투자보고서 — 토지 매입 실사 제출 기록",
+          "url": "https://www.lh.or.kr/boardDownload.es?bid=0028&list_no=652026&seq=1",
+          "evidence_strength": "PRIMARY_REGULATORY_SUBMISSION_RECORD_NO_UNDERLYING_DD_OR_DECISION_CHAIN",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "B012 — 토지·건물 매입 검토 고객의 개발 대안 수령·수정 요청",
+          "url": "https://kmong.com/gig/560444",
+          "evidence_strength": "CUSTOMER_ALTERNATIVE_RECEIPT_AND_REVISION_USE_WITH_SEPARATE_PUBLIC_SAMPLES",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "호두네 부동산 — 2025.3.29 투자 금액대별 물건 리포트 공개 판본",
+          "url": "https://files-scs.pstatic.net/2025/05/20/le8M9dE4sh/%ED%98%B8%EB%91%90%EB%84%A4%EB%A6%AC%ED%8F%AC%ED%8A%B8%20%EC%A2%85%ED%95%A9_2025.3.29%20%EB%84%B7%EC%A7%B8%EC%A3%BC_%ED%98%B8%EB%91%90%EB%A7%98_%EA%B3%B5%EA%B0%9C%EC%9A%A9.pdf",
+          "evidence_strength": "ACTUAL_PUBLIC_REPORT_EDITION_ONLY_NO_CUSTOMER_RECEIPT_OR_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "감사원 인천국제공항공사 정기감사 — 목감 용역 결과의 임대 방식 선택 활용과 토지 임대 사전분석 누락",
+          "url": "https://www.airport.kr/bbs/co_ko/110/85106/download.do",
+          "evidence_strength": "OFFICIAL_AUDIT_RECORD_OF_INSTITUTIONAL_FEASIBILITY_RESULT_TO_LEASE_MODE_AND_AGREEMENT_NO_COMMISSIONED_ORIGINAL",
+          "match": "ADJACENT_ONLY"
+        }
+      ]
+    },
+    {
+      "report_id": "P11",
+      "assessment": {
+        "report_id": "P11",
+        "status": "SAME_PURPOSE_PARTIAL_INSTITUTIONAL_LAND_LEASE_REVIEW_DISTRIBUTION_AND_USE_CONFIRMED",
+        "source_ids": [
+          "U16",
+          "U35",
+          "U54"
+        ],
+        "gap": "특정 부지 임대조건 검토보고서의 배부·수신자 질의·심사 활용 U54 확인. 개인 고객용 신규 임대 상담 및 전체 기획 항목 검증은 남음. 기관 사례라는 이유로 같은 목적의 부분 활용을 배제하지 않음.",
+        "round14_finding": "공식 감사 원문에서 목감 사업타당성 용역 결과가 직접 운영 대비 민간투자 방식 선택과 임대 협약으로 이어진 기관 사례 확인. 위탁 용역 원문·개인 고객 수령은 미확인.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U54"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U35"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "토지 임대·사용조건 검토",
+        "round27_finding": "개발사업 타당성이나 일반 정책 연구와 달리, 보고서 자체가 특정 토지의 임대기간·임대료·보증금 변경 검토를 목적으로 함. 수신 의원의 내용 평가와 질의가 연결되어 같은 목적 부분 근거로 채택."
+      },
+      "references": [
+        {
+          "title": "토지지원리츠제2호 제9기 1분기 투자보고서 및 재무제표 검토보고서",
+          "url": "https://www.lh.or.kr/boardDownload.es?bid=0028&list_no=732385&seq=1",
+          "evidence_strength": "FULL_OFFICIAL_DISCLOSURE_ARTIFACT_ADDRESSEE_ONLY_NO_USE_CHAIN",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "감사원 인천국제공항공사 정기감사 — 목감 용역 결과의 임대 방식 선택 활용과 토지 임대 사전분석 누락",
+          "url": "https://www.airport.kr/bbs/co_ko/110/85106/download.do",
+          "evidence_strength": "OFFICIAL_AUDIT_RECORD_OF_INSTITUTIONAL_FEASIBILITY_RESULT_TO_LEASE_MODE_AND_AGREEMENT_NO_COMMISSIONED_ORIGINAL",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "한국생산기술연구원 부지 임대료 감면 검토보고서 — 배부·내용 질의·의결 기록",
+          "url": "https://record.icouncil.go.kr/vod/viewer.do?cvUid=2430",
+          "evidence_strength": "PARCEL_SPECIFIC_LAND_LEASE_REVIEW_DISTRIBUTED_AND_DISCUSSSED_BY_INSTITUTIONAL_RECIPIENTS",
+          "match": "SAME_PURPOSE_PARTIAL_INSTITUTIONAL_LEASE_TERMS_REVIEW"
+        }
+      ]
+    },
+    {
+      "report_id": "P12",
+      "assessment": {
+        "report_id": "P12",
+        "status": "SAME_PURPOSE_PARTIAL_MULTIFAMILY_FIELD_REPORT_AND_SIMPLE_READING_ACKNOWLEDGMENT_CONFIRMED",
+        "source_ids": [
+          "U19",
+          "U23",
+          "U52",
+          "U57",
+          "U58"
+        ],
+        "gap": "U58 다가구 건물 매수 전 현장조사서와 같은 글의 명시적 열람 댓글 확인. 단순 공개 독자 반응이며 유료 고객 납품·호실별 임대차 승계·NOI·공실·수선·차입 비용 및 토지 포함 매입조건 검증은 미확인.",
+        "round08_finding": "외부 실사보고서 검토→투자자 설명자료 준비라는 실무자 자기기록 추가. 일본 GK-TK 기관 투자로 국내 다가구 매수 유형의 직접 근거는 아님.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U58"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U23"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "다가구·임대주택 건물 전체 매수 검토",
+        "round21_finding": "경매수지 분석표(토지·아파트·다가구) 33667의 공개 후기 10개 전체에서 열람·학습·활용 의사 확인. 특정 다가구 건물 및 임대수익 분석 확인이 부족해 동일 목적 보고서 확인으로 승격하지 않음.",
+        "round22_finding": "크몽 732435의 대전 다가구 경매 고객은 호실별 명도 난이도·예상 비용 검토의 입찰가 판단 도움을 기록. 일반 문서 제공 정책만 있으며 이 고객이 보고서를 받았다는 문구가 없어 보고서 활용 확인으로 승격하지 않음.",
+        "round25_finding": "국내 특정 다가구 건물 전체를 대상으로 한 공개 경매 검토 브리핑 U52 확인. 별도 보고서 발송은 제공 안내만 있고 댓글0이므로 고객 활용은 미확인. 검색에 남은 잠실 분석 글은 현재 다른 글로 이동하여 댓글 연결을 배제.",
+        "round29_finding": "U57 다가구 전체 건물의 매수 검토 공개본 추가 확인. 공개된 활용 반응은 없고 비밀 관리자 댓글은 증거로 사용하지 않음. P12 같은 목적 활용 미확인 유지.",
+        "round30_finding": "실제 채워진 현장조사서와 동일 글의 독자 열람 자기진술을 연결. 내용 정확성·토지 포함 조건·맞춤 고객 납품과 분리하여 P12 사전조사 부분만 인정.",
+        "verified_partial_scope": {
+          "accepted": "P12 다가구 건물 매수 전 대상·시세·임대수요·보증금·현장 메모를 정리한 공개 조사서와 명시적 열람 댓글",
+          "not_established": "유료 고객 납품, 토지 포함 매수조건의 적정성, 호실별 임대차·보증금 승계 검증, NOI·공실·수선·차입 비용 계산, 실제 입찰·매수"
+        }
+      },
+      "references": [
+        {
+          "title": "대한제29호 파주금촌 매입 실사보고서·제출 공문·주주총회 의사록",
+          "url": "https://www.reitpia.com/community/03_view.php?no=2875&page=112&reits_free_type=&reits_type=&search=",
+          "evidence_strength": "FULL_PRIMARY_ARTIFACT_OUTGOING_REGULATORY_SUBMISSION_NO_DECISION_USE",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "율촌 — 이지스자산운용 도쿄 임대주택 3동 투자 자문 실행 사례",
+          "url": "https://www.yulchon.com/ko/resources/deals-and-cases-view/4934/page.do",
+          "evidence_strength": "RECEIVING_PRACTITIONER_DD_REVIEW_AND_INVESTOR_MATERIAL_PREPARATION_OVERSEAS_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "평택 신장동 다가구 건물 전체 경매 검토 브리핑 — 별도 보고서 제공 안내, 수신 반응 미확인",
+          "url": "https://ksg-23431605.tistory.com/6",
+          "evidence_strength": "FILLED_DOMESTIC_WHOLE_DAGAGU_BUILDING_AUCTION_BRIEF_AND_REPORT_OFFER_NO_RECIPIENT_RESPONSE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "디비리츠 강남구 역삼동 다가구 건물 분석 — 실제 공개본, 수신자 반응 미확인",
+          "url": "https://dbritz.kr/partnership/?bmode=view&idx=145376108",
+          "evidence_strength": "PUBLIC_FILLED_WHOLE_MULTIFAMILY_ANALYSIS_EXISTENCE_ONLY_NO_RECIPIENT_USE",
+          "match": "EXISTENCE_ONLY_NO_RECIPIENT_USE"
+        },
+        {
+          "title": "[4일차]건기 11차 블로그 챌린지-임장보고서 작성 — 회기동 다가구 매수 검토와 공개 열람 댓글",
+          "url": "https://tigerhong.tistory.com/entry/4%EC%9D%BC%EC%B0%A8%EA%B1%B4%EA%B8%B0-11%EC%B0%A8-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EC%B1%8C%EB%A6%B0%EC%A7%80-%EC%9E%84%EC%9E%A5%EB%B3%B4%EA%B3%A0%EC%84%9C-%EC%9E%91%EC%84%B1",
+          "evidence_strength": "PARTIALLY_FILLED_WHOLE_MULTIFAMILY_FIELD_REPORT_WITH_SIMPLE_PUBLIC_READING_ACKNOWLEDGMENT",
+          "match": "SAME_PURPOSE_PARTIAL_MULTIFAMILY_FIELD_REPORT_READING"
+        }
+      ]
+    },
+    {
+      "report_id": "P13",
+      "assessment": {
+        "report_id": "P13",
+        "status": "PUBLIC_SAMPLE_PLUS_NAMED_PRACTITIONER_REPORT_WORKFLOW_AND_INTERNAL_OWNER_INFORMATION_REVIEW",
+        "source_ids": [
+          "U05",
+          "U08",
+          "U10",
+          "U31",
+          "U32",
+          "U33"
+        ],
+        "gap": "월간 보고서 샘플 원문, 기명 실무자의 실제 보고서 작성·건물주 자료 전달, 기명 운영자의 내부 월별 순이익 자료 수령·조회 기록을 확인. 동일 고객의 외부 납품 원문·수령 확인·구체 운영 결정의 일대일 연결은 미확보",
+        "round12_finding": "현재 쓰이는 월간 관리·정산 정보는 확인. 샘플·실무자 작성·건물주 간접 반응·운영자 내부 자료 수령을 서로 다른 증거로 보존.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U32",
+            "U33"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U05"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "report_type": "임대자산 월간 운영 보고"
+      },
+      "references": [
+        {
+          "title": "대한변협 역삼동 회관 실태 보고서",
+          "url": "https://img.koreanbar.or.kr/finance/2.pdf",
+          "evidence_strength": "INSTITUTIONAL_RECIPIENT_DOCUMENTARY_CHAIN",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "씨드큐브 창동 부동산 관리(PM,FM) 용역 과업내용서",
+          "url": "https://seoulreits.co.kr/kor/management/download.html?f_div=bid&file_encode=1670291032_2.pdf&file_original=%5B%EC%94%A8%EB%93%9C%ED%81%90%EB%B8%8C%EC%B0%BD%EB%8F%99%5D%EB%B6%80%EB%8F%99%EC%82%B0%EA%B4%80%EB%A6%AC%EC%9A%A9%EC%97%AD%EA%B3%BC%EC%97%85%EB%82%B4%EC%9A%A9%EC%84%9C.pdf",
+          "evidence_strength": "FORMAL_CLIENT_REQUIREMENT_ONLY",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "하우스맨 — 공개 정산서와 건물주 수령·확인 후기",
+          "url": "https://houseman.co.kr/",
+          "evidence_strength": "PROVIDER_PUBLISHED_ARTIFACT_AND_ATTRIBUTED_RECIPIENT_USE_NOT_INDEPENDENTLY_VERIFIED",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "빌딩케어 공개 월간 보고서 샘플 — 두 쪽 원문",
+          "url": "https://buildingcare0.tistory.com/6",
+          "evidence_strength": "PUBLIC_TWO_PAGE_MONTHLY_REPORT_SAMPLE_NOT_DELIVERED_CUSTOMER_ORIGINAL",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "키움자산관리 손영빈 담당 인터뷰 — 익월 보고서 작성과 건물주 데이터 전달",
+          "url": "https://www.buildingcare.co.kr/blog/buildingcare-control-tower",
+          "evidence_strength": "NAMED_CUSTOMER_PRACTITIONER_REPORT_AUTHORING_USE_PROVIDER_PUBLISHED_OWNER_USE_SECONDHAND",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "스테이모어 최윤미 대표 — 직원에게 받은 월별 순이익 자료와 현재 정산 조회",
+          "url": "https://www.buildingcare.co.kr/blog/staymore-copied-lxsw3v",
+          "evidence_strength": "NAMED_OPERATOR_INTERNAL_MONTHLY_PROFIT_INFORMATION_RECEIPT_REVIEW_SELF_REPORT_NO_CUSTOM_REPORT_ORIGINAL",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        }
+      ]
+    },
+    {
+      "report_id": "P14",
+      "assessment": {
+        "report_id": "P14",
+        "status": "SAME_PURPOSE_PARTIAL_PUBLIC_RENTAL_ANNOUNCEMENT_ANALYSIS_AND_READER_FEEDBACK_CONFIRMED",
+        "source_ids": [
+          "U26",
+          "U36",
+          "U44",
+          "U51",
+          "U56"
+        ],
+        "gap": "U56 특정 행복주택 공고의 일정·대상·임대조건·입지·평면도 해설과 내용별 독자 평가 확인. 개인별 자격 검증·복수 공고의 정량 총비용 비교·유료 고객 납품·실제 신청은 미검증.",
+        "round07_finding": "공공임대 운영관리 솔루션은 임차인의 공고·자격 비교 보고서가 아님. 새 동일 목적 수령·활용 사례 없음.",
+        "round10_finding": "여섯 공공임대 프로그램의 자격·순위 비교 견본을 직접 확인. SNS 공고를 본 입주 후기와는 연결하지 않음.",
+        "round16_finding": "정책기자의 자기진단 결과 조회·정책 확인은 인접 활용 근거. 신청 완료를 필수 조건으로 삼지 않되 실제 PDF 수령 기록으로 승격하지 않음.",
+        "user_usage_criterion_review": {
+          "accepted_same_purpose_source_ids": [
+            "U56"
+          ],
+          "accepted_adjacent_or_different_workflow_source_ids": [
+            "U36",
+            "U44",
+            "U51"
+          ],
+          "remaining_gap_is_not_a_requirement_for_contract_completion": true,
+          "full_content_validation_is_separate": true
+        },
+        "round17_finding": "일반 아파트 청약 분석 글은 확인했으나 공공임대 입주 비교와 목적이 다름. 수신자 반응도 미확인이므로 P14 활용 근거에서 제외.",
+        "report_type": "공공임대 입주 공고·조건 비교",
+        "round19_finding": "U44 실제 공공임대 조건별 결과 열람·행복주택 후보 탐색과 일정·변경공고·통근 방향 개선 요구 확인. 화면 요약을 별도 리포트 파일 수령으로 표시하지 않음.",
+        "round24_finding": "조건이 채워진 공개 공고 분석문과 AI 요약을 실제 읽었다는 앱 후기를 각각 확인. 동일 서비스 기능 수준의 활용이며 특정 분석문 전달과 연결되지 않아 인접 근거로 기록. 기준일 상충도 별도 표시.",
+        "round29_finding": "일반 앱 후기와 다른 공고를 임의 결합하지 않고, 같은 공고 해설 글의 구체적인 위치·평면도 열람 반응을 연결했다. 공공임대 공고 해설 부분만 인정.",
+        "verified_partial_scope": {
+          "accepted": "P14 특정 공공임대 공고·임대조건·입지·평면도 해설과 내용별 독자 열람 평가",
+          "not_established": "개인별 자격 검증, 여러 공고의 정량 총비용 비교, 신청 실행, 유료 고객 납품"
+        }
+      },
+      "references": [
+        {
+          "title": "지블 공공임대 자격진단 — 공개 리포트 견본",
+          "url": "https://zibble.kr/diagnosis/rent/report/sample",
+          "evidence_strength": "PUBLIC_RENDERED_ELIGIBILITY_SAMPLE_NO_MATCHED_CUSTOMER_RECEIPT_USE",
+          "match": "SAME_PROPOSED_PURPOSE_PARTIAL_SCOPE"
+        },
+        {
+          "title": "마이홈으로 청년 주거정책 한눈에 확인했어요 — 기명 정책기자의 진단 결과 열람",
+          "url": "https://www.korea.kr/news/reporterView.do?newsId=148919907",
+          "evidence_strength": "NAMED_POLICY_REPORTER_SELF_DIAGNOSIS_RESULT_VIEWING_WITH_SCREEN_ADJACENT_NO_APPLICATION",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "집지켜 공공임대 공고 요약·맞춤 목록 — 실제 이용자의 조건 비교·열람 평가",
+          "url": "https://apps.apple.com/kr/app/id6448703854?see-all=reviews&platform=iphone",
+          "evidence_strength": "PUBLIC_RENTAL_FILTERED_ANNOUNCEMENT_SUMMARY_SCREEN_READER_USE_AND_SPECIFIC_FEEDBACK_ADJACENT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "주거나침반 공공임대 공고 분석 — 실제 요약 열람 후기와 공개 구조화 분석문",
+          "url": "https://apps.apple.com/kr/app/%EC%A3%BC%EA%B1%B0%EB%82%98%EC%B9%A8%EB%B0%98-%EC%9E%84%EB%8C%80-%EB%B6%84%EC%96%91-%EC%B2%AD%EC%95%BD/id6761686011",
+          "evidence_strength": "PUBLIC_RENTAL_AI_ANNOUNCEMENT_SUMMARY_FEATURE_READER_USE_WITH_EXISTING_STRUCTURED_PAGE_NOT_MATCHED_REPORT_RECEIPT",
+          "match": "ADJACENT_ONLY"
+        },
+        {
+          "title": "LH 서울 강서 신혼희망타운 행복주택 모집 정보 — 특정 공고 분석과 내용별 독자 반응",
+          "url": "https://hs0101.tistory.com/63",
+          "evidence_strength": "FILLED_PUBLIC_RENTAL_ANNOUNCEMENT_ANALYSIS_WITH_CONTENT_SPECIFIC_READER_REACTIONS",
+          "match": "SAME_PURPOSE_PARTIAL_PUBLIC_RENTAL_ANNOUNCEMENT_READING"
+        }
+      ]
+    }
+  ]
+}

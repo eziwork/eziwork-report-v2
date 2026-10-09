@@ -1,0 +1,8 @@
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+work/
+cache/
+config/local-credentials.json
+config/branding.json

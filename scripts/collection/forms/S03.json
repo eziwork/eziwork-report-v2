@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "S03",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://www.k-apt.go.kr/",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "property_id": null,
+      "basis_date": null,
+      "management_fee_krw": null
+    }
+  ]
+}

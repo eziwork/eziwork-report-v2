@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "S14",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000098",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "property_id": null,
+      "issued_at": null,
+      "building_use": null
+    }
+  ]
+}

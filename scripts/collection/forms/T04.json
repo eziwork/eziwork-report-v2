@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "T04",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://www.data.go.kr/data/15126465/openapi.do",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {}
+  ],
+  "api_file_mode": true,
+  "native_units_confirmed": false,
+  "attachments": [],
+  "format_note": "공식 원본의 필드명과 단위를 유지. 실거래 금액은 만원, 면적은 m². 원본 첨부와 단위 대조 후 VERIFIED로 변경. raw 필드 정규화 검증을 동일 적용."
+}

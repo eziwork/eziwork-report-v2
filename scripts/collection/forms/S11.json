@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "source_id": "S11",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://data.seoul.go.kr/dataList/OA-15572/A/1/datasetView.do",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "region_code": null,
+      "basis_date": null,
+      "estimated_sales_krw": null,
+      "spatial_unit": null
+    }
+  ]
+}

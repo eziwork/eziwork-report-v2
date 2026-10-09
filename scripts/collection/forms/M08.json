@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "source_id": "M08",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "store_id": null,
+      "basis_date": null,
+      "sales_krw": null,
+      "assumptions": null
+    }
+  ]
+}

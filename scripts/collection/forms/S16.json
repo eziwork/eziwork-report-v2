@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "S16",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://m.khug.or.kr/hug/web/ig/dr/igdr000001.jsp?tabMenu=Y",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "product_name": null,
+      "basis_date": null,
+      "criteria_text": null
+    }
+  ]
+}

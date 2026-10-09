@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "M01",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "subject_id": null,
+      "purpose": null,
+      "budget_krw": null
+    }
+  ]
+}

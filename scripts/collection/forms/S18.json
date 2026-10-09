@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "S18",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://www.eum.go.kr/web/am/amMain.jsp",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "pnu": null,
+      "basis_date": null,
+      "land_use_text": null
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "source_id": "S21",
+  "evidence_mode": "ACTUAL",
+  "review_status": "VERIFIED",
+  "source_url": "https://fin.land.naver.com/articles/2654074710",
+  "basis_date": "2026-10-08",
+  "identity": {"subject_id": "naver-155817", "property_id": "naver-155817"},
+  "records": [{"article_no": "2654074710", "url": "https://fin.land.naver.com/articles/2654074710", "property_id": "naver-155817", "property_name": "올림픽파크포레온402동", "transaction_type": "SALE", "area_sqm": 84.99, "area_type": "EXCLUSIVE", "supply_area_sqm": 112.69, "asking_price_krw": 3000000000, "management_fee_krw": 300000, "confirmed_at": "2026-10-08", "observed_at": "2026-10-08T16:50:01+09:00", "floor_text": "고 (21층~) / 30층", "direction": "남향", "provider": "부동산뱅크", "card_detail_match": true}],
+  "observation": {"target_id": "naver-155817", "filters": {"complex_id": "155817", "property_type": "APT", "transaction_type": "SALE", "area_label": "112A", "exclusive_area_sqm": 84.99, "sort": "LATEST"}, "filters_verified": true, "displayed_total": 256, "raw_ad_count": 1, "group_card_count": 1, "sampling_strategy": "acceptance_latest_one_detail", "scope": "SAMPLE", "captured_at": "2026-10-08T16:50:01+09:00", "stopped_reason": null, "evidence_files": ["naver-evidence.txt"]}
+}

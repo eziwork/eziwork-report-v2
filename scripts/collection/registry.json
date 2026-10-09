@@ -1,0 +1,2669 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcAptTradeDev/getRTMSDataSvcAptTradeDev",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "APT",
+      "trade_type": "SALE",
+      "data_kind": "TRANSACTION",
+      "id": "T01",
+      "title": "국토교통부_아파트 매매 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126469/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126468/openapi.do",
+      "planned_fields": "거래금액·계약일·면적·층·단지·건축연도·해제 관련 항목",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T09:11:31.258896+00:00",
+        "sample_count": 393,
+        "usable_count": 1,
+        "scope_verified": true
+      },
+      "next_action": "기간·지역 확대, 페이지네이션·정정·해제·결측 검증 후 보고서 연동",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "authentication_audit": {
+        "status": "DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcRHTrade/getRTMSDataSvcRHTrade",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "ROWHOUSE",
+      "trade_type": "SALE",
+      "data_kind": "TRANSACTION",
+      "id": "T02",
+      "title": "국토교통부_연립다세대 매매 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126467/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126467/openapi.do",
+      "planned_fields": "거래금액·계약일·면적·층·건물·건축연도",
+      "last_audit": {
+        "status": "DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "next_action": "기간·지역 확대, 페이지네이션·정정·해제·결측 검증 후 보고서 연동",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcOffiTrade/getRTMSDataSvcOffiTrade",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "OFFICETEL",
+      "trade_type": "SALE",
+      "data_kind": "TRANSACTION",
+      "id": "T03",
+      "title": "국토교통부_오피스텔 매매 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126464/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126464/openapi.do",
+      "planned_fields": "거래금액·계약일·면적·층·건물·건축연도",
+      "last_audit": {
+        "status": "DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "next_action": "기간·지역 확대, 페이지네이션·정정·해제·결측 검증 후 보고서 연동",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcSHTrade/getRTMSDataSvcSHTrade",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "DETACHED_HOUSE",
+      "trade_type": "SALE",
+      "data_kind": "TRANSACTION",
+      "id": "T04",
+      "title": "국토교통부_단독/다가구 매매 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126465/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126465/openapi.do",
+      "planned_fields": "거래금액·계약일·대지/건물 면적·유형·건축연도",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 4,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcNrgTrade/getRTMSDataSvcNrgTrade",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "COMMERCIAL",
+      "trade_type": "SALE",
+      "data_kind": "TRANSACTION",
+      "id": "T05",
+      "title": "국토교통부_상업업무용 부동산 매매 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126463/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126463/openapi.do",
+      "planned_fields": "거래금액·계약일·면적·용도·건축연도 등 비교 항목",
+      "last_audit": {
+        "status": "DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "next_action": "기간·지역 확대, 페이지네이션·정정·해제·결측 검증 후 보고서 연동",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcLandTrade/getRTMSDataSvcLandTrade",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "LAND",
+      "trade_type": "SALE",
+      "data_kind": "TRANSACTION",
+      "id": "T06",
+      "title": "국토교통부_토지 매매 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126466/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126466/openapi.do",
+      "planned_fields": "거래금액·계약일·거래면적·지목·용도지역 등 비교 항목",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 92,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcAptRent/getRTMSDataSvcAptRent",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "APT",
+      "trade_type": "JEONSE",
+      "data_kind": "TRANSACTION",
+      "id": "T07",
+      "title": "국토교통부_아파트 전월세 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126474/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126474/openapi.do",
+      "planned_fields": "보증금·월세·계약일·면적·층·계약 관련 제공 항목",
+      "last_audit": {
+        "status": "DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "next_action": "기간·지역 확대, 페이지네이션·정정·해제·결측 검증 후 보고서 연동",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcRHRent/getRTMSDataSvcRHRent",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "ROWHOUSE",
+      "trade_type": "JEONSE",
+      "data_kind": "TRANSACTION",
+      "id": "T08",
+      "title": "국토교통부_연립다세대 전월세 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126473/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126473/openapi.do",
+      "planned_fields": "보증금·월세·계약일·면적·층·건축연도",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 563,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcOffiRent/getRTMSDataSvcOffiRent",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "OFFICETEL",
+      "trade_type": "JEONSE",
+      "data_kind": "TRANSACTION",
+      "id": "T09",
+      "title": "국토교통부_오피스텔 전월세 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126475/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126475/openapi.do",
+      "planned_fields": "보증금·월세·계약일·면적·층·건물 등 비교 항목",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 311,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "rtms",
+      "endpoint": "https://apis.data.go.kr/1613000/RTMSDataSvcSHRent/getRTMSDataSvcSHRent",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "lawd_cd",
+        "start_ym",
+        "end_ym"
+      ],
+      "defaults": {},
+      "property_type": "DETACHED_HOUSE",
+      "trade_type": "JEONSE",
+      "data_kind": "TRANSACTION",
+      "id": "T10",
+      "title": "국토교통부_단독/다가구 전월세 실거래가 자료",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15126472/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15126472/openapi.do",
+      "planned_fields": "보증금·월세·계약일·면적·유형 등 비교 항목",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 423,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "data_go",
+      "endpoint": "https://apis.data.go.kr/1613000/BldRgstHubService/getBrTitleInfo",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "sigunguCd",
+        "bjdongCd",
+        "bun",
+        "ji"
+      ],
+      "defaults": {},
+      "id": "S01",
+      "title": "건축HUB 건축물대장정보",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15134735/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15134735/openapi.do",
+      "planned_fields": "용도·면적·구조·사용승인·표제부·전유부·층별·주차 등 제공 범위에서 선택",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T09:11:31.258896+00:00",
+        "sample_count": 1,
+        "usable_count": 1,
+        "scope_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "authentication_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 34,
+        "authentication_verified": true
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "data_go",
+      "endpoint": "https://apis.data.go.kr/1613000/AptBasisInfoServiceV5/getAphusBassInfoV5",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "kaptCode"
+      ],
+      "defaults": {},
+      "id": "S02",
+      "title": "공동주택 기본 정보제공",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15058453/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15058453/openapi.do",
+      "planned_fields": "단지 코드·주소·세대수·난방·관리 방식·주변시설 등",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T09:11:31.258896+00:00",
+        "sample_count": 1,
+        "usable_count": 1,
+        "scope_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "authentication_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 1,
+        "authentication_verified": true
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "basis_date",
+        "management_fee_krw"
+      ],
+      "defaults": {},
+      "id": "S03",
+      "title": "K-apt 월별 관리비 공개",
+      "mode": "FILE",
+      "source_url": "https://www.k-apt.go.kr/",
+      "guide_url": "https://www.k-apt.go.kr/",
+      "planned_fields": "월별 항목별 관리비·사용료 등 공개 내역",
+      "last_audit": {
+        "status": "DOCUMENT_ONLY",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "해당 원자료 또는 발급 서류의 실제 입력·다운로드·추출 검증",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "basis_date",
+        "management_fee_krw"
+      ]
+    },
+    {
+      "adapter": "vworld",
+      "endpoint": "https://api.vworld.kr/req/data",
+      "credential": "VWORLD_API_KEY",
+      "auth_param": "key",
+      "required": [
+        "domain",
+        "data",
+        "attrFilter",
+        "layer_guide_url"
+      ],
+      "defaults": {
+        "service": "data",
+        "version": "2.0",
+        "request": "GetFeature",
+        "format": "json"
+      },
+      "id": "S04",
+      "title": "토지이용계획정보(WMS/WFS/속성정보)",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15123973/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15123973/openapi.do",
+      "planned_fields": "필지별 용도지역·지구·구역 등 이용계획 속성·도형",
+      "last_audit": {
+        "status": "KEY_MISSING",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "ADAPTER_IMPLEMENTED_CONFIG_REQUIRED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "configuration_note": "공식 서비스 명세의 레이어 ID(data)와 명세 URL(layer_guide_url)을 입력해야 합니다. 지적도 지가 필드로 대체 금지.",
+      "input_fields": []
+    },
+    {
+      "adapter": "vworld",
+      "endpoint": "https://api.vworld.kr/req/data",
+      "credential": "VWORLD_API_KEY",
+      "auth_param": "key",
+      "required": [
+        "domain",
+        "data",
+        "attrFilter",
+        "layer_guide_url"
+      ],
+      "defaults": {
+        "service": "data",
+        "version": "2.0",
+        "request": "GetFeature",
+        "format": "json"
+      },
+      "id": "S05",
+      "title": "개별공시지가정보(WMS/WFS/속성정보)",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15124014/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15124014/openapi.do",
+      "planned_fields": "필지·공시 기준연도·단위면적당 공시지가 등",
+      "last_audit": {
+        "status": "KEY_MISSING",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "ADAPTER_IMPLEMENTED_CONFIG_REQUIRED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "configuration_note": "공식 서비스 명세의 레이어 ID(data)와 명세 URL(layer_guide_url)을 입력해야 합니다. 지적도 지가 필드로 대체 금지.",
+      "input_fields": []
+    },
+    {
+      "adapter": "vworld",
+      "endpoint": "https://api.vworld.kr/req/data",
+      "credential": "VWORLD_API_KEY",
+      "auth_param": "key",
+      "required": [
+        "domain",
+        "data",
+        "attrFilter"
+      ],
+      "defaults": {
+        "service": "data",
+        "version": "2.0",
+        "request": "GetFeature",
+        "format": "json",
+        "data": "LP_PA_CBND_BUBUN"
+      },
+      "id": "S06",
+      "title": "연속지적도형정보(WMS/WFS)",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15123899/openapi.do",
+      "guide_url": "https://www.vworld.kr/dev/v4dv_2ddataguide2_s002.do?svcIde=cadastral",
+      "planned_fields": "필지 도형·식별자·주변 도로와 위치 관계",
+      "last_audit": {
+        "status": "KEY_MISSING",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "juso",
+      "endpoint": "https://business.juso.go.kr/addrlink/addrLinkApi.do",
+      "credential": "JUSO_CONFM_KEY",
+      "auth_param": "confmKey",
+      "required": [
+        "keyword"
+      ],
+      "defaults": {
+        "resultType": "json"
+      },
+      "id": "S07",
+      "title": "주소 검색·좌표 API",
+      "mode": "API",
+      "source_url": "https://business.juso.go.kr/",
+      "guide_url": "https://business.juso.go.kr/",
+      "planned_fields": "도로명·지번 주소·행정구역 코드·건물 식별·좌표 등 서비스별 항목",
+      "last_audit": {
+        "status": "KEY_MISSING",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "configuration_note": "주소 검색만 제공. 좌표는 별도 승인·검증 전 미수집으로 유지.",
+      "input_fields": []
+    },
+    {
+      "adapter": "kosis",
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "credential": "KOSIS_API_KEY",
+      "auth_param": "apiKey",
+      "required": [
+        "orgId",
+        "tblId",
+        "itmId",
+        "objL1",
+        "prdSe",
+        "startPrdDe",
+        "endPrdDe"
+      ],
+      "defaults": {
+        "method": "getList",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "id": "S08",
+      "title": "KOSIS 통계자료·공유서비스",
+      "mode": "API",
+      "source_url": "https://kosis.kr/serviceInfo/openAPIGuide.do",
+      "guide_url": "https://kosis.kr/openapi/devGuide/devGuide_0201List.do",
+      "planned_fields": "인구·가구·사업체·고용 등 선택 통계표의 지역·기간·분류값",
+      "last_audit": {
+        "status": "KEY_MISSING",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "data_kind": "OFFICIAL_STATISTIC",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "rone",
+      "endpoint": "https://www.reb.or.kr/r-one/openapi/SttsApiTblData.do",
+      "credential": "RONE_API_KEY",
+      "auth_param": "KEY",
+      "required": [
+        "STATBL_ID",
+        "DTACYCLE_CD",
+        "CLS_ID",
+        "ITM_ID",
+        "START_WRTTIME",
+        "END_WRTTIME"
+      ],
+      "defaults": {
+        "Type": "json"
+      },
+      "id": "S09",
+      "title": "부동산통계(R-ONE) 조회",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15134761/openapi.do",
+      "guide_url": "https://www.reb.or.kr/r-one/portal/openapi/openApiDevPage.do",
+      "planned_fields": "주택·오피스텔 가격동향·지가변동·상업용 임대동향·공실·수익 지표 등 통계표",
+      "last_audit": {
+        "status": "SAMPLE_DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 5
+      },
+      "next_action": "운영용 신청·키/인증값 설정 및 필요한 실제 통계표·기간·현행 법령 본문 검증",
+      "data_kind": "OFFICIAL_STATISTIC",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "data_go",
+      "endpoint": "https://apis.data.go.kr/B553077/api/open/sdsc2/storeListInDong",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "ServiceKey",
+      "required": [
+        "divId",
+        "key"
+      ],
+      "defaults": {
+        "type": "xml"
+      },
+      "id": "S10",
+      "title": "상가(상권)정보 API",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15012005/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15012005/openapi.do",
+      "planned_fields": "상호·업종·주소·좌표·업소 식별자·반경/영역별 점포 분포",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 66269,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "region_code",
+        "basis_date",
+        "estimated_sales_krw",
+        "spatial_unit"
+      ],
+      "defaults": {},
+      "id": "S11",
+      "title": "서울 상권분석 데이터·추정매출",
+      "mode": "FILE",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-15572/A/1/datasetView.do",
+      "guide_url": "https://data.seoul.go.kr/dataList/OA-15572/A/1/datasetView.do",
+      "planned_fields": "상권별 추정매출·점포·인구·영역 등 데이터셋별 지표",
+      "last_audit": {
+        "status": "DOCUMENT_ONLY",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "해당 원자료 또는 발급 서류의 실제 입력·다운로드·추출 검증",
+      "data_kind": "OFFICIAL_STATISTIC",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "region_code",
+        "basis_date",
+        "estimated_sales_krw",
+        "spatial_unit"
+      ]
+    },
+    {
+      "adapter": "school",
+      "endpoint": "https://www.schoolinfo.go.kr/openApi.do",
+      "credential": "SCHOOLINFO_API_KEY",
+      "auth_param": "apiKey",
+      "required": [
+        "schulKndCode"
+      ],
+      "defaults": {
+        "apiType": "0"
+      },
+      "id": "S12",
+      "title": "학교알리미 Open API",
+      "mode": "API",
+      "source_url": "https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_m0.do",
+      "guide_url": "https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_l0.do?schulCode=S010002286",
+      "planned_fields": "학교 기본정보·소재지·공시 항목 중 허용된 지표",
+      "last_audit": {
+        "status": "KEY_MISSING",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "data_go",
+      "endpoint": "https://apis.data.go.kr/1613000/BusSttnInfoInqireService/getSttnNoList",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "cityCode",
+        "nodeNm"
+      ],
+      "defaults": {},
+      "id": "S13",
+      "title": "TAGO 버스정류소정보",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15098534/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15098534/openapi.do",
+      "planned_fields": "정류소 ID·명칭·좌표·지역별 조회",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 0,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "issued_at",
+        "building_use"
+      ],
+      "defaults": {},
+      "id": "S14",
+      "title": "건축물대장 등본·초본 발급/열람",
+      "mode": "FILE",
+      "source_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000098",
+      "guide_url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000098",
+      "planned_fields": "최신 발급 표제부·전유부 등 공부의 표시 내용",
+      "last_audit": {
+        "status": "DOCUMENT_ONLY",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "해당 원자료 또는 발급 서류의 실제 입력·다운로드·추출 검증",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "issued_at",
+        "building_use"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "issued_at",
+        "rights_summary"
+      ],
+      "defaults": {},
+      "id": "S15",
+      "title": "등기사항증명서 열람·발급",
+      "mode": "FILE",
+      "source_url": "https://www.iros.go.kr/",
+      "guide_url": "https://www.iros.go.kr/",
+      "planned_fields": "소유 관계·권리 제한·근저당·신탁 등 등기 표시 내용",
+      "last_audit": {
+        "status": "DOCUMENT_ONLY",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "해당 원자료 또는 발급 서류의 실제 입력·다운로드·추출 검증",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "issued_at",
+        "rights_summary"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "product_name",
+        "basis_date",
+        "criteria_text"
+      ],
+      "defaults": {},
+      "id": "S16",
+      "title": "전세보증금반환보증 안내·제출서류",
+      "mode": "FILE",
+      "source_url": "https://m.khug.or.kr/hug/web/ig/dr/igdr000001.jsp?tabMenu=Y",
+      "guide_url": "https://m.khug.or.kr/hug/web/ig/dr/igdr000001.jsp?tabMenu=Y",
+      "planned_fields": "상품 요건·신청 시점·제출서류·주택 유형별 추가 확인 자료",
+      "last_audit": {
+        "status": "DOCUMENT_ONLY",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "해당 원자료 또는 발급 서류의 실제 입력·다운로드·추출 검증",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "product_name",
+        "basis_date",
+        "criteria_text"
+      ]
+    },
+    {
+      "adapter": "law",
+      "endpoint": "https://www.law.go.kr/DRF/lawSearch.do",
+      "credential": "LAW_OC",
+      "auth_param": "OC",
+      "required": [
+        "query"
+      ],
+      "defaults": {
+        "target": "eflaw",
+        "type": "XML"
+      },
+      "id": "S17",
+      "title": "국가법령정보 공동활용 API",
+      "mode": "API",
+      "source_url": "https://open.law.go.kr/LSO/openApi/guideList.do",
+      "guide_url": "https://open.law.go.kr/LSO/openApi/openApiManual.do",
+      "planned_fields": "법령·시행령·조례 등의 목록·본문·시행일; 제공 API별 범위",
+      "last_audit": {
+        "status": "SAMPLE_DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "next_action": "운영용 신청·키/인증값 설정 및 필요한 실제 통계표·기간·현행 법령 본문 검증",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "body_endpoint": "https://www.law.go.kr/DRF/lawService.do",
+      "body_guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEfYdInfoGuide",
+      "configuration_note": "목록은 query, 본문은 ID 또는 MST+efYd 및 expected_law_name 지정. 목록만으로 법령 근거를 충족하지 않음.",
+      "input_fields": []
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "pnu",
+        "basis_date",
+        "land_use_text"
+      ],
+      "defaults": {},
+      "id": "S18",
+      "title": "토지이음 열람·고시정보",
+      "mode": "FILE",
+      "source_url": "https://www.eum.go.kr/web/am/amMain.jsp",
+      "guide_url": "https://www.eum.go.kr/web/am/amMain.jsp",
+      "planned_fields": "토지이용계획·도시계획·고시·규제 원문",
+      "last_audit": {
+        "status": "DOCUMENT_ONLY",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "해당 원자료 또는 발급 서류의 실제 입력·다운로드·추출 검증",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "pnu",
+        "basis_date",
+        "land_use_text"
+      ]
+    },
+    {
+      "adapter": "data_go",
+      "endpoint": "https://apis.data.go.kr/1613000/ArchPmsHubService/getApBasisOulnInfo",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "serviceKey",
+      "required": [
+        "sigunguCd",
+        "bjdongCd"
+      ],
+      "defaults": {},
+      "id": "S19",
+      "title": "건축HUB 건축인허가정보",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15136267/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15136267/openapi.do",
+      "planned_fields": "허가·동별·층별·대수선·철거·가설건축물·주차 등 속성",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 999,
+        "authentication_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "lh",
+      "endpoint": "https://apis.data.go.kr/B552555/lhLeaseNoticeInfo1/lhLeaseNoticeInfo1",
+      "credential": "DATA_GO_KR_SERVICE_KEY",
+      "auth_param": "ServiceKey",
+      "required": [
+        "PAN_ST_DT",
+        "PAN_ED_DT"
+      ],
+      "defaults": {},
+      "id": "S20",
+      "title": "LH 분양임대공고문 조회",
+      "mode": "API",
+      "source_url": "https://www.data.go.kr/data/15058530/openapi.do",
+      "guide_url": "https://www.data.go.kr/data/15058530/openapi.do",
+      "planned_fields": "공고명·유형·지역·게시일·상태·상세 URL",
+      "last_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T09:11:31.258896+00:00",
+        "sample_count": 41,
+        "usable_count": 41,
+        "scope_verified": true
+      },
+      "next_action": "요청 대상·기간·단위와 원문을 대조한 후 보고서 사용 여부 검토",
+      "data_kind": "OFFICIAL_REFERENCE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "LIVE_COLLECTION_CHECKED",
+      "previous_audit": {
+        "status": "AUTH_REJECTED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "configuration_note": "최신 공식 첨부 가이드 기준: 게시 기간 PAN_ST_DT/PAN_ED_DT(YYYYMMDD), 선택 마감 기간 CLSG_ST_DT/CLSG_ED_DT. dsSch의 적용 기간과 행별 날짜를 대조하며 불일치 시 수집 미완료.",
+      "parameter_guide": "verification/LH-official-guide-20260708.docx",
+      "authentication_audit": {
+        "status": "COMPLETE",
+        "checked_at": "2026-10-08T08:45:44.637483+00:00",
+        "sample_count": 586,
+        "authentication_verified": true
+      },
+      "input_fields": []
+    },
+    {
+      "adapter": "naver",
+      "required": [
+        "article_no",
+        "url",
+        "property_id",
+        "transaction_type",
+        "area_sqm",
+        "area_type",
+        "asking_price_krw",
+        "confirmed_at",
+        "observed_at",
+        "floor_text"
+      ],
+      "defaults": {},
+      "id": "S21",
+      "title": "네이버페이 부동산 현재 매물",
+      "mode": "BROWSER",
+      "source_url": "https://fin.land.naver.com/",
+      "guide_url": "https://fin.land.naver.com/",
+      "planned_fields": "공개 호가·보증금·월세·면적·층 표기·입주 조건·확인일·원문 URL·수집 시각",
+      "last_audit": {
+        "status": "BROWSER_REQUIRED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "브라우저 연결 후 대상 1개·최대 20광고에서 필터·목록·상세·원문 대조",
+      "data_kind": "ASKING_PRICE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "article_no",
+        "url",
+        "property_id",
+        "transaction_type",
+        "area_sqm",
+        "area_type",
+        "asking_price_krw",
+        "confirmed_at",
+        "observed_at",
+        "floor_text"
+      ]
+    },
+    {
+      "adapter": "ecos",
+      "endpoint": "https://ecos.bok.or.kr/api/StatisticSearch",
+      "credential": "ECOS_API_KEY",
+      "auth_param": null,
+      "required": [
+        "stat_code",
+        "cycle",
+        "start",
+        "end",
+        "item_code"
+      ],
+      "defaults": {},
+      "id": "S22",
+      "title": "한국은행 ECOS Open API",
+      "mode": "API",
+      "source_url": "https://ecos.bok.or.kr/api/",
+      "guide_url": "https://ecos.bok.or.kr/api/",
+      "planned_fields": "기준금리·시장금리·대출금리 등 선택 통계표",
+      "last_audit": {
+        "status": "SAMPLE_DATA_RECEIVED",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 3
+      },
+      "next_action": "운영용 신청·키/인증값 설정 및 필요한 실제 통계표·기간·현행 법령 본문 검증",
+      "data_kind": "OFFICIAL_STATISTIC",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": []
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "subject_id",
+        "purpose",
+        "budget_krw"
+      ],
+      "defaults": {},
+      "id": "M01",
+      "title": "고객 목적·자금·선호",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "예산·보유자금·거주기간·통근 목적지·원하는 용도",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "subject_id",
+        "purpose",
+        "budget_krw"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "transaction_type",
+        "asking_price_krw"
+      ],
+      "defaults": {},
+      "id": "M02",
+      "title": "보유 매물·경쟁 매물·상담 기록",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "매물 원장·호가·조건·확인일·문의·방문·제안 기록",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "ASKING_PRICE",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "transaction_type",
+        "asking_price_krw"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "basis_date",
+        "rent_received_krw",
+        "operating_cost_krw"
+      ],
+      "defaults": {},
+      "id": "M03",
+      "title": "임대차·관리비·수금·운영 원장",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "계약서·호실별 보증금·임대료·만기·수금·미수·관리비·공실·지출",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "basis_date",
+        "rent_received_krw",
+        "operating_cost_krw"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "issued_at",
+        "authority_evidence"
+      ],
+      "defaults": {},
+      "id": "M04",
+      "title": "권한·기존 임대차·추가 계약 자료",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "계약 권한 증빙·기존 임대차 관련 자료·필요한 사실확인 서류",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "issued_at",
+        "authority_evidence"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "inspection_date",
+        "condition_notes"
+      ],
+      "defaults": {},
+      "id": "M05",
+      "title": "현장 조사·시설 상태",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "누수·소음·채광·층·향·진입·점유·사진·확인자·확인일",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "inspection_date",
+        "condition_notes"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "property_id",
+        "issued_at",
+        "quote_type",
+        "amount_krw"
+      ],
+      "defaults": {},
+      "id": "M06",
+      "title": "금융·세무·공사 등 개별 견적",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "승인/견적 금리·대출 조건·개별 세금 검토·수리/철거/조성 비용",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "property_id",
+        "issued_at",
+        "quote_type",
+        "amount_krw"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "pnu",
+        "issued_at",
+        "verification_notes"
+      ],
+      "defaults": {},
+      "id": "M07",
+      "title": "설계·측량·인허가 사전 확인",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "설계 대안·면적·규모·경계·접도·용도별 회신·시설 조건",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "pnu",
+        "issued_at",
+        "verification_notes"
+      ]
+    },
+    {
+      "adapter": "input",
+      "required": [
+        "store_id",
+        "basis_date",
+        "sales_krw",
+        "assumptions"
+      ],
+      "defaults": {},
+      "id": "M08",
+      "title": "점포 사업 가정·실매출",
+      "mode": "MANUAL",
+      "source_url": "",
+      "guide_url": "",
+      "planned_fields": "객단가·객수·원가·인건비·사업 계획·실적 증빙(있을 때)",
+      "last_audit": {
+        "status": "MANUAL_INPUT",
+        "checked_at": "2026-10-08T11:05:53.936150+09:00",
+        "sample_count": 0
+      },
+      "next_action": "표준 입력 양식과 익명화한 샘플 자료로 입력·추출 검증",
+      "data_kind": "USER_INPUT",
+      "validation": [
+        "required_fields",
+        "source_provenance",
+        "units_and_dates",
+        "target_identity"
+      ],
+      "failure_handling": "Preserve partial evidence; exclude incomplete analysis; never replace missing with zero.",
+      "fallback": "Reviewed local input with original file/URL and basis/issue date.",
+      "implementation_status": "IMPLEMENTED",
+      "production_status": "AWAITING_LIVE_VALIDATION",
+      "input_fields": [
+        "store_id",
+        "basis_date",
+        "sales_krw",
+        "assumptions"
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "id": "P01",
+      "title": "아파트 매수·후보 비교",
+      "data_requirements": [
+        {
+          "data": "대상 식별·단지·건물 정보",
+          "sources": [
+            "S07",
+            "S01",
+            "S02"
+          ],
+          "role": "필수",
+          "missing_handling": "주소·단지·면적을 먼저 확정",
+          "requirement_id": "P01-D01",
+          "coverage_checklist": [
+            "대상 식별",
+            "단지",
+            "건물 정보"
+          ]
+        },
+        {
+          "data": "매매 실거래 비교",
+          "sources": [
+            "T01"
+          ],
+          "role": "필수",
+          "missing_handling": "표본 부족·거래 누락 범위 표시; 정확한 물건 시세 단정 금지",
+          "requirement_id": "P01-D02",
+          "coverage_checklist": [
+            "매매 실거래 비교"
+          ]
+        },
+        {
+          "data": "현재 매물·입주 조건",
+          "sources": [
+            "M02",
+            "S21"
+          ],
+          "role": "호가 비교 시 필수",
+          "missing_handling": "권한 있는 자료 없으면 호가 분석 제외 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P01-D03",
+          "coverage_checklist": [
+            "현재 매물",
+            "입주 조건"
+          ]
+        },
+        {
+          "data": "입지·인구·학교·교통·공급",
+          "sources": [
+            "S08",
+            "S12",
+            "S13",
+            "S19"
+          ],
+          "role": "고객 질문에 따라 선택",
+          "missing_handling": "실제 통근·학교 배정은 추가 확인",
+          "requirement_id": "P01-D04",
+          "coverage_checklist": [
+            "입지",
+            "인구",
+            "학교",
+            "교통",
+            "공급"
+          ]
+        },
+        {
+          "data": "고객 자금·현장·금융 조건",
+          "sources": [
+            "M01",
+            "M05",
+            "M06"
+          ],
+          "role": "맞춤 비교 시 필수",
+          "missing_handling": "실제 값 없으면 명시한 가정만 사용",
+          "requirement_id": "P01-D05",
+          "coverage_checklist": [
+            "고객 자금",
+            "현장",
+            "금융 조건"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "아파트 매도·경쟁 매물 비교",
+      "data_requirements": [
+        {
+          "data": "대상·단지·기존 조건",
+          "sources": [
+            "S07",
+            "S01",
+            "S02",
+            "M01",
+            "M05"
+          ],
+          "role": "필수",
+          "missing_handling": "매도 물건·희망 일정 확정",
+          "requirement_id": "P02-D01",
+          "coverage_checklist": [
+            "대상",
+            "단지",
+            "기존 조건"
+          ]
+        },
+        {
+          "data": "실거래·경쟁 매물",
+          "sources": [
+            "T01",
+            "M02",
+            "S21"
+          ],
+          "role": "가격·경쟁 비교 시 필수",
+          "missing_handling": "경쟁 매물 미확보 시 범위 제한 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P02-D02",
+          "coverage_checklist": [
+            "실거래",
+            "경쟁 매물"
+          ]
+        },
+        {
+          "data": "문의·방문·제안 기록",
+          "sources": [
+            "M02"
+          ],
+          "role": "판매 활동 분석 시 필수",
+          "missing_handling": "없으면 판매 활동 진단 제외",
+          "requirement_id": "P02-D03",
+          "coverage_checklist": [
+            "문의",
+            "방문",
+            "제안 기록"
+          ]
+        },
+        {
+          "data": "보유·인도·비용 조건",
+          "sources": [
+            "M03",
+            "M06"
+          ],
+          "role": "조건 비교 시 필수",
+          "missing_handling": "비용·세금 미확정 표시",
+          "requirement_id": "P02-D04",
+          "coverage_checklist": [
+            "보유",
+            "인도",
+            "비용 조건"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "빌라·연립·다세대 매수 검토",
+      "data_requirements": [
+        {
+          "data": "물건 식별·공부·권리",
+          "sources": [
+            "S07",
+            "S01",
+            "S14",
+            "S15"
+          ],
+          "role": "필수",
+          "missing_handling": "서류 없으면 권리·대지권 검토 미완료",
+          "requirement_id": "P03-D01",
+          "coverage_checklist": [
+            "물건 식별",
+            "공부",
+            "권리"
+          ]
+        },
+        {
+          "data": "가격·현재 조건",
+          "sources": [
+            "T02",
+            "M02",
+            "S21"
+          ],
+          "role": "가격 비교 시 필수",
+          "missing_handling": "적은 표본과 물건 차이 명시 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P03-D02",
+          "coverage_checklist": [
+            "가격",
+            "현재 조건"
+          ]
+        },
+        {
+          "data": "토지·대지·주변 조건",
+          "sources": [
+            "S04",
+            "S06",
+            "S18"
+          ],
+          "role": "물건에 따라 필수",
+          "missing_handling": "기관 조회/공부로 재확인",
+          "requirement_id": "P03-D03",
+          "coverage_checklist": [
+            "토지",
+            "대지",
+            "주변 조건"
+          ]
+        },
+        {
+          "data": "현장·점유·보수·금융",
+          "sources": [
+            "M03",
+            "M05",
+            "M06"
+          ],
+          "role": "인수 검토 시 필수",
+          "missing_handling": "미확인 쟁점으로 유지",
+          "requirement_id": "P03-D04",
+          "coverage_checklist": [
+            "현장",
+            "점유",
+            "보수",
+            "금융"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "주거 전세 계약 전 점검",
+      "data_requirements": [
+        {
+          "data": "유형별 전세 시장 비교",
+          "sources": [
+            "T07",
+            "T08",
+            "T09",
+            "T10",
+            "S21"
+          ],
+          "role": "가격 비교 시 필수; 해당 유형만 선택",
+          "missing_handling": "다른 물건군 자료 혼합 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P04-D01",
+          "coverage_checklist": [
+            "유형별 전세 시장 비교"
+          ]
+        },
+        {
+          "data": "등기·건축 공부·계약 권한",
+          "sources": [
+            "S15",
+            "S14",
+            "S01",
+            "M04"
+          ],
+          "role": "계약 전 점검 필수",
+          "missing_handling": "없으면 해당 검토 미완료",
+          "requirement_id": "P04-D02",
+          "coverage_checklist": [
+            "등기",
+            "건축 공부",
+            "계약 권한"
+          ]
+        },
+        {
+          "data": "계약 초안·기존 임대차",
+          "sources": [
+            "M03",
+            "M04"
+          ],
+          "role": "계약 점검 필수; 다가구는 건물 전체 관련 자료",
+          "missing_handling": "공개 거래로 선순위 보증금 합계 추정 금지",
+          "requirement_id": "P04-D03",
+          "coverage_checklist": [
+            "계약 초안",
+            "기존 임대차"
+          ]
+        },
+        {
+          "data": "보증상품 기준·실제 확인",
+          "sources": [
+            "S16",
+            "M06"
+          ],
+          "role": "보증 관련 설명 시 필수",
+          "missing_handling": "심사 확인 전 가입 가능·안전 확정 금지",
+          "requirement_id": "P04-D04",
+          "coverage_checklist": [
+            "보증상품 기준",
+            "실제 확인"
+          ]
+        },
+        {
+          "data": "입주·현장 조건",
+          "sources": [
+            "M01",
+            "M05"
+          ],
+          "role": "조건 설명 시 필수",
+          "missing_handling": "문서와 실제 현장 차이 표시",
+          "requirement_id": "P04-D05",
+          "coverage_checklist": [
+            "입주",
+            "현장 조건"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "주거 월세 총비용·계약 비교",
+      "data_requirements": [
+        {
+          "data": "유형별 전월세 거래",
+          "sources": [
+            "T07",
+            "T08",
+            "T09",
+            "T10",
+            "S21"
+          ],
+          "role": "시장 비교 시 필수",
+          "missing_handling": "해당 유형 선택 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P05-D01",
+          "coverage_checklist": [
+            "유형별 전월세 거래"
+          ]
+        },
+        {
+          "data": "계약·권리·건축 서류",
+          "sources": [
+            "S15",
+            "S14",
+            "M03",
+            "M04"
+          ],
+          "role": "계약 점검 필수",
+          "missing_handling": "서류 없으면 해당 부분 미완료",
+          "requirement_id": "P05-D02",
+          "coverage_checklist": [
+            "계약",
+            "권리",
+            "건축 서류"
+          ]
+        },
+        {
+          "data": "관리비·옵션·일회 비용",
+          "sources": [
+            "M03",
+            "M06",
+            "S03"
+          ],
+          "role": "총비용 비교 필수",
+          "missing_handling": "K-apt 집계 대신 호실 내역 우선; 변동비 범위 표시",
+          "requirement_id": "P05-D03",
+          "coverage_checklist": [
+            "관리비",
+            "옵션",
+            "일회 비용"
+          ]
+        },
+        {
+          "data": "거주기간·예산·현장",
+          "sources": [
+            "M01",
+            "M05"
+          ],
+          "role": "필수",
+          "missing_handling": "거주기간이 없으면 기간 총비용 산출 보류",
+          "requirement_id": "P05-D04",
+          "coverage_checklist": [
+            "거주기간",
+            "예산",
+            "현장"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "오피스텔 매수·임대수익 검토",
+      "data_requirements": [
+        {
+          "data": "오피스텔 거래·임대 시장",
+          "sources": [
+            "T03",
+            "T09",
+            "S09",
+            "S21"
+          ],
+          "role": "가격 비교 필수",
+          "missing_handling": "오피스 통계로 대체 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P06-D01",
+          "coverage_checklist": [
+            "오피스텔 거래",
+            "임대 시장"
+          ]
+        },
+        {
+          "data": "물건·용도·권리",
+          "sources": [
+            "S07",
+            "S01",
+            "S14",
+            "S15"
+          ],
+          "role": "물건 검토 필수",
+          "missing_handling": "실사용·세무 적용은 추가 확인",
+          "requirement_id": "P06-D02",
+          "coverage_checklist": [
+            "물건",
+            "용도",
+            "권리"
+          ]
+        },
+        {
+          "data": "실제 계약·관리비·공실·수선",
+          "sources": [
+            "M03",
+            "M05"
+          ],
+          "role": "증빙 기반 수익 검토 필수",
+          "missing_handling": "없으면 가정에 따른 시나리오로만 표시",
+          "requirement_id": "P06-D03",
+          "coverage_checklist": [
+            "실제 계약",
+            "관리비",
+            "공실",
+            "수선"
+          ]
+        },
+        {
+          "data": "취득·금융·세무 조건",
+          "sources": [
+            "M01",
+            "M06",
+            "S22"
+          ],
+          "role": "자금 검토 필수; S22는 보조",
+          "missing_handling": "정책·평균 금리를 개인 승인 조건으로 사용 금지",
+          "requirement_id": "P06-D04",
+          "coverage_checklist": [
+            "취득",
+            "금융",
+            "세무 조건"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "상가 임차·출점 검토",
+      "data_requirements": [
+        {
+          "data": "점포·업종·경쟁 분포",
+          "sources": [
+            "S07",
+            "S01",
+            "S10",
+            "M01"
+          ],
+          "role": "필수",
+          "missing_handling": "업종·분석 영역 먼저 확정",
+          "requirement_id": "P07-D01",
+          "coverage_checklist": [
+            "점포",
+            "업종",
+            "경쟁 분포"
+          ]
+        },
+        {
+          "data": "인구·상권 수요·추정매출",
+          "sources": [
+            "S08",
+            "S11"
+          ],
+          "role": "수요 분석 시 필수; S11은 서울만",
+          "missing_handling": "서울 외 매출·유동 데이터는 지역별 추가 공급원 확보 전 생략",
+          "requirement_id": "P07-D02",
+          "coverage_checklist": [
+            "인구",
+            "상권 수요",
+            "추정매출"
+          ]
+        },
+        {
+          "data": "현재 임차 조건·계약·시설",
+          "sources": [
+            "M02",
+            "M03",
+            "M05",
+            "S14",
+            "S21"
+          ],
+          "role": "조건 검토 필수",
+          "missing_handling": "상가 임대료를 주거 전월세 API로 대체 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P07-D03",
+          "coverage_checklist": [
+            "현재 임차 조건",
+            "계약",
+            "시설"
+          ]
+        },
+        {
+          "data": "손익 가정·비용 견적",
+          "sources": [
+            "M08",
+            "M06"
+          ],
+          "role": "손익분기 분석 필수",
+          "missing_handling": "없으면 손익분기 산출 제외",
+          "requirement_id": "P07-D04",
+          "coverage_checklist": [
+            "손익 가정",
+            "비용 견적"
+          ]
+        },
+        {
+          "data": "이용·업종·법령·허가 확인",
+          "sources": [
+            "S18",
+            "S17",
+            "M07"
+          ],
+          "role": "업종에 따라 필수",
+          "missing_handling": "공개 상가업소 목록으로 신규 영업 허가 확정 금지",
+          "requirement_id": "P07-D05",
+          "coverage_checklist": [
+            "이용",
+            "업종",
+            "법령",
+            "허가 확인"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "상가 매수·임대수익 검토",
+      "data_requirements": [
+        {
+          "data": "상가 거래·지역 시장",
+          "sources": [
+            "T05",
+            "S09",
+            "S10",
+            "S11",
+            "S21"
+          ],
+          "role": "가격·시장 비교 필수; S11 서울 한정",
+          "missing_handling": "거래 단위·면적 및 표본 한계 표시 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P08-D01",
+          "coverage_checklist": [
+            "상가 거래",
+            "지역 시장"
+          ]
+        },
+        {
+          "data": "건물·권리·실제 물건",
+          "sources": [
+            "S01",
+            "S14",
+            "S15",
+            "M05"
+          ],
+          "role": "실사 필수",
+          "missing_handling": "서류·현장 미확인 표시",
+          "requirement_id": "P08-D02",
+          "coverage_checklist": [
+            "건물",
+            "권리",
+            "실제 물건"
+          ]
+        },
+        {
+          "data": "임대차·수금·공실·지출",
+          "sources": [
+            "M03"
+          ],
+          "role": "증빙 기반 수익 검토 필수",
+          "missing_handling": "없으면 실제 수익률 산출 불가; 가정 시나리오만",
+          "requirement_id": "P08-D03",
+          "coverage_checklist": [
+            "임대차",
+            "수금",
+            "공실",
+            "지출"
+          ]
+        },
+        {
+          "data": "총투입비·금융·수선 견적",
+          "sources": [
+            "M01",
+            "M06"
+          ],
+          "role": "자금 분석 필수",
+          "missing_handling": "비용·조건 미확정 표시",
+          "requirement_id": "P08-D04",
+          "coverage_checklist": [
+            "총투입비",
+            "금융",
+            "수선 견적"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "토지 매수·이용조건 검토",
+      "data_requirements": [
+        {
+          "data": "필지 식별·공부·도형·이용계획",
+          "sources": [
+            "S07",
+            "S04",
+            "S06",
+            "S15",
+            "S18"
+          ],
+          "role": "필수",
+          "missing_handling": "공개 도형은 측량·접도 확정 근거로 사용 금지",
+          "requirement_id": "P09-D01",
+          "coverage_checklist": [
+            "필지 식별",
+            "공부",
+            "도형",
+            "이용계획"
+          ]
+        },
+        {
+          "data": "토지 거래·공시지가·현재 매물",
+          "sources": [
+            "T06",
+            "S05",
+            "M02",
+            "S21"
+          ],
+          "role": "가격 비교 시 필수",
+          "missing_handling": "가려진 거래 지번을 대상 필지로 복원·단정 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P09-D02",
+          "coverage_checklist": [
+            "토지 거래",
+            "공시지가",
+            "현재 매물"
+          ]
+        },
+        {
+          "data": "희망 사용·점유·진입·기반시설",
+          "sources": [
+            "M01",
+            "M05",
+            "M07"
+          ],
+          "role": "이용 검토 필수",
+          "missing_handling": "미확보 시 이용 가능성 결론 보류",
+          "requirement_id": "P09-D03",
+          "coverage_checklist": [
+            "희망 사용",
+            "점유",
+            "진입",
+            "기반시설"
+          ]
+        },
+        {
+          "data": "조성·철거·연결 비용",
+          "sources": [
+            "M06"
+          ],
+          "role": "비용 분석 시 필수",
+          "missing_handling": "견적 없으면 비용 범위 가정 표시",
+          "requirement_id": "P09-D04",
+          "coverage_checklist": [
+            "조성",
+            "철거",
+            "연결 비용"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "토지·건축 개발 사업성 예비 검토",
+      "data_requirements": [
+        {
+          "data": "필지·규제·고시·권리",
+          "sources": [
+            "S04",
+            "S05",
+            "S06",
+            "S15",
+            "S18",
+            "S17"
+          ],
+          "role": "필수",
+          "missing_handling": "법령·고시는 시행/확정 상태 확인",
+          "requirement_id": "P10-D01",
+          "coverage_checklist": [
+            "필지",
+            "규제",
+            "고시",
+            "권리"
+          ]
+        },
+        {
+          "data": "주변 거래·시장·허가 기록",
+          "sources": [
+            "T06",
+            "T05",
+            "S09",
+            "S19"
+          ],
+          "role": "시장 검토 시 필수",
+          "missing_handling": "허가 기록을 확정 공급으로 계산 금지",
+          "requirement_id": "P10-D02",
+          "coverage_checklist": [
+            "주변 거래",
+            "시장",
+            "허가 기록"
+          ]
+        },
+        {
+          "data": "설계·규모·면적·허가 사전 확인",
+          "sources": [
+            "M07"
+          ],
+          "role": "필수",
+          "missing_handling": "전문 자료 없으면 설계·사업성 계산 보류",
+          "requirement_id": "P10-D03",
+          "coverage_checklist": [
+            "설계",
+            "규모",
+            "면적",
+            "허가 사전 확인"
+          ]
+        },
+        {
+          "data": "분양/임대 가정·공사비·금융·일정",
+          "sources": [
+            "M02",
+            "M03",
+            "M06",
+            "M07",
+            "S21"
+          ],
+          "role": "수지 분석 필수",
+          "missing_handling": "공개 평균 비용으로 사업비 확정 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P10-D04",
+          "coverage_checklist": [
+            "분양",
+            "임대 가정",
+            "공사비",
+            "금융",
+            "일정"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "토지 임대·사용조건 검토",
+      "data_requirements": [
+        {
+          "data": "필지·규제·권리·현장",
+          "sources": [
+            "S04",
+            "S06",
+            "S15",
+            "S18",
+            "M05"
+          ],
+          "role": "필수",
+          "missing_handling": "사용 가능 여부 단정 금지",
+          "requirement_id": "P11-D01",
+          "coverage_checklist": [
+            "필지",
+            "규제",
+            "권리",
+            "현장"
+          ]
+        },
+        {
+          "data": "사용 목적·임대료·기간·계약",
+          "sources": [
+            "M01",
+            "M02",
+            "M03",
+            "S21"
+          ],
+          "role": "필수",
+          "missing_handling": "전국 토지 임대료 실거래 API는 이번 미확인; 당사자 계약·견적 확보 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P11-D02",
+          "coverage_checklist": [
+            "사용 목적",
+            "임대료",
+            "기간",
+            "계약"
+          ]
+        },
+        {
+          "data": "설치·철거·반환·인허가",
+          "sources": [
+            "M06",
+            "M07",
+            "S17"
+          ],
+          "role": "필수",
+          "missing_handling": "비용·권한·책임 미합의 표시",
+          "requirement_id": "P11-D03",
+          "coverage_checklist": [
+            "설치",
+            "철거",
+            "반환",
+            "인허가"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "다가구·임대주택 건물 전체 매수 검토",
+      "data_requirements": [
+        {
+          "data": "건물 식별·공부·권리·현장",
+          "sources": [
+            "S07",
+            "S01",
+            "S14",
+            "S15",
+            "M05"
+          ],
+          "role": "필수",
+          "missing_handling": "건물 전체와 개별 호실 단위를 구분",
+          "requirement_id": "P12-D01",
+          "coverage_checklist": [
+            "건물 식별",
+            "공부",
+            "권리",
+            "현장"
+          ]
+        },
+        {
+          "data": "유형별 거래·임대 시장",
+          "sources": [
+            "T04",
+            "T10",
+            "T05",
+            "S09",
+            "S21"
+          ],
+          "role": "해당 건물 유형만 선택",
+          "missing_handling": "비식별 거래를 정확한 건물로 연결 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P12-D02",
+          "coverage_checklist": [
+            "유형별 거래",
+            "임대 시장"
+          ]
+        },
+        {
+          "data": "호실별 계약·보증금·수금·미수·공실",
+          "sources": [
+            "M03",
+            "M04"
+          ],
+          "role": "필수",
+          "missing_handling": "없으면 건물 전체 인수·수익 검토 미완료",
+          "requirement_id": "P12-D03",
+          "coverage_checklist": [
+            "호실별 계약",
+            "보증금",
+            "수금",
+            "미수",
+            "공실"
+          ]
+        },
+        {
+          "data": "수선·운영비·취득·금융",
+          "sources": [
+            "M03",
+            "M06"
+          ],
+          "role": "현금흐름 분석 필수",
+          "missing_handling": "운영 실적과 정상화 가정 분리",
+          "requirement_id": "P12-D04",
+          "coverage_checklist": [
+            "수선",
+            "운영비",
+            "취득",
+            "금융"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "임대자산 월간 운영 보고",
+      "data_requirements": [
+        {
+          "data": "자산·호실·계약·만기 원장",
+          "sources": [
+            "M03"
+          ],
+          "role": "필수",
+          "missing_handling": "원장 없으면 운영 보고서 생성 보류",
+          "requirement_id": "P13-D01",
+          "coverage_checklist": [
+            "자산",
+            "호실",
+            "계약",
+            "만기 원장"
+          ]
+        },
+        {
+          "data": "청구·수금·미수·운영비·수선",
+          "sources": [
+            "M03"
+          ],
+          "role": "필수",
+          "missing_handling": "집계기간·누락·미정산 표시",
+          "requirement_id": "P13-D02",
+          "coverage_checklist": [
+            "청구",
+            "수금",
+            "미수",
+            "운영비",
+            "수선"
+          ]
+        },
+        {
+          "data": "작업·민원·공실 모집·조치 기록",
+          "sources": [
+            "M03",
+            "M02",
+            "M05"
+          ],
+          "role": "보고 범위에 따라 필수",
+          "missing_handling": "없는 기록을 0건으로 처리하지 않음",
+          "requirement_id": "P13-D03",
+          "coverage_checklist": [
+            "작업",
+            "민원",
+            "공실 모집",
+            "조치 기록"
+          ]
+        },
+        {
+          "data": "차입·예산·차월 계획",
+          "sources": [
+            "M06",
+            "M01"
+          ],
+          "role": "해당 분석 시 필수",
+          "missing_handling": "NOI와 차입 후 현금흐름 분리",
+          "requirement_id": "P13-D04",
+          "coverage_checklist": [
+            "차입",
+            "예산",
+            "차월 계획"
+          ]
+        },
+        {
+          "data": "주변 임대 시장",
+          "sources": [
+            "S09",
+            "M02",
+            "S21"
+          ],
+          "role": "선택 보조",
+          "missing_handling": "운영 원장 대체 금지 네이버 미수집·차단 시 상태와 수집 범위를 표시하고 광고 수를 0으로 대체하지 않음.",
+          "naver_role": "현재 공개 광고의 가격·조건 비교. 체결 계약·실제 수금·공실·보증·허가 자료와 분리.",
+          "requirement_id": "P13-D05",
+          "coverage_checklist": [
+            "주변 임대 시장"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "공공임대 입주 공고·조건 비교",
+      "data_requirements": [
+        {
+          "data": "공고 목록·상태·상세 URL",
+          "sources": [
+            "S20"
+          ],
+          "role": "필수",
+          "missing_handling": "LH와 타 기관 공급을 구분",
+          "requirement_id": "P14-D01",
+          "coverage_checklist": [
+            "공고 목록",
+            "상태",
+            "상세 URL"
+          ]
+        },
+        {
+          "data": "해당 회차 원문·정정 공고·서식",
+          "sources": [
+            "S20"
+          ],
+          "role": "필수; 상세 URL 원문 확인",
+          "missing_handling": "목록 데이터만으로 자격·조건 설명 금지",
+          "requirement_id": "P14-D02",
+          "coverage_checklist": [
+            "해당 회차 원문",
+            "정정 공고",
+            "서식"
+          ]
+        },
+        {
+          "data": "고객 가구·자격·희망 지역",
+          "sources": [
+            "M01",
+            "M04"
+          ],
+          "role": "맞춤 대조 필수",
+          "missing_handling": "공식 심사 전 선정·자격 확정 금지",
+          "requirement_id": "P14-D03",
+          "coverage_checklist": [
+            "고객 가구",
+            "자격",
+            "희망 지역"
+          ]
+        }
+      ]
+    }
+  ]
+}

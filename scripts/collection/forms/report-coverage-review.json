@@ -1,0 +1,1307 @@
+{
+  "schema_version": 1,
+  "run_id": null,
+  "reviews": [
+    {
+      "requirement_id": "P01-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "대상 식별": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "단지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "건물 정보": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P01-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "매매 실거래 비교": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P01-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "현재 매물": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "입주 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P01-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "입지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "인구": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "학교": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "교통": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공급": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P01-D05",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "고객 자금": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "금융 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P02-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "대상": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "단지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "기존 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P02-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "실거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "경쟁 매물": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P02-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "문의": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "방문": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "제안 기록": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P02-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "보유": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "인도": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "비용 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P03-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "물건 식별": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공부": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P03-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "가격": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현재 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P03-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "토지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "대지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "주변 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P03-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "현장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "점유": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "보수": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "금융": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P04-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "유형별 전세 시장 비교": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P04-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "등기": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "건축 공부": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "계약 권한": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P04-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "계약 초안": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "기존 임대차": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P04-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "보증상품 기준": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "실제 확인": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P04-D05",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "입주": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현장 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P05-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "유형별 전월세 거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P05-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "계약": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "건축 서류": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P05-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "관리비": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "옵션": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "일회 비용": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P05-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "거주기간": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "예산": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P06-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "오피스텔 거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "임대 시장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P06-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "물건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "용도": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P06-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "실제 계약": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "관리비": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공실": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "수선": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P06-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "취득": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "금융": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "세무 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P07-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "점포": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "업종": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "경쟁 분포": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P07-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "인구": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "상권 수요": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "추정매출": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P07-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "현재 임차 조건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "계약": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "시설": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P07-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "손익 가정": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "비용 견적": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P07-D05",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "이용": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "업종": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "법령": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "허가 확인": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P08-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "상가 거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "지역 시장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P08-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "건물": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "실제 물건": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P08-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "임대차": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "수금": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공실": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "지출": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P08-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "총투입비": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "금융": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "수선 견적": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P09-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "필지 식별": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공부": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "도형": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "이용계획": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P09-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "토지 거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공시지가": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현재 매물": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P09-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "희망 사용": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "점유": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "진입": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "기반시설": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P09-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "조성": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "철거": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "연결 비용": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P10-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "필지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "규제": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "고시": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P10-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "주변 거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "시장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "허가 기록": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P10-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "설계": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "규모": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "면적": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "허가 사전 확인": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P10-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "분양": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "임대 가정": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공사비": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "금융": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "일정": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P11-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "필지": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "규제": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P11-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "사용 목적": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "임대료": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "기간": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "계약": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P11-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "설치": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "철거": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "반환": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "인허가": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P12-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "건물 식별": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공부": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "권리": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "현장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P12-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "유형별 거래": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "임대 시장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P12-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "호실별 계약": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "보증금": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "수금": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "미수": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공실": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P12-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "수선": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "운영비": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "취득": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "금융": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P13-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "자산": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "호실": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "계약": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "만기 원장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P13-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "청구": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "수금": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "미수": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "운영비": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "수선": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P13-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "작업": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "민원": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "공실 모집": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "조치 기록": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P13-D04",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "차입": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "예산": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "차월 계획": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P13-D05",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "주변 임대 시장": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P14-D01",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "공고 목록": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "상태": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "상세 URL": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P14-D02",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "해당 회차 원문": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "정정 공고": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "서식": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    },
+    {
+      "requirement_id": "P14-D03",
+      "review_status": "PENDING",
+      "review_note": "",
+      "coverage": {
+        "고객 가구": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "자격": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        },
+        "희망 지역": {
+          "source_id": null,
+          "record_index": null,
+          "fields": []
+        }
+      }
+    }
+  ]
+}

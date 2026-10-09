@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "source_id": "S21",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://fin.land.naver.com/",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "article_no": null,
+      "url": null,
+      "property_id": null,
+      "transaction_type": null,
+      "area_sqm": null,
+      "area_type": null,
+      "asking_price_krw": null,
+      "confirmed_at": null,
+      "observed_at": null,
+      "floor_text": null
+    }
+  ],
+  "observation": {
+    "target_id": null,
+    "filters": {},
+    "filters_verified": false,
+    "displayed_total": null,
+    "raw_ad_count": null,
+    "group_card_count": null,
+    "sampling_strategy": "latest12_price8",
+    "stopped_reason": null,
+    "scope": "SAMPLE",
+    "captured_at": null,
+    "evidence_files": []
+  }
+}

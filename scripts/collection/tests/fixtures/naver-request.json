@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "report_type": "P01",
+  "target": {"subject_id": "naver-155817", "property_id": "naver-155817", "property_name": "올림픽파크포레온"},
+  "transaction_type": "SALE",
+  "sources": ["S21"],
+  "params": {},
+  "naver_filters": {"complex_id": "155817", "property_type": "APT", "transaction_type": "SALE", "area_label": "112A", "exclusive_area_sqm": 84.99, "sort": "LATEST"}
+}

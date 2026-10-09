@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "source_id": "S15",
+  "evidence_mode": "EXAMPLE",
+  "review_status": "PENDING",
+  "source_url": "https://www.iros.go.kr/",
+  "basis_date": null,
+  "issued_at": null,
+  "identity": {
+    "subject_id": null,
+    "property_id": null,
+    "pnu": null
+  },
+  "records": [
+    {
+      "property_id": null,
+      "issued_at": null,
+      "rights_summary": null
+    }
+  ]
+}
