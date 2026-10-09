@@ -1,5 +1,5 @@
 {
-  "version": "2.0.0",
+  "version": "2.1.0",
   "checked_at": "2026-10-10",
   "implementation": "DISTRIBUTION_PREPARED",
   "production_validation": "PARTIAL_WITH_EXPLICIT_EXTERNAL_DEPENDENCIES",
@@ -968,5 +968,10 @@
   "publication": "PUBLIC_DISTRIBUTION_NO_LIVE_CREDENTIALS",
   "automatic_jobs": false,
   "Jev_or_external_AI_calls": 0,
-  "live_validation_credential_scope": "Maintainer local credential used only for the previously recorded validation; not distributed"
+  "live_validation_credential_scope": "Maintainer local credential used only for the previously recorded validation; not distributed",
+  "cover_update": {
+    "status": "PASS_WINDOWS",
+    "details": "qa/cover-v-results.json",
+    "baseline_validation": "2.0.0 checks below are preserved historical results; no new API collection in this update"
+  }
 }

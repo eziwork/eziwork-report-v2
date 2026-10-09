@@ -6,6 +6,7 @@ from importlib.metadata import version, PackageNotFoundError
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/collection'))
 import collector
+import covers
 from adapters import CollectionError
 ALLOWED=collector.ENV_NAMES
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -121,6 +122,13 @@ def check_contract(path):
    if any(id not in b['claim_ids'] for id in re.findall(r'\{\{([A-Za-z0-9_-]+)(?::\w+)?\}\}',text)):raise ValueError('BLOCK_CLAIM_NOT_DECLARED')
  if not ids:raise ValueError('NO_BLOCKS')
  if c.get('title'):bound_text(c['title'],claims)
+ cover=c.get('cover',{})
+ if not isinstance(cover,dict) or ('enabled' in cover and not isinstance(cover['enabled'],bool)):raise ValueError('COVER_SCHEMA')
+ if set(cover)-set(covers.FIELDS)-{'enabled'}:raise ValueError('COVER_FIELD_UNKNOWN')
+ for field in covers.FIELDS:
+  if field in cover:
+   if not isinstance(cover[field],str) or not cover[field].strip():raise ValueError('COVER_TEXT_REQUIRED')
+   bound_text(cover[field],claims)
  if c.get('qa',{}).get('evidence_review')!='PASS' or c.get('qa',{}).get('copy_review')!='PASS':raise ValueError('CODEX_REVIEW_REQUIRED')
  return c
 def esc(x):return html.escape(str(x))
@@ -184,9 +192,18 @@ def render_contract(path,out,branding=None):
  mode={'actual':'','historical_replay':'과거 자료 재생 사례 · 현재 매물 안내가 아닙니다.','synthetic_test':'합성 검증 예시 · 실제 시세가 아닙니다.'}[c['mode']]
  css=(ROOT/'assets/report.css').read_text(encoding='utf-8')
  doc='<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+esc(title)+'</title><style>'+css+'</style></head><body><main><header>'+logo+'<small>'+esc(brand.get('business_name') or 'EZIWORK')+'</small><h1>'+esc(title)+'</h1><p>'+esc(c['question'])+'</p><p>'+esc(mode)+' 기준일 '+esc(c['basis_date'])+'</p><p>'+esc(c['scope'])+'</p></header>'+body+'<footer><h2>출처</h2>'+''.join('<p>'+esc(s['title'])+' · '+esc(s['basis_date'])+(' · <a href="'+esc(s['url'])+'">원문</a>' if s['url'].startswith('http') else ' · 사용자 제공 정리표')+'</p>' for s in c['sources'])+'<p>'+esc(' · '.join(str(brand.get(k,'')) for k in ['business_name','contact_name','phone'] if brand.get(k)))+'</p></footer></main></body></html>'
+ if c.get('cover',{}).get('enabled',True):doc=covers.wrap_document(doc,cover_metadata(c),brand)
  (out/'report.html').write_text(doc,encoding='utf-8')
  save(out/'render-manifest.json',{'contract_sha256':sha(path),'dataset_sha256':c['dataset_sha256'],'html_sha256':sha(out/'report.html'),'mode':c['mode'],'semantic_review':'CODEX_ATTESTED_NOT_AUTOMATICALLY_PROVEN','blocks':len(c['blocks'])})
  return out/'report.html'
+
+def cover_metadata(c):
+ values={q['id']:q['value'] for q in c['claims']}
+ kind=next(r['report_type'] for r in load(ROOT/'references/report-types.json')['reports'] if r['report_id']==c['report_id'])
+ meta={'report_id':c['report_id'],'mode':c['mode'],'basis_date':c['basis_date'],'title':bound_text(c['title'],values) if c.get('title') else kind}
+ for field in covers.FIELDS:
+  if field in c.get('cover',{}):meta[field]=bound_text(c['cover'][field],values)
+ return meta
 def main():
  p=argparse.ArgumentParser();p.add_argument('--workspace',type=Path,default=Path.cwd()/'eziwork-output');sub=p.add_subparsers(dest='cmd',required=True)
  sub.add_parser('doctor');sub.add_parser('catalog')
@@ -203,10 +220,17 @@ def main():
   a=sub.add_parser(n);a.add_argument('--contract',type=Path,required=True)
   if n=='render':a.add_argument('--output',type=Path,required=True);a.add_argument('--branding',type=Path);a.add_argument('--pdf',action='store_true')
  a=sub.add_parser('pdf');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
+ a=sub.add_parser('cover');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--contract',type=Path,required=True);a.add_argument('--branding',type=Path)
  args=p.parse_args()
  with environment() as redact:
   try:
-   if args.cmd=='doctor':
+   if args.cmd=='cover':
+    c=check_contract(args.contract)
+    if args.output.exists():raise ValueError('OUTPUT_EXISTS_USE_NEW_VERSION')
+    if args.input.resolve().parent!=args.output.resolve().parent:raise ValueError('KEEP_CUSTOM_HTML_ASSET_BASE_USE_SAME_FOLDER')
+    document=covers.wrap_document(args.input.read_text(encoding='utf-8-sig'),cover_metadata(c),load(args.branding) if args.branding else {})
+    args.output.write_text(document,encoding='utf-8');result={'status':'V_COVERS_ADDED','output':str(args.output),'body_review':'REQUIRES_CODEX_COMPARISON_TO_CONTRACT'}
+   elif args.cmd=='doctor':
     try:nd=node()
     except ValueError:nd=None
     result={'os':platform.system(),'python':platform.python_version(),'node_found':bool(nd),'credential_presence':{k:bool(os.environ.get(k)) for k in ALLOWED},'browser_workflow':'REQUIRES_CONNECTED_CODEX_BROWSER','mac_actual_validation':'SEE qa/release-status.json'}

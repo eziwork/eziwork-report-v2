@@ -1,0 +1,102 @@
+[
+  {
+    "report_id": "P01",
+    "title": "잠실엘스와\n리센츠",
+    "subtitle": "가격과 입주 조건을\n함께 비교해 보세요.",
+    "basis_date": "2026.10.09",
+    "mode": "historical_replay",
+    "closing_title": "궁금한 매물과\n조건을 말씀해 주세요.",
+    "closing_text": "관심 있는 동·층과 희망 입주일을 알려주시면\n다음 상담에서 함께 살펴보겠습니다."
+  },
+  {
+    "report_id": "P02",
+    "title": "잠실엘스\n118동",
+    "subtitle": "호가와 입주 조건을\n다른 매물과 비교합니다.",
+    "basis_date": "2026.10.09",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P03",
+    "title": "태원빌라\n1동",
+    "subtitle": "등록 가격과 거래가격,\n입주 안내를 살펴봅니다.",
+    "basis_date": "2026.10.09~10",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P04",
+    "title": "화곡동\n월성빌라 1동",
+    "subtitle": "전세보증금과 입주 조건을\n함께 살펴보세요.",
+    "basis_date": "2026.10.10",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P05",
+    "title": "맹그로브\n창천",
+    "subtitle": "보증금에 따라 달라지는\n월 지출을 비교합니다.",
+    "basis_date": "2026.10.10 확인",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P06",
+    "title": "마곡나루역\n보타닉푸르지오시티",
+    "subtitle": "매매가격과 임대수입을\n함께 살펴봅니다.",
+    "basis_date": "2026년 7~9월 거래",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P07",
+    "title": "반포동 주흥길\n카페",
+    "subtitle": "인수할 때 필요한 금액과\n매달 부담할 비용을 나눠 봅니다.",
+    "basis_date": "2026.10.10 확인",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P08",
+    "title": "부평동\n122호",
+    "subtitle": "광고 수익률과 공실·이자에 따른\n수입 차이를 살펴봅니다.",
+    "basis_date": "게시·수정일 미확인",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P09",
+    "title": "곤지암리\n604-9",
+    "subtitle": "토지 가격과 사용할 수 있는\n조건을 함께 살펴보세요.",
+    "basis_date": "2026.04.01 공고",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P10",
+    "title": "죽전동\n개발 대안",
+    "subtitle": "개발 비용과 수입,\n회수 시점을 비교합니다.",
+    "basis_date": "2018.12 공개 계획",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P11",
+    "title": "송도\n연구시설 부지",
+    "subtitle": "임대기간과 임대료의\n변경 내용을 살펴봅니다.",
+    "basis_date": "2022.07.08 회의록",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P12",
+    "title": "평택 신장동\n다가구주택",
+    "subtitle": "건물 전체의 매각 가격과\n가구 구성을 살펴봅니다.",
+    "basis_date": "2023년 7월 공개 안내",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P13",
+    "title": "신한알파리츠\n임대 운영 현황",
+    "subtitle": "임대율과 공실률의\n월별 변화를 살펴봅니다.",
+    "basis_date": "2026년 8월",
+    "mode": "historical_replay"
+  },
+  {
+    "report_id": "P14",
+    "title": "서울오류와\n서울금천 행복주택",
+    "subtitle": "보증금·월세와 신청 조건을\n함께 비교해 보세요.",
+    "basis_date": "2026.05.15 자격 기준",
+    "mode": "historical_replay"
+  }
+]

@@ -144,7 +144,8 @@
       "conditional_evidence": [
         "현장 상태를 분석할 때 현장 자료",
         "대출·자금 시나리오를 요청할 때 실제 또는 명시된 가정 조건"
-      ]
+      ],
+      "cover_example": "examples/P01/report-v.html"
     },
     {
       "report_id": "P02",
@@ -358,7 +359,8 @@
           "150동 전체 층수",
           "150동 입주 안내"
         ]
-      }
+      },
+      "cover_example": "examples/P02/report-v.html"
     },
     {
       "report_id": "P03",
@@ -562,7 +564,8 @@
       "example_mode": "HISTORICAL_REPLAY_NOT_CURRENT_OFFER",
       "verified_example_scope": {},
       "attachment_policy": null,
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P03/report-v.html"
     },
     {
       "report_id": "P04",
@@ -768,7 +771,8 @@
       "excluded_content": [
         "질문과 무관한 지상 2층 전세 가격 비교",
         "그 가격에서 계산한 반지하 가격차"
-      ]
+      ],
+      "cover_example": "examples/P04/report-v.html"
     },
     {
       "report_id": "P05",
@@ -899,7 +903,8 @@
       "example_mode": "HISTORICAL_REPLAY_NOT_CURRENT_OFFER",
       "verified_example_scope": {},
       "attachment_policy": null,
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P05/report-v.html"
     },
     {
       "report_id": "P06",
@@ -1054,7 +1059,8 @@
         "full_actual_unit_return_verification": "NOT_COMPLETED"
       },
       "attachment_policy": null,
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P06/report-v.html"
     },
     {
       "report_id": "P07",
@@ -1199,7 +1205,8 @@
         "full_type_analysis_complete": false
       },
       "attachment_policy": "references/attachments.md",
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P07/report-v.html"
     },
     {
       "report_id": "P08",
@@ -1300,7 +1307,8 @@
       },
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "selection_summary": "세 부분 제목·본문 A"
+      "selection_summary": "세 부분 제목·본문 A",
+      "cover_example": "examples/P08/report-v.html"
     },
     {
       "report_id": "P09",
@@ -1455,7 +1463,8 @@
         "full_land_use_review_completed": false
       },
       "attachment_policy": "references/attachments.md",
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P09/report-v.html"
     },
     {
       "report_id": "P10",
@@ -1587,7 +1596,8 @@
         "current_project_feasibility": "NOT_COMPLETED"
       },
       "attachment_policy": "references/attachments.md",
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P10/report-v.html"
     },
     {
       "report_id": "P11",
@@ -1710,7 +1720,8 @@
         "actual_scope": "2022년 송도 연구시설 부지 임대 연장 심사"
       },
       "attachment_policy": null,
-      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section."
+      "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
+      "cover_example": "examples/P11/report-v.html"
     },
     {
       "report_id": "P12",
@@ -1821,7 +1832,8 @@
       "excluded_content": [
         "전입자 기록으로 공실·인수 보증금·임대수입 추정",
         "그러한 미분석 주제의 자기 설명 문장"
-      ]
+      ],
+      "cover_example": "examples/P12/report-v.html"
     },
     {
       "report_id": "P13",
@@ -1937,7 +1949,8 @@
       },
       "attachment_policy": "references/attachments.md",
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "selection_summary": "세 부분 제목·본문 A; 시각화는 개별 선택 미확정"
+      "selection_summary": "세 부분 제목·본문 A; 시각화는 개별 선택 미확정",
+      "cover_example": "examples/P13/report-v.html"
     },
     {
       "report_id": "P14",
@@ -2016,7 +2029,8 @@
       },
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "selection_summary": "세 부분 제목·본문 B"
+      "selection_summary": "세 부분 제목·본문 B",
+      "cover_example": "examples/P14/report-v.html"
     }
   ],
   "selection_asset_policy": "selections의 원본 그림 파일명은 과거 선택 이력입니다. 배포 시각화는 각 baseline HTML에 내장되어 있으며 원래 작업 폴더에 의존하지 않습니다."
