@@ -2,6 +2,10 @@ name: Portable validation
 on: [push, pull_request, workflow_dispatch]
 jobs:
   offline:
+    # Python tests also print Korean onboarding messages to captured output.
+    env:
+      PYTHONUTF8: '1'
+      PYTHONIOENCODING: utf-8
     strategy:
       matrix:
         os: [windows-latest, macos-latest]

@@ -28,8 +28,8 @@
     },
     {
       "path": ".github/workflows/validate.yml",
-      "bytes": 1003,
-      "sha256": "a59528ff0bec587c50ac9ebebbef1dc0947c0ec7ea0ffeebf703f8f5fcbcab77"
+      "bytes": 1145,
+      "sha256": "433c6279ab1bedc59b5d601d4812f5682bf08abb3eef693a126980a62a8a6030"
     },
     {
       "path": ".gitignore",
