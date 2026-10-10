@@ -44,7 +44,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 3
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_아파트 매매 실거래가 자료",
+      "route_id": "T01-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -82,7 +85,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_연립다세대 매매 실거래가 자료",
+      "route_id": "T02-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -120,7 +126,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_오피스텔 매매 실거래가 자료",
+      "route_id": "T03-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -164,7 +173,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_단독/다가구 매매 실거래가 자료",
+      "route_id": "T04-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -202,7 +214,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_상업업무용 부동산 매매 실거래가 자료",
+      "route_id": "T05-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -246,7 +261,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_토지 매매 실거래가 자료",
+      "route_id": "T06-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -284,7 +302,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_아파트 전월세 실거래가 자료",
+      "route_id": "T07-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -328,7 +349,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_연립다세대 전월세 실거래가 자료",
+      "route_id": "T08-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -372,7 +396,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_오피스텔 전월세 실거래가 자료",
+      "route_id": "T09-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rtms",
@@ -416,7 +443,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "국토교통부_단독/다가구 전월세 실거래가 자료",
+      "route_id": "T10-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "data_go",
@@ -466,7 +496,10 @@
         "sample_count": 34,
         "authentication_verified": true
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "건축HUB 건축물대장정보",
+      "route_id": "S01-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "data_go",
@@ -513,7 +546,10 @@
         "sample_count": 1,
         "authentication_verified": true
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "공동주택 기본 정보제공",
+      "route_id": "S02-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -550,7 +586,10 @@
         "property_id",
         "basis_date",
         "management_fee_krw"
-      ]
+      ],
+      "provider": "K-apt 월별 관리비 공개",
+      "route_id": "S03-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "vworld",
@@ -593,7 +632,10 @@
       "implementation_status": "ADAPTER_IMPLEMENTED_CONFIG_REQUIRED",
       "production_status": "AWAITING_LIVE_VALIDATION",
       "configuration_note": "공식 서비스 명세의 레이어 ID(data)와 명세 URL(layer_guide_url)을 입력해야 합니다. 지적도 지가 필드로 대체 금지.",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "토지이용계획정보(WMS/WFS/속성정보)",
+      "route_id": "S04-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "vworld",
@@ -636,7 +678,10 @@
       "implementation_status": "ADAPTER_IMPLEMENTED_CONFIG_REQUIRED",
       "production_status": "AWAITING_LIVE_VALIDATION",
       "configuration_note": "공식 서비스 명세의 레이어 ID(data)와 명세 URL(layer_guide_url)을 입력해야 합니다. 지적도 지가 필드로 대체 금지.",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "개별공시지가정보(WMS/WFS/속성정보)",
+      "route_id": "S05-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "vworld",
@@ -678,31 +723,32 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "연속지적도형정보(WMS/WFS)",
+      "route_id": "S06-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
-      "adapter": "juso",
-      "endpoint": "https://business.juso.go.kr/addrlink/addrLinkApi.do",
-      "credential": "JUSO_CONFM_KEY",
-      "auth_param": "confmKey",
+      "adapter": "vworld_address",
+      "endpoint": "https://api.vworld.kr/req/address",
+      "credential": "VWORLD_API_KEY",
+      "auth_param": null,
       "required": [
-        "keyword"
+        "address",
+        "expected_tokens"
       ],
-      "defaults": {
-        "resultType": "json"
-      },
+      "defaults": {},
       "id": "S07",
-      "title": "주소 검색·좌표 API",
+      "title": "VWorld 주소·좌표 확인",
       "mode": "API",
       "source_url": "https://business.juso.go.kr/",
-      "guide_url": "https://business.juso.go.kr/",
+      "guide_url": "https://www.vworld.kr/",
       "planned_fields": "도로명·지번 주소·행정구역 코드·건물 식별·좌표 등 서비스별 항목",
       "last_audit": {
-        "status": "KEY_MISSING",
-        "checked_at": "2026-10-08T11:05:53.936150+09:00",
-        "sample_count": 0
+        "status": "REPLACEMENT_ROUTE_REQUIRES_NEW_VALIDATION",
+        "previous_audit_preserved_in": "references/legacy/collection-registry-2.2.0.json"
       },
-      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "next_action": "references/public-evidence.md에 따라 원문·대상·기준일을 대조",
       "data_kind": "OFFICIAL_REFERENCE",
       "validation": [
         "required_fields",
@@ -715,7 +761,20 @@
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
       "configuration_note": "주소 검색만 제공. 좌표는 별도 승인·검증 전 미수집으로 유지.",
-      "input_fields": []
+      "input_fields": [
+        "address",
+        "road_address",
+        "parcel_address",
+        "lon",
+        "lat",
+        "expected_tokens",
+        "basis_date",
+        "location_kind"
+      ],
+      "provider": "VWorld",
+      "route_id": "vworld-address-v1",
+      "validation_rule_version": "2.3.0",
+      "legacy_definition": "references/legacy/collection-registry-2.2.0.json"
     },
     {
       "adapter": "kosis",
@@ -759,7 +818,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "KOSIS 통계자료·공유서비스",
+      "route_id": "S08-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "rone",
@@ -800,7 +862,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "부동산통계(R-ONE) 조회",
+      "route_id": "S09-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "data_go",
@@ -843,7 +908,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "상가(상권)정보 API",
+      "route_id": "S10-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -882,31 +950,29 @@
         "basis_date",
         "estimated_sales_krw",
         "spatial_unit"
-      ]
+      ],
+      "provider": "서울 상권분석 데이터·추정매출",
+      "route_id": "S11-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
-      "adapter": "school",
-      "endpoint": "https://www.schoolinfo.go.kr/openApi.do",
-      "credential": "SCHOOLINFO_API_KEY",
-      "auth_param": "apiKey",
-      "required": [
-        "schulKndCode"
-      ],
-      "defaults": {
-        "apiType": "0"
-      },
+      "adapter": "official_school",
+      "endpoint": "https://www.data.go.kr/data/15021148/standard.do",
+      "credential": null,
+      "auth_param": null,
+      "required": [],
+      "defaults": {},
       "id": "S12",
-      "title": "학교알리미 Open API",
-      "mode": "API",
+      "title": "공식 학교 위치·학구·배정 공고",
+      "mode": "FILE",
       "source_url": "https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_m0.do",
-      "guide_url": "https://www.schoolinfo.go.kr/ng/go/pnnggo_a01_l0.do?schulCode=S010002286",
+      "guide_url": "https://schoolzone.emac.kr/",
       "planned_fields": "학교 기본정보·소재지·공시 항목 중 허용된 지표",
       "last_audit": {
-        "status": "KEY_MISSING",
-        "checked_at": "2026-10-08T11:05:53.936150+09:00",
-        "sample_count": 0
+        "status": "REPLACEMENT_ROUTE_REQUIRES_NEW_VALIDATION",
+        "previous_audit_preserved_in": "references/legacy/collection-registry-2.2.0.json"
       },
-      "next_action": "기관별 키·운영 조건 확인 및 서비스별 상세 명세에 맞춘 소량 조회",
+      "next_action": "references/public-evidence.md에 따라 원문·대상·기준일을 대조",
       "data_kind": "OFFICIAL_REFERENCE",
       "validation": [
         "required_fields",
@@ -918,7 +984,21 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [
+        "record_type",
+        "school_code",
+        "school_level",
+        "operating_status",
+        "address",
+        "lon",
+        "lat",
+        "basis_date",
+        "source_url"
+      ],
+      "provider": "학교 소재지 관할 교육기관",
+      "route_id": "official-school-v1",
+      "validation_rule_version": "2.3.0",
+      "legacy_definition": "references/legacy/collection-registry-2.2.0.json"
     },
     {
       "adapter": "data_go",
@@ -959,7 +1039,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "TAGO 버스정류소정보",
+      "route_id": "S13-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -996,7 +1079,10 @@
         "property_id",
         "issued_at",
         "building_use"
-      ]
+      ],
+      "provider": "건축물대장 등본·초본 발급/열람",
+      "route_id": "S14-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1033,7 +1119,10 @@
         "property_id",
         "issued_at",
         "rights_summary"
-      ]
+      ],
+      "provider": "등기사항증명서 열람·발급",
+      "route_id": "S15-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1070,32 +1159,29 @@
         "product_name",
         "basis_date",
         "criteria_text"
-      ]
+      ],
+      "provider": "전세보증금반환보증 안내·제출서류",
+      "route_id": "S16-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
-      "adapter": "law",
-      "endpoint": "https://www.law.go.kr/DRF/lawSearch.do",
-      "credential": "LAW_OC",
-      "auth_param": "OC",
-      "required": [
-        "query"
-      ],
-      "defaults": {
-        "target": "eflaw",
-        "type": "XML"
-      },
+      "adapter": "official_law",
+      "endpoint": "https://www.law.go.kr/",
+      "credential": null,
+      "auth_param": null,
+      "required": [],
+      "defaults": {},
       "id": "S17",
-      "title": "국가법령정보 공동활용 API",
-      "mode": "API",
+      "title": "법령·조문·지역별 이용 조건 원문",
+      "mode": "FILE",
       "source_url": "https://open.law.go.kr/LSO/openApi/guideList.do",
-      "guide_url": "https://open.law.go.kr/LSO/openApi/openApiManual.do",
+      "guide_url": "https://www.law.go.kr/",
       "planned_fields": "법령·시행령·조례 등의 목록·본문·시행일; 제공 API별 범위",
       "last_audit": {
-        "status": "SAMPLE_DATA_RECEIVED",
-        "checked_at": "2026-10-08T11:05:53.936150+09:00",
-        "sample_count": 3
+        "status": "REPLACEMENT_ROUTE_REQUIRES_NEW_VALIDATION",
+        "previous_audit_preserved_in": "references/legacy/collection-registry-2.2.0.json"
       },
-      "next_action": "운영용 신청·키/인증값 설정 및 필요한 실제 통계표·기간·현행 법령 본문 검증",
+      "next_action": "references/public-evidence.md에 따라 원문·대상·기준일을 대조",
       "data_kind": "OFFICIAL_REFERENCE",
       "validation": [
         "required_fields",
@@ -1107,10 +1193,23 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "body_endpoint": "https://www.law.go.kr/DRF/lawService.do",
       "body_guide_url": "https://open.law.go.kr/LSO/openApi/guideResult.do?htmlName=lsEfYdInfoGuide",
       "configuration_note": "목록은 query, 본문은 ID 또는 MST+efYd 및 expected_law_name 지정. 목록만으로 법령 근거를 충족하지 않음.",
-      "input_fields": []
+      "input_fields": [
+        "law_name",
+        "article",
+        "law_body",
+        "effective_date",
+        "jurisdiction",
+        "source_url",
+        "basis_date",
+        "addenda_review",
+        "annex_review"
+      ],
+      "provider": "국가법령정보센터·관할 지자체",
+      "route_id": "official-law-v1",
+      "validation_rule_version": "2.3.0",
+      "legacy_definition": "references/legacy/collection-registry-2.2.0.json"
     },
     {
       "adapter": "input",
@@ -1147,7 +1246,10 @@
         "pnu",
         "basis_date",
         "land_use_text"
-      ]
+      ],
+      "provider": "토지이음 열람·고시정보",
+      "route_id": "S18-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "data_go",
@@ -1188,7 +1290,10 @@
         "checked_at": "2026-10-08T11:05:53.936150+09:00",
         "sample_count": 0
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "건축HUB 건축인허가정보",
+      "route_id": "S19-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "lh",
@@ -1238,7 +1343,10 @@
         "sample_count": 586,
         "authentication_verified": true
       },
-      "input_fields": []
+      "input_fields": [],
+      "provider": "LH 분양임대공고문 조회",
+      "route_id": "S20-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "naver",
@@ -1289,7 +1397,10 @@
         "confirmed_at",
         "observed_at",
         "floor_text"
-      ]
+      ],
+      "provider": "네이버페이 부동산 현재 매물",
+      "route_id": "S21-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "ecos",
@@ -1327,7 +1438,10 @@
       "fallback": "Reviewed local input with original file/URL and basis/issue date.",
       "implementation_status": "IMPLEMENTED",
       "production_status": "AWAITING_LIVE_VALIDATION",
-      "input_fields": []
+      "input_fields": [],
+      "provider": "한국은행 ECOS Open API",
+      "route_id": "S22-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1364,7 +1478,10 @@
         "subject_id",
         "purpose",
         "budget_krw"
-      ]
+      ],
+      "provider": "고객 목적·자금·선호",
+      "route_id": "M01-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1401,7 +1518,10 @@
         "property_id",
         "transaction_type",
         "asking_price_krw"
-      ]
+      ],
+      "provider": "보유 매물·경쟁 매물·상담 기록",
+      "route_id": "M02-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1440,7 +1560,10 @@
         "basis_date",
         "rent_received_krw",
         "operating_cost_krw"
-      ]
+      ],
+      "provider": "임대차·관리비·수금·운영 원장",
+      "route_id": "M03-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1477,7 +1600,10 @@
         "property_id",
         "issued_at",
         "authority_evidence"
-      ]
+      ],
+      "provider": "권한·기존 임대차·추가 계약 자료",
+      "route_id": "M04-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1514,7 +1640,10 @@
         "property_id",
         "inspection_date",
         "condition_notes"
-      ]
+      ],
+      "provider": "현장 조사·시설 상태",
+      "route_id": "M05-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1553,7 +1682,10 @@
         "issued_at",
         "quote_type",
         "amount_krw"
-      ]
+      ],
+      "provider": "금융·세무·공사 등 개별 견적",
+      "route_id": "M06-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1590,7 +1722,10 @@
         "pnu",
         "issued_at",
         "verification_notes"
-      ]
+      ],
+      "provider": "설계·측량·인허가 사전 확인",
+      "route_id": "M07-original-v1",
+      "validation_rule_version": "2.3.0"
     },
     {
       "adapter": "input",
@@ -1629,7 +1764,10 @@
         "basis_date",
         "sales_krw",
         "assumptions"
-      ]
+      ],
+      "provider": "점포 사업 가정·실매출",
+      "route_id": "M08-original-v1",
+      "validation_rule_version": "2.3.0"
     }
   ],
   "reports": [

@@ -26,13 +26,13 @@ def check():
    p=ROOT/'vendor'/name/rel
    if not p.is_file() or sha(p)!=digest:bad.append(name+'/'+rel)
  libs={}
- for name,want in [('matplotlib','3.10.7'),('Pillow','12.3.0'),('pypdf','6.10.0')]:
+ for name,want in [('matplotlib','3.10.7'),('Pillow','12.3.0'),('pypdf','6.10.0'),('shapely','2.1.2'),('pyproj','3.7.2')]:
   try:got=version(name)
   except PackageNotFoundError:got=None
   libs[name]={'required':want,'found':got,'match':got==want}
  asset=cfg['vworld_release']['assets'].get(platform.system());exe=binary()
  ok=bool(asset and exe.is_file() and sha(exe)==asset['sha256'])
- return {'version':'2.2.0','network_called':False,'vendor_integrity':'PASS' if not bad else 'FAIL','changed_files':bad,'vworld':{'version':'0.3.5','verified':ok},'libraries':libs,'korean_font_found':bool(font()),'ready':not bad and ok and all(v['match'] for v in libs.values()) and bool(font())}
+ return {'version':'2.3.0','network_called':False,'vendor_integrity':'PASS' if not bad else 'FAIL','changed_files':bad,'vworld':{'version':'0.3.5','verified':ok},'libraries':libs,'korean_font_found':bool(font()),'ready':not bad and ok and all(v['match'] for v in libs.values()) and bool(font())}
 def setup(install_python=False):
  if install_python:
   target=runtime()/'python';target.mkdir(parents=True,exist_ok=True)
@@ -107,10 +107,23 @@ def map_collect(request,output,key):
   targets=request['targets']
   if not 1<=len(targets)<=4:raise ValueError('MAP_TARGET_COUNT')
   for i,t in enumerate(targets):
-   raw=cli(['geocode',t['address'],'--type',t.get('type','ROAD')],key)
-   payload=json.loads(raw);write(out/f'geocode-{i+1}.json',payload)
-   x,y=match_address(payload,t['expected_tokens']);points.append({'label':t['label'],'address':t['address'],'lon':x,'lat':y,'location_kind':'address_lookup_point'})
-   calls.append({'command':'geocode','address':t['address'],'status':'PASS'})
+   if t.get('address_evidence'):
+    from evidence_rules import revalidate
+    from collector import registry
+    run=Path(t['address_evidence']['run'])
+    record=load(run/t['address_evidence']['normalized_file'])[t['address_evidence'].get('record_index',0)]
+    req=load(run/'request.json')
+    if not revalidate(registry()[0]['S07'],record,req,run):raise ValueError('ADDRESS_EVIDENCE_REVIEW_REQUIRED')
+    if record['values']['address']!=t['address'] or record['values']['expected_tokens']!=t['expected_tokens']:raise ValueError('ADDRESS_EVIDENCE_TARGET_MISMATCH')
+    x,y=record['values']['lon'],record['values']['lat']
+    write(out/f'address-evidence-{i+1}.json',record)
+    calls.append({'command':'reuse_verified_address','status':'PASS','observed_at':record['provenance']['observed_at']})
+   else:
+    raw=cli(['geocode',t['address'],'--type',t.get('type','ROAD')],key)
+    payload=json.loads(raw);write(out/f'geocode-{i+1}.json',payload)
+    x,y=match_address(payload,t['expected_tokens'])
+    calls.append({'command':'geocode','address':t['address'],'status':'PASS'})
+   points.append({'label':t['label'],'address':t['address'],'lon':x,'lat':y,'location_kind':'address_lookup_point'})
   center=[sum(p[k] for p in points)/len(points) for k in ['lon','lat']]
   dest=out/'map-base.png';zoom=int(request.get('zoom',16))
   if not 6<=zoom<=18:raise ValueError('MAP_ZOOM_RANGE')

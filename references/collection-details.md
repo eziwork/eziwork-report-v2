@@ -1,3 +1,5 @@
+> 2.3.0 우선 적용: 새 API 허용 키는 5개이며 S07은 VWorld, S12·S17은 공식 파일입니다. 아래 과거 감사 기록의 주소·학교알리미·법령 API 상태는 새 실행 경로가 아닙니다. [현재 안내](api-setup.md) · [공식 접수](public-evidence.md)
+
 # 수집 데이터 규칙
 
 ## 40개 경로와 자료 입력
@@ -7,7 +9,7 @@
 - API: `preflight` 후 `collect`. Vworld S04/S05는 공식 명세의 정확한 레이어 ID와 `layer_guide_url`을 지정해야 합니다. 지적도 `jiga`를 공시지가 경로로 대체하지 않습니다.
 - API 파일 대체: 키·승인 대기 시 공식 CSV/JSON을 `prepare_input.py`로 접수하고 같은 출처 ID로 `import`할 수 있습니다. 공식 원본 첨부, 원문 필드명·단위 유지, `api_file_mode: true`, `native_units_confirmed: true`, VERIFIED 검토가 필요합니다. 실거래 금액 필드는 만원 단위입니다. 한국어 CSV 헤더를 API 필드로 매핑했다면 원본과 매핑을 함께 보관하세요. 동일 정규화 검증을 적용하며 실제 API 연결 성공으로 승격하지 않습니다.
 - 주소 S07: 주소 검색 어댑터입니다. 좌표 API는 별도 승인과 명세 검증 전 미지원입니다.
-- 법령 S17: 검색 목록을 보존하되 본문 확인 전 법령 근거로 내보내지 않습니다. 본문은 `params.S17`에 `ID` 또는 `MST`+`efYd`와 `expected_law_name`을 지정합니다. 본문 XML·법령명·ID·시행일을 검사하며, 운영 인증값으로의 실제 본문 수신은 대기 상태입니다.
+- 법령 S17: 새 실행은 공식 원문 파일과 조문·시행일·부칙·별표 검토를 사용합니다. 과거 API 검색 결과는 보존하되 현행 검증 없이 재사용하지 않습니다. public-evidence.md를 따릅니다.
 - 네이버: [연결 브라우저 절차](naver-collection.md)를 따릅니다. 최대 20광고를 검증한 후 입력합니다. CLI 단독으로 브라우저를 조작하지 않습니다.
 - 파일: 개인정보 없는 자료를 직접 검토하고 `python scripts/collection/prepare_input.py --source S15 --files sanitized.pdf --output received/S15 --privacy-reviewed`로 접수합니다. 탐지 신호가 있거나 이미지 PDF라면 복사를 시작하지 않고 정리된 자료를 요청합니다. CSV/JSON 배열은 구조화 행을 읽고, PDF 텍스트는 자동으로 권리판단 필드로 변환하지 않습니다.
 - 수동: 해당 양식의 필수값과 기준일/발급일, 대상 식별정보를 채우고 원본과 대조한 뒤 VERIFIED로 변경합니다. EXAMPLE 자료는 테스트용이며 보고서에 사용되지 않습니다.

@@ -1,28 +1,75 @@
 {
-  "version": "2.2.0",
+  "version": "2.3.0",
   "checked_at": "2026-10-10",
-  "implementation": "LOCAL_INTEGRATION_VALIDATED",
-  "prior_release": "release-status-2.1.0.json",
+  "implementation": "LOCAL_IMPLEMENTED_TESTED",
+  "github_upload": "NOT_REQUESTED_IN_THIS_SCOPE",
   "tests": {
     "collector_passed": 51,
-    "workflow_cover_integration_passed": 36,
-    "failed": 0,
-    "evidence_checks_passed": 51
+    "workflow_cover_integration_key_migration_passed": 78,
+    "total": 129,
+    "failed": 0
   },
-  "reports": 14,
-  "new_scientific_charts": 8,
-  "new_vworld_maps": 3,
-  "humanizer_reviewed_reports": 14,
-  "live_vworld": {
-    "final_successful_calls": 7,
-    "earlier_wrapper_parse_hold_calls": 1,
-    "scope": "address_geocode_and_staticmap_only"
+  "reports": {
+    "historical_replay": 14,
+    "latest_pdf_text_unchanged": 14,
+    "mobile_390px_overflow": 0,
+    "new_market_collection": false,
+    "whole_report_user_approval": "UNCHANGED"
   },
-  "market_data": "historical_replay_no_new_trade_or_listing_collection",
+  "live_samples": {
+    "VWorld_address": {
+      "usable": 1,
+      "scope": "road/parcel/address point; no cadastral boundary"
+    },
+    "KOSIS": {
+      "usable": 3,
+      "table": "101/DT_1B040A3",
+      "item": "T20",
+      "region": "11",
+      "period": "202501-202503",
+      "unit": "명"
+    },
+    "RONE": {
+      "usable": 3,
+      "table": "A_2024_00903",
+      "item": "100001",
+      "region": "500001",
+      "period": "202501-202503",
+      "unit": "%"
+    },
+    "ECOS": {
+      "usable": 3,
+      "table": "722Y001",
+      "item": "0101000",
+      "period": "202501-202503",
+      "unit": "연%",
+      "metadata_checked": true
+    },
+    "school_location": {
+      "usable": 1,
+      "school_code": "B000002024",
+      "basis_date": "2026-10-01",
+      "assignment_verified": false
+    },
+    "law": {
+      "usable": 1,
+      "law": "국토의 계획 및 이용에 관한 법률",
+      "article": "제1조",
+      "effective_date": "2026-05-17",
+      "individual_parcel_use_verified": false
+    }
+  },
+  "five_keys_registered": true,
   "windows_actual": "PASS_WITH_RECORDED_SCOPE",
-  "macos_automation": "DEFINED_NOT_RUN",
+  "mac_storage_branch": "MOCK_TESTED_ON_WINDOWS",
+  "macos_ci": "DEFINED_NOT_RUN",
   "macos_actual": "PENDING_ENVIRONMENT",
-  "mobile_browser": "PENDING",
-  "whole_report_user_approval": "UNCHANGED",
-  "references": "integration-2.2.0.md"
+  "pending": [
+    "actual school catchment geometry + final annual notice combination",
+    "individual parcel use and local ordinance case",
+    "all 40 routes operational validation",
+    "new natural language requests across 14 types",
+    "macOS actual installation and rendering"
+  ],
+  "references": "migration-2.3.0.md"
 }

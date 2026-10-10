@@ -5,6 +5,7 @@ import re
 from decimal import Decimal, InvalidOperation
 from scope_validation import POLICY_VERSION,identity,lh_parameters,validate_lh_scope
 from adapters import CollectionError,Page
+import evidence_rules as rules
 
 def num(value, multiplier=1):
     if value is None or str(value).strip()=='': return None
@@ -72,22 +73,10 @@ def normalize(source,row,request,raw_file,observed_at,period=None,collection_sco
         basis=first(row,'TIME','PRD_DE','WRTTIME_IDTFR_ID','basis_date','issued_at')
         units={'source_unit':first(row,'UNIT_NAME','UNIT_NM','UI_NM')}
         # Reference/area aggregates are not proofs of a specific unit's identity.
-        if source['id']=='S17':
-            if not row.get('law_body'): issues.append('LAW_LIST_ONLY_BODY_UNVERIFIED')
-            else:
-                params=request.get('params',{}).get('S17',{})
-                basis=date(row.get('effective_date'))
-                if row.get('law_name')!=params.get('expected_law_name'): issues.append('LAW_NAME_MISMATCH')
-                if params.get('ID') and str(row['law_id']).zfill(6)!=str(params['ID']).zfill(6): issues.append('LAW_ID_MISMATCH')
-                if params.get('MST') and basis!=date(params.get('efYd')): issues.append('LAW_EFFECTIVE_DATE_MISMATCH')
-                if not basis or basis>request.get('basis_date',D.date.today().isoformat()): issues.append('LAW_NOT_EFFECTIVE_AT_BASIS')
+        if source['id'] in rules.REPLACED:
+            issues.extend(rules.public_issues(source,row,request))
         elif source['id'] in {'S08','S09','S22'}:
-            if not basis: issues.append('STATISTIC_BASIS_REQUIRED')
-            if not units['source_unit']: issues.append('STATISTIC_UNIT_REQUIRED')
-            value=first(row,'DT','DTA_VAL','DATA_VALUE')
-            try:
-                if not Decimal(str(value).replace(',','')).is_finite(): raise InvalidOperation()
-            except (InvalidOperation,ValueError): issues.append('STATISTIC_VALUE_INVALID')
+            issues.extend(rules.statistic_issues(source,row,request))
         else:
             scope=identity(source,row,request);issues.extend(scope['reasons'])
             if scope['status']!='MATCH':
@@ -113,18 +102,14 @@ def normalize(source,row,request,raw_file,observed_at,period=None,collection_sco
         values['query_scope']=request.get('params',{}).get(source['id'],{})
     if scope is not None:values['identity_scope']=scope
     return dict(source_id=source['id'],data_kind=source['data_kind'],values=values,raw_fields=row,
-                provenance=dict(raw_file=raw_file,source_url=source.get('body_endpoint') if row.get('law_body') else source['endpoint'],observed_at=observed_at,
-                                basis_date=basis,basis_type=basis_type,query_period=period,units=units,
+                provenance=dict(**rules.provenance(source,raw_file,observed_at,basis),source_url=source.get('body_endpoint') if row.get('law_body') else row.get('source_url',source['endpoint']),
+                                basis_type=basis_type,query_period=period,units=units,
                                 collection_scope=collection_scope,scope_policy_version=POLICY_VERSION,review_status='AUTOMATED_CHECK'),
                 warnings=warnings,issues=list(dict.fromkeys(issues)),usable=not issues)
 
 def current_api_usable(source,record,request):
     """Recheck old or edited normalized evidence before coverage review or report export."""
-    if not record.get('usable') or not isinstance(record.get('raw_fields'),dict):return False
-    p=record.get('provenance',{})
-    check=normalize(source,record['raw_fields'],request,p.get('raw_file'),p.get('observed_at'),
-                    p.get('query_period'),p.get('collection_scope'))
-    return check['usable']
+    return rules.revalidate(source,record,request)
 
 def validate_input(source, payload, request):
     problems=[]; rows=[]
@@ -183,8 +168,10 @@ def validate_input(source, payload, request):
             if not re.fullmatch(r'\d+',article) or not re.fullmatch(r'https://fin\.land\.naver\.com/articles/'+re.escape(article)+r'/?',str(r.get('url',''))): issues.append('INVALID_ARTICLE_LINK')
             if article in seen: continue
             seen.add(article)
-        rows.append(dict(source_id=source['id'],data_kind=source['data_kind'],values=r,
-            provenance=dict(source_url=payload.get('source_url'),basis_date=payload.get('basis_date'),
+        if source['id'] in rules.REPLACED:
+            issues.extend(rules.public_issues(source,r,request))
+        rows.append(dict(raw_fields=r,source_id=source['id'],data_kind=source['data_kind'],values=r,
+            provenance=dict(**rules.provenance(source,None,None,payload.get('basis_date'),'FILE'),source_url=payload.get('source_url'),
                 issued_at=payload.get('issued_at'),review_status=payload.get('review_status'),
                 evidence_mode=payload.get('evidence_mode'),units={k:'KRW' if k.endswith('_krw') else 'm2' for k in r if k.endswith(('_krw','_sqm'))}),
             issues=issues,usable=not issues and not problems and payload.get('evidence_mode')=='ACTUAL'))

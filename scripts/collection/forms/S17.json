@@ -1,21 +1,39 @@
 {
-  "schema_version": 1,
   "source_id": "S17",
-  "evidence_mode": "EXAMPLE",
+  "data_format_version": 2,
+  "route_id": "official-law-v1",
+  "intake_channel": "OFFICIAL_PUBLIC",
+  "evidence_mode": "ACTUAL",
   "review_status": "PENDING",
-  "source_url": "https://open.law.go.kr/LSO/openApi/guideList.do",
+  "source_url": "https://www.law.go.kr/",
   "basis_date": null,
-  "issued_at": null,
   "identity": {
-    "subject_id": null,
-    "property_id": null,
-    "pnu": null
+    "subject_id": null
   },
-  "records": [
-    {}
+  "attachments": [
+    {
+      "file": null,
+      "source_url": "https://www.law.go.kr/",
+      "sha256": null
+    }
   ],
-  "api_file_mode": true,
-  "native_units_confirmed": false,
-  "attachments": [],
-  "format_note": "공식 원본의 필드명과 단위를 유지. 실거래 금액은 만원, 면적은 m². 원본 첨부와 단위 대조 후 VERIFIED로 변경. raw 필드 정규화 검증을 동일 적용."
+  "public_contact_review": [],
+  "records": [
+    {
+      "law_name": null,
+      "article": null,
+      "law_body": null,
+      "effective_date": null,
+      "jurisdiction": null,
+      "source_url": null,
+      "basis_date": null,
+      "addenda_review": null,
+      "annex_review": null,
+      "original_proof": {
+        "raw_sha256": null,
+        "review_status": "PENDING",
+        "field_quotes": {}
+      }
+    }
+  ]
 }

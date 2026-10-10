@@ -25,3 +25,4 @@ jobs:
       - run: python scripts/eziwork.py doctor
       - run: node scripts/replay-check.mjs
       - run: node scripts/cover-check.mjs --regenerate
+      - run: node scripts/migration-check.mjs

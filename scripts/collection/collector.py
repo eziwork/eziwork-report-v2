@@ -21,9 +21,8 @@ from quality import normalize, validate_input
 from scope_validation import lh_parameters,validate_lh_scope,lot
 
 ROOT=Path(__file__).resolve().parent
-VERSION='1.1.0'
-ENV_NAMES=['DATA_GO_KR_SERVICE_KEY','JUSO_CONFM_KEY','VWORLD_API_KEY','KOSIS_API_KEY',
-           'RONE_API_KEY','SCHOOLINFO_API_KEY','LAW_OC','ECOS_API_KEY']
+VERSION='2.3.0'
+ENV_NAMES=['DATA_GO_KR_SERVICE_KEY','VWORLD_API_KEY','KOSIS_API_KEY','RONE_API_KEY','ECOS_API_KEY']
 
 def now(): return D.datetime.now(D.timezone.utc).isoformat()
 def load(path): return json.loads(Path(path).read_text(encoding='utf-8-sig'))
@@ -96,8 +95,9 @@ def months(start,end):
         return [f'{(a.year*12+a.month-1+i)//12:04}{(a.year*12+a.month-1+i)%12+1:02}' for i in range(count)]
     except (ValueError,TypeError): raise CollectionError('INVALID_PERIOD') from None
 
-def registry():
-    reg=load(ROOT/'registry.json')
+def registry(version=None):
+    if version not in (None,'2.3.0','2.2.0'):raise CollectionError('SOURCE_DEFINITION_VERSION_UNSUPPORTED')
+    reg=load(ROOT.parents[1]/'references/legacy/collection-registry-2.2.0.json' if version=='2.2.0' else ROOT/'registry.json')
     return {s['id']:s for s in reg['sources']},reg['reports']
 
 def validate_request(request,sources,reports):
@@ -114,8 +114,7 @@ def validate_request(request,sources,reports):
         raise CollectionError('CONFLICTING_TARGET_PNU')
     chosen=request.get('sources')
     if chosen is None:
-        report=next((r for r in reports if r['id']==request.get('report_type')),None)
-        chosen=list(dict.fromkeys(s for g in report['data_requirements'] for s in g['sources'])) if report else list(sources)
+        raise CollectionError('SOURCE_SELECTION_REQUIRED')
     if not isinstance(chosen,list) or not chosen or len(set(chosen))!=len(chosen) or any(s not in sources for s in chosen): raise CollectionError('INVALID_SOURCES')
     for key,default,maximum in [('max_pages',100,1000),('page_size',1000,1000)]:
         value=request.get(key,default)
@@ -187,6 +186,9 @@ class Engine:
         self.sources,self.reports=registry()
     def save(self,path,data): write(path,self.redactor.data(data))
     def chunk(self,source,params,run,force=False):
+        if source['adapter']=='vworld_address':
+            from public_evidence import collect_address
+            return collect_address(source,params,run,self.credentials.get('VWORLD_API_KEY',''))
         spec=dict(version=VERSION,source=source['id'],endpoint=source['endpoint'],params=params)
         key=digest(encoded(spec));cache_file=self.cache/(key+'.json')
         checkpoint=run/'checkpoints'/source['id']/(key+'.json')
@@ -266,6 +268,22 @@ class Engine:
             verified_scope=validate_lh_scope(parsed,params) if source['adapter']=='lh' else None
             for row in parsed.rows:
                 materialized.append(normalize(source,row,normalization_request,str(raw.relative_to(run)),state['observed_at'],params.get('month'),verified_scope))
+        scope_proof=normalization_request.get('scope_evidence',{}).get(source['id'])
+        archived_proof=None
+        if scope_proof:
+            original=Path(scope_proof.get('file',''))
+            if original.is_file() and original.stat().st_size<=16_000_000 and digest(original.read_bytes())==scope_proof.get('sha256'):
+                target=run/'raw'/source['id']/('metadata-'+scope_proof['sha256']+original.suffix)
+                target.parent.mkdir(parents=True,exist_ok=True)
+                content=original.read_bytes()
+                if any(secret.encode('utf-8') in content for secret in self.redactor.values):raise CollectionError('CREDENTIAL_IN_METADATA')
+                target.write_bytes(content)
+                archived_proof={**scope_proof,'file':None,'archived_file':str(target.relative_to(run))}
+        for record in materialized:
+            if archived_proof:record['provenance']['scope_evidence']=archived_proof
+            raw=run/record['provenance']['raw_file']
+            record['provenance'].update(raw_sha256=digest(raw.read_bytes()),
+                processing_status='VALIDATED' if record['usable'] else 'EXTRACTED_REVIEW_REQUIRED')
         return dict(status='COMPLETE' if state['complete'] else 'PARTIAL' if materialized else state['error'] or 'FAILED',
             complete=state['complete'],rows=materialized,returned_count=len(rows) if state['pages'] else None,total_count=state['total'],
             error=state['error'],warnings=warnings,cached=cached,network_attempts=getattr(self.transport,'attempts',initial_attempts+attempts)-initial_attempts,observed_at=state['observed_at'])
@@ -325,6 +343,9 @@ class Engine:
                 self.save(run/'manifest.json',dict(schema_version=1,version=VERSION,run_id=run.name,created_at=now(),sources={}))
             if load(run/'request.json')!=request: raise CollectionError('RESUME_REQUEST_MISMATCH')
             if source['id'] not in validate_request(request,self.sources,self.reports): raise CollectionError('SOURCE_OUTSIDE_REQUEST')
+            from public_evidence import review_official_payload
+            if source['id'] in ('S07','S12','S17'):
+                review_official_payload(payload,Path(path).parent,request)
             rows,issues=validate_input(source,payload,request)
             raw=run/'raw'/source['id']/(uuid.uuid4().hex+'.json')
             api_file=source['mode']=='API'
@@ -336,6 +357,12 @@ class Engine:
                     row['provenance'].update(source_url=payload.get('source_url'),review_status=payload.get('review_status'),
                         evidence_mode=payload.get('evidence_mode'),issued_at=payload.get('issued_at'))
                     if payload.get('evidence_mode')!='ACTUAL': row['usable']=False
+            if source['id'] in ('S12','S17'):
+                rows=[normalize(source,r,request,str(raw.relative_to(run)),now()) for r in payload.get('records',[]) if isinstance(r,dict)]
+                for row in rows:
+                    row['provenance'].update(source_url=payload.get('source_url'),review_status=payload.get('review_status'),
+                        evidence_mode=payload.get('evidence_mode'),collection_channel='FILE')
+                    if payload.get('evidence_mode')!='ACTUAL':row['usable']=False
             attachments=payload.get('attachments',[])
             evidence=payload.get('observation',{}).get('evidence_files',[])
             for entry in attachments+[{ 'file':f } for f in evidence]:
@@ -354,7 +381,10 @@ class Engine:
             if issues:
                 for row in rows: row['usable']=False
             self.save(raw,payload)
-            for row in rows: row['provenance'].update(raw_file=str(raw.relative_to(run)),observed_at=now())
+            for row in rows:
+                row['provenance'].update(raw_file=str(raw.relative_to(run)),raw_sha256=digest(raw.read_bytes()),observed_at=now(),
+                    attachments=[{'archived_file':a['archived_file'],'sha256':a['sha256']} for a in attachments if 'archived_file' in a],
+                    processing_status='VALIDATED' if row['usable'] and not issues else 'EXTRACTED_REVIEW_REQUIRED')
             self.save(run/'normalized'/f'{source["id"]}.json',rows)
             manifest=load(run/'manifest.json')
             manifest.pop('requirement_reviews',None)
@@ -422,7 +452,17 @@ def main():
         if name=='collect': p.add_argument('--resume',action='store_true');p.add_argument('--force-refresh',action='store_true')
         if name=='import': p.add_argument('--file',required=True,type=Path)
     p=sub.add_parser('status');p.add_argument('--run-id',required=True)
-    args=parser.parse_args();engine=Engine(args.output,args.cache)
+    args=parser.parse_args()
+    if args.command in ('preflight','collect','import'):
+        sys.path.insert(0,str(ROOT.parent))
+        import key_environment
+        try:
+            needs_keys=args.command!='import' or load(args.file).get('evidence_mode')=='ACTUAL'
+            blocked=key_environment.require_registered() if needs_keys else None
+        except (ValueError,OSError):
+            print(json.dumps({'status':'KEY_STORE_REVIEW_REQUIRED'}));return 2
+        if blocked:print(json.dumps(blocked,ensure_ascii=False,indent=2));return 2
+    engine=Engine(args.output,args.cache)
     try:
         if args.command=='status':
             if not re.fullmatch(r'[A-Za-z0-9_-]{1,100}',args.run_id): raise CollectionError('INVALID_RUN_ID')

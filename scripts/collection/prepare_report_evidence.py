@@ -3,7 +3,7 @@ import argparse
 import json
 from pathlib import Path
 from collector import load,write,registry,report_readiness,CollectionError,dashboard,lock
-from quality import current_api_usable
+from evidence_rules import revalidate,RULE_VERSION
 
 def review_coverage(run,path):
     """A source list is a provider map, not proof that every grouped topic is covered."""
@@ -25,13 +25,13 @@ def review_coverage(run,path):
                 raise CollectionError('COVERAGE_EVIDENCE_REQUIRED')
             records=load(run/state['normalized_file'])
             if index>=len(records) or not records[index].get('usable'): raise CollectionError('COVERAGE_RECORD_UNUSABLE')
-            if sources[id]['mode']=='API' and not current_api_usable(sources[id],records[index],request):
+            if not revalidate(sources.get(id),records[index],request,run):
                 raise CollectionError('COVERAGE_RECORD_SCOPE_INVALID')
             values=records[index]['values']
             if any(f not in values or values[f] is None or values[f]=='' for f in fields): raise CollectionError('COVERAGE_FIELD_MISSING')
             from collector import digest,encoded
             proofs[item]={**proof,'record_sha256':digest(encoded(records[index]))};ids.add(id)
-        accepted[group['requirement_id']]=dict(review_status='VERIFIED',review_note=review['review_note'],sources=sorted(ids),proofs=proofs)
+        accepted[group['requirement_id']]=dict(review_status='VERIFIED',review_note=review['review_note'],sources=sorted(ids),proofs=proofs,validation_rule_version=RULE_VERSION)
     with lock(run):
         # Reload after locking; attach reviews to exact normalized records, not a future refresh.
         manifest=load(run/'manifest.json')
@@ -44,12 +44,14 @@ def current_reviews(run,manifest):
     from collector import digest,encoded
     sources,_=registry();request=load(run/'request.json')
     for id,review in list(manifest.get('requirement_reviews',{}).items()):
+        if review.get('validation_rule_version')!=RULE_VERSION:
+            review['review_status']='STALE'
         for proof in review.get('proofs',{}).values():
             try:
                 state=manifest['sources'][proof['source_id']]
                 row=load(run/state['normalized_file'])[proof['record_index']]
                 if not row.get('usable') or digest(encoded(row))!=proof['record_sha256']: raise ValueError()
-                if sources[proof['source_id']]['mode']=='API' and not current_api_usable(sources[proof['source_id']],row,request):raise ValueError()
+                if not revalidate(sources.get(proof['source_id']),row,request,run):raise ValueError()
             except (KeyError,IndexError,ValueError,OSError):
                 manifest['requirement_reviews'][id]['review_status']='STALE';break
     return manifest
@@ -59,10 +61,17 @@ def prepare(run, report_id):
     sources,reports=registry();manifest=current_reviews(run,manifest)
     # Saved usable flags from older versions do not bypass current target/date rules.
     for id,state in manifest['sources'].items():
-        if sources[id]['mode']=='API' and state.get('usable_count') and state.get('normalized_file'):
+        if id not in sources:
+            state.update(usable_count=0,status='UNKNOWN_SOURCE_MIGRATION_REQUIRED',complete=False)
+            continue
+        if state.get('usable_count') and state.get('normalized_file'):
             records=load(run/state['normalized_file'])
-            state['usable_count']=sum(current_api_usable(sources[id],row,request) for row in records)
-    readiness=next((r for r in report_readiness(request,manifest,reports) if r['report_id']==report_id),None)
+            state['usable_count']=sum(revalidate(sources[id],row,request,run) for row in records)
+            if not state['usable_count']:state['status']='CURRENT_RULE_REVIEW_REQUIRED'
+    manifest['readiness']=report_readiness(request,manifest,reports)
+    write(run/'manifest.json',manifest)
+    dashboard(run,manifest,sources,reports)
+    readiness=next((r for r in manifest['readiness'] if r['report_id']==report_id),None)
     if readiness is None: raise CollectionError('UNKNOWN_REPORT')
     destination=run/f'{report_id}-evidence.json'
     if readiness['status']=='HOLD':
@@ -73,9 +82,9 @@ def prepare(run, report_id):
     for id in selected:
         path=manifest['sources'][id].get('normalized_file')
         if path: records.extend(r for r in load(run/path) if r.get('usable') and
-            (sources[id]['mode']!='API' or current_api_usable(sources[id],r,request)))
+            revalidate(sources.get(id),r,request,run))
     write(destination,dict(schema_version=1,status='READY_WITH_DECLARED_SCOPE',report_id=report_id,
-        target=request['target'],readiness=readiness,records=records,
+        target=request['target'],readiness=readiness,records=records,validation_rule_version=RULE_VERSION,
         excluded_groups=[g['data'] for g in readiness['groups'] if g['status']=='EXCLUDED']))
     return destination
 
@@ -83,6 +92,11 @@ if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--run',type=Path,required=True)
     parser.add_argument('--report',required=True);parser.add_argument('--review',type=Path);args=parser.parse_args()
     try:
+        import sys
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
+        import key_environment
+        gate=key_environment.require_registered()
+        if gate:print(json.dumps(gate));raise SystemExit(2)
         if args.review: review_coverage(args.run,args.review)
         print(prepare(args.run,args.report).resolve())
     except CollectionError as exc: print(json.dumps({'status':exc.code}));raise SystemExit(2)

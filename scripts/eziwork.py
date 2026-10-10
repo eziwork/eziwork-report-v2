@@ -9,6 +9,7 @@ sys.path.insert(0,str(ROOT/'scripts/collection'))
 import collector
 import covers
 import integrations
+import key_environment
 from adapters import CollectionError
 ALLOWED=collector.ENV_NAMES
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -20,7 +21,8 @@ def credentials():
   result.update(load(ROOT/'config/default-credentials.json'))
  local=Path(os.environ.get('EZIWORK_CREDENTIAL_FILE',ROOT/'config/local-credentials.json'))
  if local.is_file():result.update(load(local))
- return {k:os.environ.get(k,result.get(k,'')) for k in ALLOWED if os.environ.get(k,result.get(k,''))}
+ result.update(key_environment.user_values(ALLOWED))
+ return {k:os.environ.get(k,'').strip() or result.get(k,'') for k in ALLOWED if os.environ.get(k,'').strip() or result.get(k,'')}
 @contextlib.contextmanager
 def environment():
  before={k:os.environ.get(k) for k in ALLOWED};values=credentials()
@@ -60,6 +62,13 @@ def check_contract(path):
  if c['mode']=='actual':
   if data.get('status')!='READY_WITH_DECLARED_SCOPE':raise ValueError('EVIDENCE_NOT_READY')
   if data.get('report_id')!=c['report_id'] or not c.get('target') or c['target']!=data.get('target'):raise ValueError('REPORT_TARGET_MISMATCH')
+  from evidence_rules import RULE_VERSION,revalidate
+  if data.get('validation_rule_version')!=RULE_VERSION:raise ValueError('EVIDENCE_CURRENT_REVIEW_REQUIRED')
+  run=ds.parent
+  if not (run/'request.json').is_file():raise ValueError('EVIDENCE_ORIGINAL_RUN_REQUIRED')
+  request=load(run/'request.json');registry,_=collector.registry()
+  if not data.get('records') or any(not revalidate(registry.get(r.get('source_id')),r,request,run) for r in data['records']):
+   raise ValueError('EVIDENCE_CURRENT_REVIEW_REQUIRED')
  if data.get('status')=='HOLD':raise ValueError('EVIDENCE_HOLD')
  records=data.get('records',[]);claims={};claim_sources={};claim_units={};sources={x['id']:x for x in c.get('sources',[])}
  if len(sources)!=len(c.get('sources',[])):raise ValueError('DUPLICATE_SOURCE')
@@ -230,6 +239,7 @@ def cover_metadata(c):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--workspace',type=Path,default=Path.cwd()/'eziwork-output');sub=p.add_subparsers(dest='cmd',required=True)
  sub.add_parser('doctor');sub.add_parser('catalog')
+ a=sub.add_parser('key-env');a.add_argument('action',choices=['check','setup']);a.add_argument('--name',choices=key_environment.BASIC)
  a=sub.add_parser('integrations');a.add_argument('action',choices=['check','setup']);a.add_argument('--python',action='store_true',dest='install_python')
  a=sub.add_parser('map');a.add_argument('--request',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('chart');a.add_argument('--spec',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
@@ -245,9 +255,34 @@ def main():
  for n in ['verify','render']:
   a=sub.add_parser(n);a.add_argument('--contract',type=Path,required=True)
   if n=='render':a.add_argument('--output',type=Path,required=True);a.add_argument('--branding',type=Path);a.add_argument('--pdf',action='store_true')
+ a=sub.add_parser('official-document');a.add_argument('--file',type=Path,required=True);a.add_argument('--url',required=True);a.add_argument('--output',type=Path,required=True)
+ a=sub.add_parser('catchment');a.add_argument('--spec',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('pdf');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('cover');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--contract',type=Path,required=True);a.add_argument('--branding',type=Path)
  args=p.parse_args()
+ # Before file-credential injection: local files must not appear to be OS variables.
+ if args.cmd=='key-env':
+  try:
+   if args.action=='check' and args.name:raise ValueError('NAME_REQUIRES_SETUP')
+   result=key_environment.setup(args.name) if args.action=='setup' else key_environment.check()
+   print(json.dumps(result,ensure_ascii=False,indent=2));return 2 if result['missing'] else 0
+  except (KeyboardInterrupt,EOFError):
+   print(json.dumps({'status':'INPUT_CANCELLED','live_call':False}));return 2
+  except (ValueError,OSError):
+   print(json.dumps({'status':'KEY_ENV_ACTION_REQUIRED','guide':'references/api-setup.md','live_call':False}));return 2
+ # Inspect registration before credentials from local files are injected.
+ needs_keys=args.cmd in ('preflight','collect','prepare','map')
+ if args.cmd=='render':
+  needs_keys=load(args.contract).get('mode')=='actual'
+ if args.cmd=='import':
+  needs_keys=load(args.file).get('evidence_mode')=='ACTUAL'
+ if needs_keys:
+  try:blocked=key_environment.require_registered()
+  except (OSError,ValueError):
+   print(json.dumps({'status':'KEY_STORE_REVIEW_REQUIRED','live_call':False}));return 2
+  if blocked:
+   print(json.dumps(blocked,ensure_ascii=False,indent=2));return 2
+ registration_state=key_environment.check() if args.cmd=='doctor' else None
  with environment() as redact:
   try:
    if args.cmd=='integrations':
@@ -272,9 +307,22 @@ def main():
     fonts=[Path(os.environ.get('WINDIR','C:/Windows'))/'Fonts/malgun.ttf',Path('/System/Library/Fonts/AppleSDGothicNeo.ttc'),Path('/System/Library/Fonts/Supplemental/AppleGothic.ttf')]
     result['korean_os_font_found']=any(f.is_file() for f in fonts)
     result['python_supported']=sys.version_info>=(3,11)
+    result['key_registration']=registration_state
+    result['geometry_libraries']={}
+    for lib,wanted in [('shapely','2.1.2'),('pyproj','3.7.2')]:
+     try:installed=version(lib)
+     except PackageNotFoundError:installed=None
+     result['geometry_libraries'][lib]={'installed':installed,'expected':wanted,'match':installed==wanted}
     result['integrations']=integrations.check()
     if nd:
      check=subprocess.run([nd,str(ROOT/'scripts/render.mjs'),'--doctor'],capture_output=True,text=True,encoding='utf-8');result['renderer']=json.loads(check.stdout) if check.returncode==0 else {'status':'DEPENDENCIES_REQUIRED'}
+   elif args.cmd=='official-document':
+    from public_evidence import public_document
+    result=public_document(args.file,args.url,args.output)
+   elif args.cmd=='catchment':
+    from public_evidence import catchment
+    if args.output.exists():raise ValueError('OUTPUT_EXISTS_USE_NEW_VERSION')
+    result=catchment(load(args.spec),args.spec.parent);save(args.output,result)
    elif args.cmd=='catalog':result=load(ROOT/'references/report-types.json')
    elif args.cmd=='configure':
     value=getpass.getpass('API key (hidden): ').strip()
@@ -287,8 +335,12 @@ def main():
    elif args.cmd in ['preflight','collect','import','status']:
     if args.cmd=='import':
      if not args.privacy_reviewed:raise ValueError('PRIVACY_REVIEW_REQUIRED')
-     issues=privacy_issues(args.file)
      payload=load(args.file)
+     official=payload.get('intake_channel')=='OFFICIAL_PUBLIC' and payload.get('source_id') in ('S07','S12','S17')
+     if official:
+      from public_evidence import review_official_payload
+      review_official_payload(payload,args.file.parent,load(args.request))
+     issues=[] if official else privacy_issues(args.file)
      # Attachments must also pass the scan before the collector copies originals.
      def scan_files(x):
       if isinstance(x,dict):
@@ -299,7 +351,7 @@ def main():
         else:scan_files(v)
       elif isinstance(x,list):
        for v in x:scan_files(v)
-     scan_files(payload)
+     if not official:scan_files(payload)
      for rel in payload.get('observation',{}).get('evidence_files',[]):
       f=(args.file.parent/rel).resolve()
       if f.is_file() and f.suffix.lower() not in ('.png','.jpg','.jpeg','.webp'):issues.extend(privacy_issues(f))

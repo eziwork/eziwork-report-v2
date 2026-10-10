@@ -23,3 +23,11 @@
 - VWorld 지도와 좌표 응답은 VWorld의 데이터·지도 이용 조건이 별도로 적용됩니다. 지도 원본 출처 표시를 유지합니다. 이번 지도는 주소 조회점과 배경지도이며 동호실 위치·필지 경계를 증명하지 않습니다.
 
 scientific-visualization 원본이 요청하는 소프트웨어 문헌 표기: Timothy Kassis, Vinayak Agarwal, Yuhuan He, Darshil Patel, Aubrey M. Brueckner (2026), *Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents*. https://doi.org/10.48550/arXiv.2609.00065 . 이는 스킬 라이브러리 출처이며 개별 부동산 분석의 검증 근거는 아닙니다.
+
+## 2.3.0 공간 검증 의존성
+
+- Shapely 2.1.2: BSD-3-Clause; 배포 휠의 LICENSE.txt 및 GEOS LGPL-2.1 고지를 유지합니다. https://github.com/shapely/shapely
+- pyproj 3.7.2: MIT; PROJ 및 포함 자료의 별도 라이선스는 설치 휠의 licenses 폴더를 따릅니다. https://github.com/pyproj4/pyproj
+- certifi 2026.2.25: MPL-2.0; 인증기관 목록과 설치 파일의 LICENSE를 유지합니다. https://github.com/certifi/python-certifi
+- 이 라이브러리들의 실행 파일은 공개 스킬 압축파일에 포함하지 않으며 requirements.txt에 따라 설치합니다.
+- 학교·학구·법령 실제 표본 원문은 이번 공개 패키지에 추가하지 않습니다. 검증 요약과 공식 원문 링크만 포함합니다.

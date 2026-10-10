@@ -46,13 +46,18 @@ def check_code(code, accepted, public_portal=False, message=None):
     raise CollectionError('API_REJECTED', code[:60])
 
 def request_url(source, params, page, size, secret):
+    if source.get('adapter') in ('juso','school','schoolinfo','law') or source.get('credential') in ('JUSO_CONFM_KEY','SCHOOLINFO_API_KEY','LAW_OC'):
+        raise CollectionError('RETIRED_API_USE_VERSIONED_PUBLIC_ROUTE')
     a=source['adapter']; q={**source.get('defaults',{}), **params}
     # Internal routing and documentation fields never go to the provider.
-    for k in ['lawd_cd','start_ym','end_ym','layer_guide_url','expected_law_name']: q.pop(k,None)
+    for k in ['lawd_cd','start_ym','end_ym','layer_guide_url','expected_law_name','expected_unit']: q.pop(k,None)
     endpoint=source['endpoint']
     if a=='ecos':
         path=[secret,'json','kr',str((page-1)*size+1),str(page*size),q['stat_code'],
               q['cycle'],q['start'],q['end'],q['item_code']]
+        for i in range(2,5):
+            if q.get(f'item_code{i}'):path.append(q[f'item_code{i}'])
+            elif any(q.get(f'item_code{j}') for j in range(i+1,5)):raise CollectionError('ECOS_ITEM_ORDER_REQUIRED')
         return endpoint+'/'+ '/'.join(U.quote(str(x),safe='') for x in path)
     if a=='rtms': q.update(LAWD_CD=params['lawd_cd'],DEAL_YMD=params['month'],pageNo=page,numOfRows=size); q.pop('month',None)
     elif a=='juso': q.update(currentPage=page,countPerPage=min(size,100))
@@ -130,7 +135,10 @@ def parse_json(source, data):
         r=data['StatisticSearch']
         return Page(as_rows(r['row']),integer(r['list_total_count']),'INFO-000')
     if a=='kosis':
-        if not isinstance(data,list): raise CollectionError('API_REJECTED',str(data.get('err','UNKNOWN'))[:60])
+        if not isinstance(data,list):
+            code=str(data.get('err','UNKNOWN'))
+            if code=='30':return Page([],0,'NO_DATA',True)
+            raise CollectionError({'20':'AUTH_REJECTED','21':'REQUEST_CONFIG_INVALID'}.get(code,'API_REJECTED'),code[:60])
         rows=as_rows(data)
         if any(not {'DT','PRD_DE','UNIT_NM'} <= x.keys() for x in rows): raise CollectionError('RESPONSE_SCHEMA_CHANGED')
         if len(rows)>=10000: raise CollectionError('RESPONSE_LIMIT_REACHED')

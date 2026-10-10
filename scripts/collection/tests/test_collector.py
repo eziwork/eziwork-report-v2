@@ -46,7 +46,7 @@ class EngineTests(unittest.TestCase):
     def test_registry_coverage(self):
         self.assertEqual(len(self.sources),40);self.assertEqual(len(self.reports),14)
         self.assertEqual(sum(len(r['data_requirements']) for r in self.reports),58)
-        self.assertEqual(sum(s['mode']=='API' for s in self.sources.values()),25)
+        self.assertEqual(sum(s['mode']=='API' for s in self.sources.values()),23)
         for s in self.sources.values():
             for key in ['required','validation','fallback','failure_handling','guide_url','last_audit','implementation_status','production_status']: self.assertIn(key,s)
             if s['mode']!='API': self.assertTrue((Path(__file__).resolve().parents[1]/'forms'/f'{s["id"]}.json').exists())
@@ -177,7 +177,7 @@ class EngineTests(unittest.TestCase):
     def test_replay_real_recorded_samples(self):
         base=Path(__file__).resolve().parent/'fixtures'
         for id,file in [('T01','samples/T01-detail.xml'),('T02','samples/T02.xml'),('T03','samples/T03.xml'),('T05','samples/T05.xml'),('T07','samples/T07.xml'),('S09','documents/D-RONE-SAMPLE.html'),('S17','documents/D-LAW-SAMPLE.html'),('S22','documents/D-ECOS-SAMPLE.html')]:
-            parsed=parse(self.sources[id],(base/file).read_bytes());self.assertGreater(len(parsed.rows),0,id)
+            parsed=parse(registry('2.2.0')[0][id],(base/file).read_bytes());self.assertGreater(len(parsed.rows),0,id)
     def test_naver_incomplete_filters_and_examples(self):
         req=request(['S21']);payload=load(Path(__file__).resolve().parents[1]/'forms/S21.json')
         rows,issues=validate_input(self.sources['S21'],payload,req)
@@ -192,10 +192,10 @@ class EngineTests(unittest.TestCase):
             'S12':{'resultCode':'success','list':[{'SCHUL_CODE':'a'}]},
             'S20':[{'resHeader':[{'SS_CODE':'Y','ALL_CNT':'1'}]},{'dsList':[{'PAN_ID':'a'}]}]}
         for id,data in fixtures.items():
-            with self.subTest(id=id): self.assertEqual(len(parse(self.sources[id],json.dumps(data).encode()).rows),1)
+            with self.subTest(id=id): self.assertEqual(len(parse(registry('2.2.0')[0][id],json.dumps(data).encode()).rows),1)
     def test_missing_body_and_error_envelopes_rejected(self):
         for id,data in [('S12',{'resultCode':'success'}),('S09',{'RESULT':{'CODE':'ERROR-100'}}),('S07',{'results':{'common':{'errorCode':'E0001'}}})]:
-            with self.subTest(id=id),self.assertRaises(CollectionError):parse(self.sources[id],json.dumps(data).encode())
+            with self.subTest(id=id),self.assertRaises(CollectionError):parse(registry('2.2.0')[0][id],json.dumps(data).encode())
     def test_lh_live_row_count_and_conflicting_counts(self):
         payload=[{'dsSch':[{'PAGE':'1','PG_SZ':'1'}]},
                  {'resHeader':[{'SS_CODE':'Y'}],
@@ -254,18 +254,18 @@ class EngineTests(unittest.TestCase):
         out=normalize(self.sources['S01'],{'mgmBldrgstPk':'a'},request(),'raw','now')
         self.assertFalse(out['usable']);self.assertIn('REFERENCE_TARGET_REVIEW_REQUIRED',out['issues'])
         out=normalize(self.sources['S08'],{'DT':'-1.2','PRD_DE':'202608','UNIT_NM':'%'},request(),'raw','now')
-        self.assertTrue(out['usable'])
+        self.assertFalse(out['usable']) # Scope-less historical rows require metadata review.
         out=normalize(self.sources['S08'],{'DT':'NaN','PRD_DE':'202608','UNIT_NM':'%'},request(),'raw','now')
         self.assertFalse(out['usable'])
 
     def test_law_body_is_distinct_from_search_and_date_checked(self):
         body='<법령><기본정보><법령ID>001248</법령ID><법령명_한글>주택임대차보호법</법령명_한글><시행일자>20260102</시행일자></기본정보><조문><조문단위><조문번호>1</조문번호><조문내용>OFFLINE SCHEMA FIXTURE</조문내용></조문단위></조문></법령>'.encode()
-        s=self.sources['S17'];p=parse(s,body);self.assertTrue(p.terminal)
+        s=registry('2.2.0')[0]['S17'];p=parse(s,body);self.assertTrue(p.terminal)
         req=request(['S17']);req['params']={'S17':{'ID':'001248','expected_law_name':'주택임대차보호법'}}
-        self.assertIn('lawService.do',request_url(s,req['params']['S17'],1,100,'private'))
-        self.assertNotIn('expected_law_name',request_url(s,req['params']['S17'],1,100,'private'))
-        self.assertEqual(preflight(req,{'LAW_OC':'private'})[0]['status'],'READY_TO_TEST')
-        self.assertTrue(normalize(s,p.rows[0],req,'raw','now')['usable'])
+        with self.assertRaisesRegex(CollectionError,'RETIRED_API'):
+            request_url(s,req['params']['S17'],1,100,'private')
+        self.assertEqual(preflight(req,{'LAW_OC':'private'})[0]['status'],'INPUT_REQUIRED')
+        self.assertFalse(normalize(s,p.rows[0],req,'raw','now')['usable'])
         req['basis_date']='2025-01-01';self.assertFalse(normalize(s,p.rows[0],req,'raw','now')['usable'])
 
     def test_csv_files_accumulate_and_pdf_needs_review(self):

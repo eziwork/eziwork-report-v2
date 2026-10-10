@@ -43,3 +43,8 @@ python scripts/eziwork.py pdf --input 검증된-맞춤.html --output 결과/v02.
 ## 2.2.0 추가 연결
 
 지도·외부 그래프의 선택 필드와 실행 순서는 [통합 안내](integrations.md)를 따른다. 맞춤 HTML이 연속형이면 `<meta name="eziwork-page-flow" content="natural">`을 넣는다. V 표지는 각각 한 장으로 출력하고 본문은 자연스럽게 나눈다. 본문 꼬리말이 별도 빈 장으로 넘어가지 않도록 마지막 설명과 묶고, PDF에서 좌우 여백과 한글 잘림을 확인한다.
+
+## 2.3.0 인증·출처 계약
+새 고객 보고서 시작과 직접 preflight/collect/actual import/prepare/actual render/map은 5개 키 등록을 확인한다. sources는 필수이며 생략 시 전체 수집하지 않는다.
+공식 원문 추출은 official-document, 학구 판정은 catchment를 사용한다. [공식 자료](public-evidence.md)와 [통계 범위](statistics-scope.md)를 읽고 해당 양식을 채운다.
+리포트 계약 v1은 유지한다. 수집 데이터의 형식 v2·검증 규칙 2.3.0·경로 ID·제공기관·수집 경로·원문 해시는 별도로 기록한다. 기존 VERIFIED/usable만 복사하지 않는다.

@@ -1,0 +1,28 @@
+{
+  "version": "2.2.0",
+  "checked_at": "2026-10-10",
+  "implementation": "LOCAL_INTEGRATION_VALIDATED",
+  "prior_release": "release-status-2.1.0.json",
+  "tests": {
+    "collector_passed": 51,
+    "workflow_cover_integration_passed": 36,
+    "failed": 0,
+    "evidence_checks_passed": 51
+  },
+  "reports": 14,
+  "new_scientific_charts": 8,
+  "new_vworld_maps": 3,
+  "humanizer_reviewed_reports": 14,
+  "live_vworld": {
+    "final_successful_calls": 7,
+    "earlier_wrapper_parse_hold_calls": 1,
+    "scope": "address_geocode_and_staticmap_only"
+  },
+  "market_data": "historical_replay_no_new_trade_or_listing_collection",
+  "windows_actual": "PASS_WITH_RECORDED_SCOPE",
+  "macos_automation": "DEFINED_NOT_RUN",
+  "macos_actual": "PENDING_ENVIRONMENT",
+  "mobile_browser": "PENDING",
+  "whole_report_user_approval": "UNCHANGED",
+  "references": "integration-2.2.0.md"
+}
