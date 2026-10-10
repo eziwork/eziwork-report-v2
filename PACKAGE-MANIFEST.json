@@ -46,8 +46,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 3903,
-      "sha256": "289b775ff4a21f386277230209a55bd4e9b22432f74fa7a0e5c2ea123c1483c9"
+      "bytes": 16812,
+      "sha256": "352ed365af99342013fa3957cdcc839493c9a9bb2424231bd39e1683776ffaa9"
     },
     {
       "path": "SKILL.md",
@@ -78,6 +78,11 @@
       "path": "assets/cover-v.png",
       "bytes": 2911353,
       "sha256": "2f4e337a7fe934d85dda69955ac02c454776d669e8dc6ee0c319dbc430487d83"
+    },
+    {
+      "path": "assets/readme-preview.png",
+      "bytes": 392904,
+      "sha256": "3655ac267d5ac1b09aa18a6b65a23da539a8fed3ca1d2f011c47a2e8901de263"
     },
     {
       "path": "assets/report.css",
