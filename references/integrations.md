@@ -1,6 +1,6 @@
 # 세 스킬 번들 — 2.2.0
 
-`eziwork-report-v2`가 단일 진입점이다. 원본은 `vendor/`, EZIWORK 조정은 이 문서와 `humanizer-profile.md`, `scripts/integrations.py`, `scripts/scientific_charts.py`에 분리한다. 원본을 수정하지 않는다. `integrations-lock.json`의 커밋·해시를 확인하며 자동 업데이트를 호출하지 않는다.
+`real-estate-report`가 단일 진입점이다. 원본은 `vendor/`, EZIWORK 조정은 이 문서와 `humanizer-profile.md`, `scripts/integrations.py`, `scripts/scientific_charts.py`에 분리한다. 원본을 수정하지 않는다. `integrations-lock.json`의 커밋·해시를 확인하며 자동 업데이트를 호출하지 않는다.
 
 ## 실행 순서
 

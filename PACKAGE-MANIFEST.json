@@ -38,13 +38,13 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 3611,
-      "sha256": "db6db167e47e27084c4e0f4fd29f86c89dc52f776099a9897942ee8f513d695b"
+      "bytes": 3795,
+      "sha256": "5b4863416928f3a769a42722dafaeae357aca97d27dadd67c1e51115620a8089"
     },
     {
       "path": "INSTALL.md",
-      "bytes": 3380,
-      "sha256": "c5b9110ca73ea69e14d14e232b0ded7d976488e47b60602993586ab2ac7d81df"
+      "bytes": 3382,
+      "sha256": "4dbfe1b822c9f8086438788a6e134ba6b51ca2d03bee9756f4a0814eaf90f4d5"
     },
     {
       "path": "LICENSE.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 19277,
-      "sha256": "73593b045ea07bd18e99eab5cdd00a7f435a56e71096fae6b9e2af0c238ccba4"
+      "bytes": 19295,
+      "sha256": "446e650a6de691d62c70f480fd24a1da78eeb5e0abcefdf45030ba9ec0bc9efb"
     },
     {
       "path": "SKILL.md",
-      "bytes": 11594,
-      "sha256": "398e50d7f6c8f6708b3925d6532024f4bfe58a0c2ed26023f154a8311bda8b5c"
+      "bytes": 11604,
+      "sha256": "83f3039f0fd1a89439325c7e12e109fcabe6198aae40de33f74d35da9576ab35"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -73,8 +73,8 @@
     },
     {
       "path": "agents/openai.yaml",
-      "bytes": 397,
-      "sha256": "48c47fe2188e1b2be504d4a434272e9a3ada12b1e4eb3609e627284b0aa670d5"
+      "bytes": 407,
+      "sha256": "e66abfce8b00f98ba08e76c4ee635eb0c7a7538df1715dcdcd286e6f7b5aec2b"
     },
     {
       "path": "assets/cover-v.css",
@@ -1193,13 +1193,13 @@
     },
     {
       "path": "package-lock.json",
-      "bytes": 3056,
-      "sha256": "937711829525fb9e2cd20858883dd7c14fcec84df449dbceda4fecee7fd8c8db"
+      "bytes": 3058,
+      "sha256": "5bb6d8b2668a87faaa833b32c612381e8b0007cbd60ccd61d181b2d8f6c57037"
     },
     {
       "path": "package.json",
-      "bytes": 227,
-      "sha256": "299844109fcfc8aace147066d2ea04cde0a02de558eb0603c64d3e49d78e09a7"
+      "bytes": 228,
+      "sha256": "fd0e885b77d2d3a95c44487fe83ddbc72e0480bdda63d1985b3f6f530e5a6331"
     },
     {
       "path": "qa/baseline-integrity.json",
@@ -1373,8 +1373,8 @@
     },
     {
       "path": "references/integrations.md",
-      "bytes": 6341,
-      "sha256": "1ddee9d89a2aca1f0f35d571fa7832ca09c2cc114ddb0301d61ec0228c2a77e6"
+      "bytes": 6342,
+      "sha256": "e58c4531614de5d6fdc36ae1c20cb2b869ba78a6f6bf6222707477ab95118e40"
     },
     {
       "path": "references/legacy/collection-registry-2.2.0.json",

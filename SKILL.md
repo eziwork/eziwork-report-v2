@@ -1,8 +1,8 @@
 ---
-name: eziwork-report-v2
+name: real-estate-report
 description: "한국 부동산 중개·상담에 사용하는 14종 고객 리포트를 자연어 요청에서 수집·자료 검토·계산·시각화·HTML/PDF까지 만든다. 아파트·빌라·오피스텔·상가·토지·임대운영·공공임대 비교에 사용한다."
 ---
-# EZIWORK Report V2
+# EZIWORK Real Estate Report
 
 고객의 질문에 확인한 사실과 구체적인 비교로 답한다. Codex가 해석·작성·검토하고 동봉 스크립트가 수집·계산 확인·출력을 담당한다. 다른 AI 서비스는 호출하지 않는다.
 

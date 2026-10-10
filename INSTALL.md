@@ -1,6 +1,6 @@
 # Windows · macOS 설치
 
-이 폴더를 Codex skills 폴더의 `eziwork-report-v2`에 놓고 Codex를 다시 열어 `$eziwork-report-v2`를 사용합니다. 다른 개인 스킬 설치는 필요하지 않습니다. Python 3.12 이상과 Node.js 22를 준비합니다.
+이 폴더를 Codex skills 폴더의 `real-estate-report`에 놓고 Codex를 다시 열어 `$real-estate-report`를 사용합니다. 다른 개인 스킬 설치는 필요하지 않습니다. Python 3.12 이상과 Node.js 22를 준비합니다.
 
 Windows PowerShell에서 스킬 폴더로 이동한 뒤:
 ```powershell

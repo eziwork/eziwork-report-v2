@@ -1,4 +1,4 @@
-# EZIWORK Report V2
+# EZIWORK Real Estate Report
 
 **고객의 부동산 질문을, 근거와 비교가 담긴 HTML·PDF 상담 리포트로 만듭니다.**
 
@@ -79,7 +79,7 @@ Codex가 질문 해석·문장 작성·내용 검토를 담당하고, 포함된 
 **아파트 매도 상담**
 
 ~~~text
-$eziwork-report-v2
+$real-estate-report
 잠실엘스 118동 84.80㎡를 35.5억에 매도하려고 합니다.
 같은 면적의 실거래와 현재 등록 매물 가격을 비교해 주세요.
 층·향·입주 조건의 차이도 확보된 자료 범위에서 설명하고,
@@ -89,7 +89,7 @@ $eziwork-report-v2
 **월세 후보 비교**
 
 ~~~text
-$eziwork-report-v2
+$real-estate-report
 첨부한 월세 후보 2개를 비교해 주세요.
 월세와 관리비를 합친 월 지출, 2년간 지출, 입주 날짜를 정리해 주세요.
 보증금은 지출 합계와 구분하고, 관리비 포함 항목도 보여 주세요.
@@ -98,7 +98,7 @@ $eziwork-report-v2
 **임대 운영 보고**
 
 ~~~text
-$eziwork-report-v2
+$real-estate-report
 개인정보를 제거한 호실별 청구·수금·지출·계약 만료 자료를 첨부했습니다.
 이번 달 운영 리포트를 만들고 미수금과 다가오는 계약 만료를 정리해 주세요.
 ~~~
@@ -125,13 +125,13 @@ Windows에서 설치·출력 검증을 수행했습니다. macOS 설치 경로�
 프로젝트 루트에서 다음과 같이 내려받습니다. Git이 없다면 GitHub의 **Code → Download ZIP**으로 내려받아 같은 위치에 압축을 푸세요.
 
 ~~~shell
-git clone https://github.com/eziwork/eziwork-report-v2.git .agents/skills/eziwork-report-v2
-cd .agents/skills/eziwork-report-v2
+git clone https://github.com/eziwork/real-estate-report.git .agents/skills/real-estate-report
+cd .agents/skills/real-estate-report
 ~~~
 
-설치 후 경로가 <code>프로젝트/.agents/skills/eziwork-report-v2/SKILL.md</code>인지 확인하세요. 이미 같은 이름의 스킬이 있다면 기존 폴더를 확인하고 다른 위치에 보관한 뒤 설치하세요.
+설치 후 경로가 <code>프로젝트/.agents/skills/real-estate-report/SKILL.md</code>인지 확인하세요. 이미 같은 이름의 스킬이 있다면 기존 폴더를 확인하고 다른 위치에 보관한 뒤 설치하세요.
 
-여러 프로젝트에서 사용하려면 개인 <code>~/.agents/skills/eziwork-report-v2</code>에 둘 수 있습니다. 설치 위치는 [공식 Codex 스킬 안내](https://learn.chatgpt.com/docs/build-skills)를 따릅니다.
+여러 프로젝트에서 사용하려면 개인 <code>~/.agents/skills/real-estate-report</code>에 둘 수 있습니다. 설치 위치는 [공식 Codex 스킬 안내](https://learn.chatgpt.com/docs/build-skills)를 따릅니다.
 
 ### 실행 도구 설치
 
@@ -251,7 +251,7 @@ Codex에 “이 branding.json의 상호·담당자·전화번호와 로고를 �
 | [문장과 시각자료 기준](references/writing-and-visuals.md) | 고객 설명 방식, 표·그래프 작성 기준 |
 | [변경 이력](CHANGELOG.md) | 버전별 변경 사항 |
 
-오류는 [GitHub Issues](https://github.com/eziwork/eziwork-report-v2/issues)에 운영체제, Codex 환경, 스킬 버전, 리포트 유형, 기대한 결과와 실제 결과, 오류 코드를 함께 남겨 주세요. API 키·계약 당사자 정보·원본 계약서 등 비공개 정보는 첨부하지 마세요.
+오류는 [GitHub Issues](https://github.com/eziwork/real-estate-report/issues)에 운영체제, Codex 환경, 스킬 버전, 리포트 유형, 기대한 결과와 실제 결과, 오류 코드를 함께 남겨 주세요. API 키·계약 당사자 정보·원본 계약서 등 비공개 정보는 첨부하지 마세요.
 
 ## 이용 조건
 
