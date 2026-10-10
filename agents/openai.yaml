@@ -1,5 +1,5 @@
 interface:
-  display_name: "EZIWORK Real Estate Report"
+  display_name: "Real Estate Report"
   short_description: "14종 부동산 고객 상담 리포트와 근거 시각화"
   default_prompt: "Use $real-estate-report to answer this customer's property question with verified data, natural Korean explanation, matching visuals, and actual verified HTML/PDF files; finish by linking both files."
 policy:

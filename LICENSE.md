@@ -1,4 +1,4 @@
-# EZIWORK Report V2 이용 조건 1.0
+# Real Estate Report 이용 조건 1.0
 
 Copyright (c) 2026 EZIWORK. 이 조건은 EZIWORK가 권리를 보유한 이 배포본의 지침·코드·자체 제작 자산에 적용됩니다.
 

@@ -38,8 +38,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 3795,
-      "sha256": "5b4863416928f3a769a42722dafaeae357aca97d27dadd67c1e51115620a8089"
+      "bytes": 3909,
+      "sha256": "9f38a9f6930d60283013defa6b8e7afe512bae3c7180cf42f1739d9b3eb4ff2a"
     },
     {
       "path": "INSTALL.md",
@@ -48,18 +48,18 @@
     },
     {
       "path": "LICENSE.md",
-      "bytes": 2212,
-      "sha256": "bcbe4c7be061338eba909282d07bbc4551642d4d5bedfcfa495a62fb4db375f7"
+      "bytes": 2213,
+      "sha256": "0ae01c8c8ca3e0ce679cbf9f9287659eb500dd4667da4b0550ad4c8d25ab50a0"
     },
     {
       "path": "README.md",
-      "bytes": 19295,
-      "sha256": "446e650a6de691d62c70f480fd24a1da78eeb5e0abcefdf45030ba9ec0bc9efb"
+      "bytes": 19549,
+      "sha256": "75ef3eac30dfed489270edb8d60926a9963f58d1249e98436f9961c02de97157"
     },
     {
       "path": "SKILL.md",
-      "bytes": 11604,
-      "sha256": "83f3039f0fd1a89439325c7e12e109fcabe6198aae40de33f74d35da9576ab35"
+      "bytes": 11602,
+      "sha256": "972fa5cb40bf31748ad4b7406e7ddb7fa156f1ebd876650cf95c414b6d704237"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -73,8 +73,8 @@
     },
     {
       "path": "agents/openai.yaml",
-      "bytes": 407,
-      "sha256": "e66abfce8b00f98ba08e76c4ee635eb0c7a7538df1715dcdcd286e6f7b5aec2b"
+      "bytes": 399,
+      "sha256": "55f54524d4035d19481c4613aa3d123694f170fa595f5972cda1aabcef22bc08"
     },
     {
       "path": "assets/cover-v.css",

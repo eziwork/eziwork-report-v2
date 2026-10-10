@@ -1,4 +1,4 @@
-# EZIWORK Real Estate Report
+# Real Estate Report
 
 **고객의 부동산 질문을, 근거와 비교가 담긴 HTML·PDF 상담 리포트로 만듭니다.**
 
@@ -266,7 +266,7 @@ MIT 또는 OSI 승인 오픈소스 라이선스가 아닙니다. 정확한 조�
 
 ## 2.2.0 세 스킬 번들
 
-VWorld 0.3.5 원본 CLI로 주소와 배경지도를 조회하고, korean-humanizer 원본 지침을 EZIWORK 고객 설명형으로 적용합니다. scientific-visualization의 원본 exporter·색상·파일 검사 도구로 근거에 연결된 그래프를 만듭니다. 원본 버전은 고정하며 자동 업데이트하지 않습니다.
+VWorld 0.3.5 원본 CLI로 주소와 배경지도를 조회하고, korean-humanizer 원본 지침을 고객 설명형으로 적용합니다. scientific-visualization의 원본 exporter·색상·파일 검사 도구로 근거에 연결된 그래프를 만듭니다. 원본 버전은 고정하며 자동 업데이트하지 않습니다.
 
 - [설치와 첫 점검](INSTALL.md)
 - [통합 실행과 실패 처리](references/integrations.md)
@@ -278,3 +278,9 @@ VWorld 0.3.5 원본 CLI로 주소와 배경지도를 조회하고, korean-humani
 2.3.0은 인증·수집 검증 개정입니다. 기존 2.2.0 예시 HTML/PDF·선택 문구·자료 기준일을 보존하며 새 수집으로 표시하지 않습니다. 새 규칙으로 실제 보고서를 만들 때는 기존 자료도 재검토합니다.
 
 설정·생성 흐름 보완: [키 입력과 재사용](references/api-setup.md), [작업 재개와 HTML·PDF 완료 검사](references/report-jobs.md).
+
+## 제작 및 저작권
+
+제작: EZIWORK
+
+Copyright (c) 2026 EZIWORK. 이 저장소의 자체 제작 지침·코드·자산에 적용됩니다. 제3자 구성요소의 저작권과 라이선스는 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)를 따릅니다.
