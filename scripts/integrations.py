@@ -32,7 +32,7 @@ def check():
   libs[name]={'required':want,'found':got,'match':got==want}
  asset=cfg['vworld_release']['assets'].get(platform.system());exe=binary()
  ok=bool(asset and exe.is_file() and sha(exe)==asset['sha256'])
- return {'version':'2.3.0','network_called':False,'vendor_integrity':'PASS' if not bad else 'FAIL','changed_files':bad,'vworld':{'version':'0.3.5','verified':ok},'libraries':libs,'korean_font_found':bool(font()),'ready':not bad and ok and all(v['match'] for v in libs.values()) and bool(font())}
+ return {'version':'2.3.2','network_called':False,'vendor_integrity':'PASS' if not bad else 'FAIL','changed_files':bad,'vworld':{'version':'0.3.5','verified':ok},'libraries':libs,'korean_font_found':bool(font()),'ready':not bad and ok and all(v['match'] for v in libs.values()) and bool(font())}
 def setup(install_python=False):
  if install_python:
   target=runtime()/'python';target.mkdir(parents=True,exist_ok=True)

@@ -236,10 +236,27 @@ def cover_metadata(c):
  for field in covers.FIELDS:
   if field in c.get('cover',{}):meta[field]=bound_text(c['cover'][field],values)
  return meta
+def output_environment():
+ try:
+  proc=subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--doctor'],capture_output=True,text=True,encoding='utf-8')
+  renderer=json.loads(proc.stdout) if proc.returncode==0 else {'status':'DEPENDENCIES_REQUIRED'}
+ except (OSError,ValueError):renderer={'status':'DEPENDENCIES_REQUIRED'}
+ integration=integrations.check()
+ return {'ready':bool(renderer.get('browser_found') and integration['ready']), 'renderer':renderer,'integrations_ready':integration['ready']}
+
+def produce_pdf(html_path,pdf_path,contract=None):
+ from delivery import file_hash,seal_output
+ before=file_hash(html_path);contract_hash=file_hash(contract) if contract else None
+ run=subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(html_path),'--output',str(pdf_path)],capture_output=True,text=True,encoding='utf-8')
+ if run.returncode:
+  if 'PLAYWRIGHT_REQUIRED' in run.stdout:raise ValueError('PLAYWRIGHT_REQUIRED_RUN_NPM_CI')
+  raise ValueError('PDF_RENDER_FAILED_CHECK_ASSETS_LAYOUT_AND_OUTPUT_PATH')
+ return seal_output(html_path,pdf_path,contract,before,contract_hash)
+
 def main():
  p=argparse.ArgumentParser();p.add_argument('--workspace',type=Path,default=Path.cwd()/'eziwork-output');sub=p.add_subparsers(dest='cmd',required=True)
  sub.add_parser('doctor');sub.add_parser('catalog')
- a=sub.add_parser('key-env');a.add_argument('action',choices=['check','setup']);a.add_argument('--name',choices=key_environment.BASIC)
+ a=sub.add_parser('key-env');a.add_argument('action',choices=['check','setup','ensure','window']);a.add_argument('--name',choices=key_environment.BASIC);a.add_argument('--replace',action='store_true')
  a=sub.add_parser('integrations');a.add_argument('action',choices=['check','setup']);a.add_argument('--python',action='store_true',dest='install_python')
  a=sub.add_parser('map');a.add_argument('--request',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('chart');a.add_argument('--spec',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
@@ -257,20 +274,57 @@ def main():
   if n=='render':a.add_argument('--output',type=Path,required=True);a.add_argument('--branding',type=Path);a.add_argument('--pdf',action='store_true')
  a=sub.add_parser('official-document');a.add_argument('--file',type=Path,required=True);a.add_argument('--url',required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('catchment');a.add_argument('--spec',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
- a=sub.add_parser('pdf');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
- a=sub.add_parser('delivery-check');a.add_argument('--html',type=Path,required=True);a.add_argument('--pdf',type=Path,required=True)
+ a=sub.add_parser('pdf');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--contract',type=Path)
+ a=sub.add_parser('delivery-check');a.add_argument('--html',type=Path,required=True);a.add_argument('--pdf',type=Path,required=True);a.add_argument('--contract',type=Path)
  a=sub.add_parser('cover');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--contract',type=Path,required=True);a.add_argument('--branding',type=Path)
+ a=sub.add_parser('report-job');a.add_argument('action',choices=['start','status','bind','finish']);a.add_argument('--job',type=Path,required=True);a.add_argument('--request',type=Path);a.add_argument('--mode',choices=['actual','historical_replay','synthetic_test'],default='actual');a.add_argument('--contract',type=Path);a.add_argument('--html',type=Path);a.add_argument('--pdf',type=Path);a.add_argument('--reviewed',action='store_true')
  args=p.parse_args()
  # Before file-credential injection: local files must not appear to be OS variables.
- if args.cmd=='key-env':
+ if args.cmd in ('key-env','configure'):
   try:
-   if args.action=='check' and args.name:raise ValueError('NAME_REQUIRES_SETUP')
-   result=key_environment.setup(args.name) if args.action=='setup' else key_environment.check()
-   print(json.dumps(result,ensure_ascii=False,indent=2));return 2 if result['missing'] else 0
+   if args.cmd=='configure':result=key_environment.setup(args.name,replace=True)
+   else:
+    if args.action in ('check','ensure') and (args.name or args.replace):raise ValueError('OPTIONS_REQUIRE_SETUP_OR_WINDOW')
+    if args.action=='check':result=key_environment.check()
+    elif args.action=='setup':result=key_environment.setup(args.name,replace=args.replace)
+    elif args.action=='ensure':result=key_environment.ensure()
+    else:
+     from key_window import open_window
+     result=open_window(args.name,args.replace)
+   print(json.dumps(result,ensure_ascii=False,indent=2));return 2 if result.get('missing') or result.get('input_cancelled') or result.get('window_opened') else 0
   except (KeyboardInterrupt,EOFError):
    print(json.dumps({'status':'INPUT_CANCELLED','live_call':False}));return 2
-  except (ValueError,OSError):
-   print(json.dumps({'status':'KEY_ENV_ACTION_REQUIRED','guide':'references/api-setup.md','live_call':False}));return 2
+  except (ValueError,OSError) as ex:
+   code=str(ex) if isinstance(ex,ValueError) else 'KEY_STORE_WRITE_OR_READ_FAILED'
+   print(json.dumps({'status':'KEY_ENV_ACTION_REQUIRED','code':code,'guide':'references/api-setup.md','live_call':False}));return 2
+ if args.cmd=='report-job':
+  import report_job
+  try:
+   if args.action=='start':
+    if not args.request:raise ValueError('REQUEST_REQUIRED')
+    result=report_job.start(args.request,args.job,args.mode)
+   else:result=report_job.status(args.job)
+   job=report_job.current(args.job)
+   if job['mode']=='actual':
+    state=key_environment.ensure() if args.action=='start' else key_environment.check()
+    if state.get('missing') or state.get('window_opened'):
+     print(json.dumps({'status':'CREDENTIALS_REQUIRED','complete':False,'job':str(args.job),'onboarding':state,'next_action':'Complete input, then run report-job status for this job.'},ensure_ascii=False));return 2
+   if args.action=='bind':
+    if not args.contract:raise ValueError('CONTRACT_REQUIRED')
+    result=report_job.bind(args.job,args.contract,check_contract(args.contract))
+   elif args.action=='finish':
+    if not args.html or not args.pdf:raise ValueError('HTML_AND_PDF_REQUIRED')
+    if job.get('contract'):check_contract(job['contract'])
+    result=report_job.finish(args.job,args.html,args.pdf,args.reviewed)
+   elif job.get('contract') and Path(job['contract']).is_file() and sha(job['contract'])==job.get('contract_sha256'):
+    check_contract(job['contract'])
+   if args.action in ('start','status') and not result.get('complete'):
+    readiness=output_environment()
+    if not readiness['ready']:result.update(status='DEPENDENCIES_REQUIRED',environment=readiness,next_action='Run integrations setup --python, npm ci in the skill folder, then report-job status.')
+   print(json.dumps(result,ensure_ascii=False,indent=2));return 0 if result.get('complete') else 2
+  except (ValueError,OSError,KeyError,TypeError,CollectionError) as ex:
+   code=ex.code if isinstance(ex,CollectionError) else str(ex) if isinstance(ex,ValueError) else 'JOB_INPUT_OR_FILE_REQUIRED'
+   print(json.dumps({'status':'ACTION_REQUIRED','complete':False,'code':code,'guide':'references/report-jobs.md'},ensure_ascii=False));return 2
  # Inspect registration before credentials from local files are injected.
  needs_keys=args.cmd in ('preflight','collect','prepare','map')
  if args.cmd=='render':
@@ -325,13 +379,6 @@ def main():
     if args.output.exists():raise ValueError('OUTPUT_EXISTS_USE_NEW_VERSION')
     result=catchment(load(args.spec),args.spec.parent);save(args.output,result)
    elif args.cmd=='catalog':result=load(ROOT/'references/report-types.json')
-   elif args.cmd=='configure':
-    value=getpass.getpass('API key (hidden): ').strip()
-    if not value:raise ValueError('EMPTY_KEY')
-    dest=Path(os.environ.get('EZIWORK_CREDENTIAL_FILE',ROOT/'config/local-credentials.json'));d=load(dest) if dest.exists() else {};d[args.name]=value;save(dest,d)
-    try:dest.chmod(0o600)
-    except OSError:pass
-    result={'status':'SAVED_LOCALLY','live_call':False}
    elif args.cmd=='privacy-check':result={'signals':privacy_issues(args.file),'manual_review_required':True,'guarantee':False}
    elif args.cmd in ['preflight','collect','import','status']:
     if args.cmd=='import':
@@ -381,20 +428,16 @@ def main():
    elif args.cmd=='verify':c=check_contract(args.contract);result={'status':'PASS','report_id':c['report_id'],'mode':c['mode'],'semantic_review':'CODEX_ATTESTED'}
    elif args.cmd=='render':
     dest=render_contract(args.contract,args.output,args.branding)
-    if args.pdf:
-     subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(dest),'--output',str(args.output/'report.pdf')],check=True)
-    if args.pdf:
-     from delivery import check_delivery
-     result=check_delivery(dest,args.output/'report.pdf')
+    if args.pdf:result=produce_pdf(dest,args.output/'report.pdf',args.contract)
     else:result={'status':'HTML_ONLY','html':str(dest),'pdf':None}
    elif args.cmd=='pdf':
-    subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(args.input),'--output',str(args.output)],check=True)
-    from delivery import check_delivery
-    result=check_delivery(args.input,args.output)
+    if args.contract:check_contract(args.contract)
+    result=produce_pdf(args.input,args.output,args.contract)
    elif args.cmd=='delivery-check':
-    from delivery import check_delivery
-    result=check_delivery(args.html,args.pdf)
+    from delivery import check_delivery,check_receipt
+    result=check_receipt(args.html,args.pdf,args.contract) if args.contract else check_delivery(args.html,args.pdf)
    print(json.dumps(redact.data(result),ensure_ascii=False,indent=2))
+   if args.cmd=='doctor' and not (result['integrations']['ready'] and result.get('renderer',{}).get('browser_found')):return 2
    if args.cmd=='map' and result.get('status')!='PASS':return 2
    if args.cmd=='integrations' and not result.get('ready'):return 2
    return 0

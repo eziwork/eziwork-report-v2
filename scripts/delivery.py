@@ -2,6 +2,7 @@
 from hashlib import sha256
 from html.parser import HTMLParser
 from pathlib import Path
+import json
 
 
 class BodyText(HTMLParser):
@@ -74,3 +75,41 @@ def check_delivery(html_path, pdf_path):
         'content_and_visual_review': 'REQUIRES_CODEX_REVIEW',
         'live_call': False,
     }
+
+
+def file_hash(path):
+    return sha256(Path(path).read_bytes()).hexdigest()
+
+
+def receipt_path(pdf):
+    return Path(str(pdf) + '.delivery.json')
+
+
+def seal_output(html, pdf, contract=None, expected_html=None, expected_contract=None):
+    result = check_delivery(html, pdf)
+    if expected_html != result['files']['html']['sha256']:
+        raise ValueError('HTML_CHANGED_DURING_PDF_RENDER')
+    if contract and expected_contract != file_hash(contract):
+        raise ValueError('CONTRACT_CHANGED_DURING_PDF_RENDER')
+    receipt = {**result, 'schema_version': 1, 'producer': 'eziwork.pdf',
+               'contract': str(Path(contract).resolve()) if contract else None,
+               'contract_sha256': expected_contract}
+    from collector import write
+    write(receipt_path(pdf), receipt)
+    return {**result, 'receipt': str(receipt_path(pdf).resolve())}
+
+
+def check_receipt(html, pdf, contract):
+    result = check_delivery(html, pdf)
+    path = receipt_path(pdf)
+    if not path.is_file():
+        raise ValueError('OUTPUT_RECEIPT_REQUIRED_REGENERATE_PDF')
+    saved = json.loads(path.read_text(encoding='utf-8-sig'))
+    if saved.get('schema_version') != 1 or saved.get('producer') != 'eziwork.pdf':
+        raise ValueError('OUTPUT_RECEIPT_INVALID')
+    if saved.get('contract_sha256') != file_hash(contract):
+        raise ValueError('OUTPUT_CONTRACT_MISMATCH')
+    if saved.get('files') != result['files']:
+        raise ValueError('OUTPUT_FILES_CHANGED_REGENERATE_PDF')
+    return {**result, 'status': 'BOUND_OUTPUT_FILES_READY', 'receipt': str(path.resolve()),
+            'scope': 'FILE_HASHES_AND_RENDER_RECEIPT; SEMANTIC_REVIEW_IS_CODEX_ATTESTED'}

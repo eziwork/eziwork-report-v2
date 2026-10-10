@@ -108,7 +108,7 @@ class DeliveryTests(unittest.TestCase):
 
     def test_pdf_command_does_not_trust_renderer_exit_only(self):
         self.pdf.unlink()
-        with patch.object(eziwork, 'node', return_value='node'), patch.object(eziwork.subprocess, 'run'):
+        with patch.object(eziwork, 'node', return_value='node'), patch.object(eziwork.subprocess, 'run', return_value=type('Result', (), {'returncode':0,'stdout':''})()):
             code, result = self.cli('pdf', '--input', self.html, '--output', self.pdf)
         self.assertEqual(code, 2)
         self.assertEqual(result['code'], 'DELIVERY_PDF_MISSING')
@@ -116,7 +116,7 @@ class DeliveryTests(unittest.TestCase):
     def test_render_pdf_checks_files_and_html_only_is_supported(self):
         contract = self.root / 'contract.json'
         contract.write_text('{"mode":"synthetic_test"}', encoding='utf-8')
-        with patch.object(eziwork, 'render_contract', return_value=self.html), patch.object(eziwork, 'node', return_value='node'), patch.object(eziwork.subprocess, 'run'):
+        with patch.object(eziwork, 'render_contract', return_value=self.html), patch.object(eziwork, 'node', return_value='node'), patch.object(eziwork.subprocess, 'run', return_value=type('Result', (), {'returncode':0,'stdout':''})()):
             code, result = self.cli('render', '--contract', contract, '--output', self.root, '--pdf')
             self.assertEqual((code, result['status']), (0, 'DELIVERY_FILES_READY'))
             self.pdf.unlink()

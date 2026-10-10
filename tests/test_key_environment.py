@@ -18,11 +18,11 @@ class KeyEnvironmentTests(unittest.TestCase):
         self.assertNotIn('synthetic-secret',json.dumps(result))
         self.assertFalse(result['live_call'])
     def test_setup_requests_only_missing(self):
-        with patch.object(keys.platform,'system',return_value='Windows'),patch.object(keys,'check',return_value={'missing':[keys.BASIC[1]]}),patch.object(keys.getpass,'getpass',return_value='synthetic') as prompt,patch.object(keys,'save_user') as save:
+        with patch.object(keys.platform,'system',return_value='Windows'),patch.object(keys,'check',return_value={'missing':[keys.BASIC[1]]}),patch.object(keys,'masked_input',return_value='synthetic') as prompt,patch.object(keys,'save_user') as save:
             keys.setup()
         prompt.assert_called_once();save.assert_called_once_with(keys.BASIC[1],'synthetic')
     def test_no_echo_fallback(self):
-        with patch.object(keys.platform,'system',return_value='Windows'),patch.object(keys,'check',return_value={'missing':[keys.BASIC[0]]}),patch.object(keys.getpass,'getpass',side_effect=keys.getpass.GetPassWarning),patch.object(keys,'save_user') as save:
+        with patch.object(keys.platform,'system',return_value='Windows'),patch.object(keys,'check',return_value={'missing':[keys.BASIC[0]]}),patch.object(keys,'masked_input',side_effect=ValueError('INTERACTIVE_SECURE_TERMINAL_REQUIRED')),patch.object(keys,'save_user') as save:
             with self.assertRaisesRegex(ValueError,'SECURE_TERMINAL'):keys.setup()
             save.assert_not_called()
     def test_windows_save_and_readback(self):

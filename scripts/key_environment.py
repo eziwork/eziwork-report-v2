@@ -1,11 +1,10 @@
 """Presence-only onboarding; never calls a service or exposes a key."""
-import getpass
+from key_input import masked_input
 import json
 import os
 import platform
 from pathlib import Path
 import tempfile
-import warnings
 
 BASIC = ('DATA_GO_KR_SERVICE_KEY','VWORLD_API_KEY','KOSIS_API_KEY','RONE_API_KEY','ECOS_API_KEY')
 RETIRED = ('JUSO_CONFM_KEY','SCHOOLINFO_API_KEY','LAW_OC')
@@ -36,7 +35,9 @@ def user_values(names=BASIC):
     return result
 
 def legacy_values():
-    path=Path(os.environ.get('EZIWORK_CREDENTIAL_FILE',Path(__file__).resolve().parents[1]/'config/local-credentials.json'))
+    root=Path(__file__).resolve().parents[1]
+    path=Path(os.environ.get('EZIWORK_CREDENTIAL_FILE',root/'config/local-credentials.json'))
+    if not path.is_absolute(): path=root/path
     if not path.is_file(): return {},str(path)
     data=json.loads(path.read_text(encoding='utf-8-sig'))
     return {k:v.strip() for k,v in data.items() if k in BASIC and isinstance(v,str) and v.strip()},str(path)
@@ -45,7 +46,7 @@ def check():
     saved=user_values();local,path=legacy_values();windows=platform.system()=='Windows';keys={}
     for name in BASIC:
         process=os.environ.get(name,'').strip();stored=saved.get(name,'')
-        keys[name]={'present':bool(process or stored),'process_present':bool(process),
+        keys[name]={'present':bool(process or stored),'process_present':bool(process),'persistent_present':bool(stored),
             'user_environment_present':bool(stored) if windows else False,
             'managed_store_present':bool(stored) if not windows else False,
             'effective_location':'PROCESS' if process else ('WINDOWS_USER' if windows else 'EZIWORK_MANAGED') if stored else None,
@@ -54,6 +55,7 @@ def check():
     missing=[k for k,v in keys.items() if not v['present']]
     return {'status':'KEY_INPUT_REQUIRED' if missing else 'KEYS_PRESENT_NOT_VERIFIED','keys':keys,'missing':missing,
         'conflicts':[k for k,v in keys.items() if v['conflict']],
+        'not_persistent':[k for k,v in keys.items() if v['present'] and not v['persistent_present']],
         'legacy_location':path if any(v['legacy_migration_available'] for v in keys.values()) else None,
         'live_call':False,'persistent_setup_supported':True}
 
@@ -81,22 +83,29 @@ def save_user(name,value):
     if user_values((name,)).get(name)!=value: raise ValueError('ENVIRONMENT_SAVE_VERIFICATION_FAILED')
     if not os.environ.get(name,'').strip(): os.environ[name]=value
 
-def setup(name=None):
+def setup(name=None, replace=False, reader=None, prompt_missing=True):
     state=check()
     if name and name not in BASIC: raise ValueError('UNSUPPORTED_KEY_NAME')
-    targets=[name] if name and name in state['missing'] else state['missing'] if not name else []
+    if replace and not name: raise ValueError('REPLACE_REQUIRES_NAME')
+    candidates=list(dict.fromkeys(state['missing']+state.get('not_persistent',[])))
+    targets=[name] if replace else [name] if name in candidates else candidates if not name else []
     local,path=legacy_values();saved=[];migrated=[];cancelled=False
     for target in targets:
         try:
-            if target in local:
-                print(target+' : 기존 로컬 설정을 환경 저장소로 이전합니다. '+path)
+            process=os.environ.get(target,'').strip()
+            if not replace and process:
+                print(target+' : 현재 실행 환경의 값을 사용자 저장소에 저장합니다.')
+                value=process;migrated.append(target)
+            elif not replace and target in local:
+                print(target+' : 기존 로컬 설정을 사용자 저장소로 이전합니다. '+path)
                 value=local[target];migrated.append(target)
+            elif prompt_missing:
+                value=(reader or masked_input)(target+' : ')
             else:
-                with warnings.catch_warnings():
-                    warnings.simplefilter('error',getpass.GetPassWarning)
-                    try: value=getpass.getpass(target+' (hidden): ')
-                    except getpass.GetPassWarning: raise ValueError('INTERACTIVE_SECURE_TERMINAL_REQUIRED') from None
+                continue
             save_user(target,value);saved.append(target)
+            if replace: os.environ[target]=value.strip()
+            print(target+' : 저장 완료')
         except (KeyboardInterrupt,EOFError):
             cancelled=True;break
     result={**check(),'saved_names':saved,'migrated_names':[k for k in migrated if k in saved],
@@ -104,6 +113,16 @@ def setup(name=None):
         'input_cancelled':cancelled}
     if cancelled: result['status']='INPUT_CANCELLED'
     return result
+
+
+def ensure():
+    # Explicit onboarding action; unlike check, may migrate existing values.
+    result=setup(prompt_missing=False)
+    if result['missing']:
+        from key_window import open_window
+        return open_window()
+    return result
+
 
 def apply_saved():
     for k,v in user_values().items():

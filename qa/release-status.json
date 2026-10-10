@@ -1,33 +1,32 @@
 {
-  "version": "2.3.1",
+  "version": "2.3.2",
   "checked_at": "2026-10-10",
-  "scope": "Report delivery completion fix",
+  "scope": "Onboarding and report completion reliability",
   "tests": {
-    "workflow_cover_integration_key_migration_delivery_passed": 87,
-    "new_delivery_tests": 9,
+    "workflow_and_onboarding": 102,
+    "collector": 51,
+    "total": 153,
     "failed": 0,
     "skill_quick_validate": "PASS"
   },
-  "actual_execution": {
-    "platform": "Windows",
-    "synthetic_render_pdf": {
-      "status": "PASS",
-      "pages": 3,
-      "covers": 2,
-      "korean_space_path": true,
-      "external_requests": 0
-    },
-    "existing_local_customer_files": {
-      "status": "PASS_FILE_READABILITY",
-      "pages": 8,
-      "new_collection": false,
-      "customer_data_packaged": false
-    }
+  "windows_actual": {
+    "isolated_project_keys_present": 5,
+    "existing_keys_reprompted": false,
+    "actual_keys_changed": false,
+    "new_console_tty": true,
+    "console_input": "Synthetic character sequence; no real API key entered",
+    "render_pdf_pages": 3,
+    "pdf_visual_review": "Three pages inspected",
+    "report_job_finish": "COMPLETED",
+    "different_html_same_pdf": "REJECTED",
+    "missing_dependencies_doctor_exit": 2
   },
-  "limitations": [
-    "File checks do not prove HTML/PDF content equivalence, freshness, facts, visual quality, or future agent compliance.",
-    "macOS actual execution was not performed for this patch.",
-    "No new live API collection or 14-report regeneration was performed; renderer, data contracts and examples are unchanged."
+  "live_api_calls": 0,
+  "limits": [
+    "Same Windows account and Python runtime; not a new operating system.",
+    "No fresh Codex-conversation behavioral guarantee; job and receipt checks require the agent to execute the documented workflow.",
+    "macOS Terminal launch and storage are covered by mocks; actual macOS execution pending.",
+    "Receipt hashes are not semantic proof; content and visual review remain Codex-attested."
   ],
-  "prior_validation": "release-status-2.3.0.json"
+  "previous_validation": "release-status-2.3.1.json"
 }

@@ -27,18 +27,20 @@ python3 scripts/eziwork.py integrations check
 Windows:
 ~~~powershell
 python scripts/eziwork.py key-env check
-python scripts/eziwork.py key-env setup
+python scripts/eziwork.py key-env ensure
 ~~~
 
 macOS:
 ~~~sh
 python3 scripts/eziwork.py key-env check
-python3 scripts/eziwork.py key-env setup
+python3 scripts/eziwork.py key-env ensure
 ~~~
 
-check는 네트워크를 호출하지 않습니다. setup은 누락값만 숨김 입력으로 받으며 등록 가능한 기존 EZIWORK 설정값이 있으면 저장 위치를 안내하고 이전합니다. Windows는 현재 사용자 환경변수에 저장합니다. Mac은 사용자 전용 ~/.config/eziwork-report-v2/environment.json에 저장하고 스킬 실행 환경에만 적용합니다. 프로세스 환경변수가 우선하며 값이 다르면 충돌을 표시합니다.
+check는 네트워크를 호출하지 않습니다. setup은 누락값이 있으면 별도 입력 창을 열며 등록 가능한 기존 EZIWORK 설정값이 있으면 저장 위치를 안내하고 이전합니다. Windows는 현재 사용자 환경변수에 저장합니다. Mac은 사용자 전용 ~/.config/eziwork-report-v2/environment.json에 저장하고 스킬 실행 환경에만 적용합니다. 프로세스 환경변수가 우선하며 값이 다르면 충돌을 표시합니다.
 
 다섯 값의 등록과 각 서비스의 인증·활용승인 성공은 별개입니다. 고객 질문에 필요한 출처만 호출합니다. 기존 예시 열기·단순 PDF 변환·합성 시험은 키 등록 없이 가능합니다. 발급·교체·실패 구분은 [API 안내](references/api-setup.md)를 따릅니다.
+
+다른 프로젝트에서는 위 명령의 scripts/eziwork.py를 설치된 스킬의 절대 경로로 바꿉니다. 열린 창에서 별표·입력 글자 수와 저장 완료를 확인합니다. 창 실행이 불가능하면 대화형 터미널에서 key-env setup을 사용합니다.
 
 설치 뒤 “이 매물의 가격과 입주 조건을 비교해 리포트를 만들어줘”처럼 요청합니다. Codex가 필요한 근거를 확인하고 지도·그래프·한국어 교정의 적용 여부를 기록합니다. 이미 존재하는 출력 폴더는 덮어쓰지 않고 새 버전으로 저장합니다.
 

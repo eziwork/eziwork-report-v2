@@ -33,16 +33,16 @@ class MigrationTests(unittest.TestCase):
     def test_cancel_keeps_completed_and_resumes(self):
         saved={}
         def check():return {'missing':[k for k in keys.BASIC if k not in saved]}
-        with patch.object(keys,'check',side_effect=check),patch.object(keys,'legacy_values',return_value=({},'test')),patch.object(keys,'save_user',side_effect=lambda k,v:saved.update({k:v})),patch.object(keys.getpass,'getpass',side_effect=['one',KeyboardInterrupt]):
+        with patch.object(keys,'check',side_effect=check),patch.object(keys,'legacy_values',return_value=({},'test')),patch.object(keys,'save_user',side_effect=lambda k,v:saved.update({k:v})),patch.object(keys,'masked_input',side_effect=['one',KeyboardInterrupt]):
             result=keys.setup()
         self.assertEqual(result['saved_names'],[keys.BASIC[0]]);self.assertEqual(result['missing'],list(keys.BASIC[1:]))
-        with patch.object(keys,'check',side_effect=check),patch.object(keys,'legacy_values',return_value=({},'test')),patch.object(keys,'save_user',side_effect=lambda k,v:saved.update({k:v})),patch.object(keys.getpass,'getpass',return_value='two') as prompt:
+        with patch.object(keys,'check',side_effect=check),patch.object(keys,'legacy_values',return_value=({},'test')),patch.object(keys,'save_user',side_effect=lambda k,v:saved.update({k:v})),patch.object(keys,'masked_input',return_value='two') as prompt:
             self.assertFalse(keys.setup()['missing']);self.assertEqual(prompt.call_count,4)
     def test_migration_no_overwrite(self):
-        with patch.object(keys,'check',return_value={'missing':[keys.BASIC[1]]}),patch.object(keys,'legacy_values',return_value=({keys.BASIC[0]:'a',keys.BASIC[1]:'b'},'test')),patch.object(keys,'save_user') as save,patch.object(keys.getpass,'getpass') as prompt:
+        with patch.object(keys,'check',return_value={'missing':[keys.BASIC[1]]}),patch.object(keys,'legacy_values',return_value=({keys.BASIC[0]:'a',keys.BASIC[1]:'b'},'test')),patch.object(keys,'save_user') as save,patch.object(keys,'masked_input') as prompt:
             keys.setup();save.assert_called_once_with(keys.BASIC[1],'b');prompt.assert_not_called()
     def test_storage_failure_no_success(self):
-        with patch.object(keys,'check',return_value={'missing':[keys.BASIC[0]]}),patch.object(keys,'legacy_values',return_value=({},'test')),patch.object(keys.getpass,'getpass',return_value='test'),patch.object(keys,'save_user',side_effect=OSError):
+        with patch.object(keys,'check',return_value={'missing':[keys.BASIC[0]]}),patch.object(keys,'legacy_values',return_value=({},'test')),patch.object(keys,'masked_input',return_value='test'),patch.object(keys,'save_user',side_effect=OSError):
             with self.assertRaises(OSError):keys.setup()
     def test_managed_mac_persistence(self):
         path=self.dir/'한글 공백/environment.json'

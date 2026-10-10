@@ -1,0 +1,33 @@
+{
+  "version": "2.3.1",
+  "checked_at": "2026-10-10",
+  "scope": "Report delivery completion fix",
+  "tests": {
+    "workflow_cover_integration_key_migration_delivery_passed": 87,
+    "new_delivery_tests": 9,
+    "failed": 0,
+    "skill_quick_validate": "PASS"
+  },
+  "actual_execution": {
+    "platform": "Windows",
+    "synthetic_render_pdf": {
+      "status": "PASS",
+      "pages": 3,
+      "covers": 2,
+      "korean_space_path": true,
+      "external_requests": 0
+    },
+    "existing_local_customer_files": {
+      "status": "PASS_FILE_READABILITY",
+      "pages": 8,
+      "new_collection": false,
+      "customer_data_packaged": false
+    }
+  },
+  "limitations": [
+    "File checks do not prove HTML/PDF content equivalence, freshness, facts, visual quality, or future agent compliance.",
+    "macOS actual execution was not performed for this patch.",
+    "No new live API collection or 14-report regeneration was performed; renderer, data contracts and examples are unchanged."
+  ],
+  "prior_validation": "release-status-2.3.0.json"
+}
