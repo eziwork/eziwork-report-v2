@@ -1,0 +1,50 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2018-12",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "423cd5985c3b3962df10cedde03bfb4b2931fc83b21571b1359a4a151e05a860",
+    "output_sha256": {
+      "png": "eb8631d8b8ea50b561e8257cdce4ea483f46e7b881ee807c14c47e4a24e05f81",
+      "svg": "82747fc9ae5b734921218b6eb703d40347a265814b7bdc8dabf24eeb54ec0c47"
+    },
+    "points": [
+      {
+        "label": "수입·지출 단순 차이",
+        "value": 276503809
+      },
+      {
+        "label": "현재가치 차이",
+        "value": -775898169
+      }
+    ],
+    "scope": "국토교통부 2018년 계획 · 할인율 연 4% · 당시 계산이며 현재 사업 전망 아님",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/money/nominal",
+      "/money/npv"
+    ],
+    "status": "PASS",
+    "unit": "원"
+  },
+  "copy_changes": 1,
+  "html_sha256": "ce4060e14d338cf27c04e72fef5624cd4e7c6f75a4465875b73aeea6a4ed48ed",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "66afd297c67bcb952e9e91aba8faffc34243167dbe877cb47b3f39f64452fbef",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P10",
+  "whole_report_user_approval": "UNCHANGED",
+  "layout_revision": "v03: footer grouping and P07 margins",
+  "pdf_sha256": "46f7051c60984c9e3c0b0de6582d87ea2a6edee4e547e762a39a8ae638f3da07"
+}

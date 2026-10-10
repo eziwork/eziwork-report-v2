@@ -1,0 +1,51 @@
+{
+  "chart": {
+    "reason": "납부 비율과 토지사용 조건 도식을 보존. 단일 예정가격에 비교 대상을 만들지 않음.",
+    "status": "NOT_APPLIED"
+  },
+  "copy_changes": 0,
+  "html_sha256": "fc7776c5e7bfcac2c178d78658edf8afd5e451b4cf33029994b7016c2f5a9052",
+  "map": {
+    "calls": [
+      {
+        "address": "경기도 광주시 곤지암읍 곤지암리 604-9",
+        "command": "geocode",
+        "status": "PASS"
+      },
+      {
+        "command": "staticmap",
+        "status": "PASS"
+      }
+    ],
+    "center": [
+      127.33938533437706,
+      37.352841381230604
+    ],
+    "execution": "upstream_cli",
+    "input_sha256": "5194d67391196de81407311e1f1caf0e25686520b8b0a12b2f9f6b29cbc28958",
+    "map_sha256": "2f898e5e490d52741549a459f741c272a2843a28a25774a4500f5e3040090ea9",
+    "points": [
+      {
+        "address": "경기도 광주시 곤지암읍 곤지암리 604-9",
+        "label": "곤지암리 604-9",
+        "lat": 37.352841381230604,
+        "location_kind": "address_lookup_point",
+        "lon": 127.33938533437706
+      }
+    ],
+    "queried_at": "2026-10-10T08:00:23.171353+00:00",
+    "scope": "address_and_background_only",
+    "skill": "vworld",
+    "source": "VWorld",
+    "status": "PASS",
+    "version": "0.3.5",
+    "zoom": 17
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "c63a1e719c69da6a594cd08e2f9feb85329b7d9a3015aff6bc71edbcea6ee1b5",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P09",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "5f21114c808814951697b7409373b04081cfc38a82437788f4b2ed1716387dbb"
+}

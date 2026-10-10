@@ -1,0 +1,25 @@
+{
+  "basis_date": "2018-12",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "577bd99dbdaf87cbab6c65e87fa6f547c3e4746c47403a45b836e980e90d4d5d",
+  "display_divisor": 100000000,
+  "display_unit": "억원",
+  "kind": "bar",
+  "points": [
+    {
+      "label": "수입·지출 단순 차이",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "현재가치 차이",
+      "pointer": "/points/1/value"
+    }
+  ],
+  "scope": "국토교통부 2018년 계획 · 할인율 연 4% · 당시 계산이며 현재 사업 전망 아님",
+  "title": "합계와 회수 시점을 반영한 금액은 다릅니다.",
+  "unit": "원",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p10/report-dataset.json",
+    "sha256": "423cd5985c3b3962df10cedde03bfb4b2931fc83b21571b1359a4a151e05a860"
+  }
+}

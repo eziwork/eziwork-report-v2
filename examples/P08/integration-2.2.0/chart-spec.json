@@ -1,0 +1,25 @@
+{
+  "basis_date": "2026-10-10",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "03a18aeccaea6999d803d3011b104ad0944a7c99e4a8094ff83442718084b6bd",
+  "display_divisor": 1,
+  "display_unit": "만원/월",
+  "kind": "bar",
+  "points": [
+    {
+      "label": "가격표의 월세",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "설명의 월세",
+      "pointer": "/points/1/value"
+    }
+  ],
+  "scope": "상가114 부평 122호 광고 · 가격표와 설명의 월세가 다름 · 확정 계약금액 아님",
+  "title": "같은 광고에 적힌 두 월세를 나란히 비교해 보세요.",
+  "unit": "만원/월",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p08/evidence/source-capture.json",
+    "sha256": "10d96a797cf62a8d36300597de19a7204e002757381c4a91feff66bd0968aa2d"
+  }
+}

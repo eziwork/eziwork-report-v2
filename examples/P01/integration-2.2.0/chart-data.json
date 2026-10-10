@@ -1,0 +1,23 @@
+{
+  "basis_date": "2026-10-09",
+  "unit": "원",
+  "points": [
+    {
+      "label": "잠실엘스",
+      "value": 3380000000
+    },
+    {
+      "label": "리센츠",
+      "value": 3490000000
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p01/evidence/metrics.json",
+    "sha256": "18957c6d513f66f5acbd38de2e152254bab34914dfa8c63b82e42fb7d00f5f7d",
+    "pointers": [
+      "/properties/els/stats/quarter/median_krw",
+      "/properties/ricenz/stats/quarter/median_krw"
+    ]
+  }
+}

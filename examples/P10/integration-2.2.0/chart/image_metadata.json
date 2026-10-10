@@ -1,0 +1,52 @@
+{
+  "checks": [
+    {
+      "actual": "PNG",
+      "detail": "File format is compared with the explicit allow-list.",
+      "expected": [
+        "PNG"
+      ],
+      "name": "format",
+      "status": "pass"
+    }
+  ],
+  "input": {
+    "name": "figure.png",
+    "path": "figure.png",
+    "size_bytes": 18038,
+    "suffix": ".png"
+  },
+  "metadata": {
+    "bands": [
+      "R",
+      "G",
+      "B",
+      "A"
+    ],
+    "compression": null,
+    "dpi_x": 180.00979999999998,
+    "dpi_y": 180.00979999999998,
+    "exif_present": false,
+    "format": "PNG",
+    "frames": 1,
+    "has_alpha": true,
+    "height_mm_from_metadata": 55.87695781007479,
+    "height_px": 396,
+    "icc_profile_bytes": 0,
+    "icc_profile_present": false,
+    "kind": "raster",
+    "mode": "RGBA",
+    "pixel_count": 641520,
+    "width_mm_from_metadata": 228.58755467757868,
+    "width_px": 1620
+  },
+  "notice": "This deterministic metadata screen checks only the supplied constraints. It does not verify visual quality, scientific integrity, accessibility, embedded-raster resolution in vector files, or journal compliance.",
+  "schema_version": "1.0",
+  "screening_summary": {
+    "fail": 0,
+    "pass": 1,
+    "unknown": 0,
+    "warning": 0
+  },
+  "public_log_path_normalization": "absolute file locations replaced by basename; original execution logs retained locally"
+}

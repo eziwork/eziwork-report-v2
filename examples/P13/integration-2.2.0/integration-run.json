@@ -1,0 +1,49 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2026-08-31",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "c3c0e13cc6fc0dd04f48d58917d81054ace8acb634371ebc1e42c3b7f189599e",
+    "output_sha256": {
+      "png": "b0c522bd6482edb28f78d1db5bcfef2ae64e11ec74c63c5530876653086be8db",
+      "svg": "0dea06ebc85421ead3cfe9184dee639557b39656bf18a472679f3f6cbae6d08a"
+    },
+    "points": [
+      {
+        "label": "7월 말",
+        "value": 2.2
+      },
+      {
+        "label": "8월 말",
+        "value": 2.5
+      }
+    ],
+    "scope": "신한알파리츠 공개 월간보고서 · 각 월 말 · 공실률이며 미수금 비율 아님",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/monthly/0/vacancy_pct",
+      "/monthly/1/vacancy_pct"
+    ],
+    "status": "PASS",
+    "unit": "%"
+  },
+  "copy_changes": 1,
+  "html_sha256": "b03878e7edd49648a088e44f2cf5bf2e177b7bd1ae2d362fbe288840edb2b07e",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "0bcbcec5b89994eb15c948c07b92517a7baa89d489dfc21794288e346c8c4380",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P13",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "0e391cbd58e83ae71911ff3ec127bbc859b19d4c83c5a06d4c37f1a7c6c855d7"
+}

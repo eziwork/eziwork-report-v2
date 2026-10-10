@@ -1,0 +1,25 @@
+{
+  "basis_date": "2026-05-15",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "003afbbf59bdcd487417d259dc6c77341d61d8c34a1f5540fba497c0519b595b",
+  "display_divisor": 10000,
+  "display_unit": "만원/월",
+  "kind": "bar",
+  "points": [
+    {
+      "label": "서울오류 16형",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "서울금천 16A",
+      "pointer": "/points/1/value"
+    }
+  ],
+  "scope": "LH 2026.05.15 공고 · 오류 16.84㎡·금천 16.13㎡ · 기본 조건 · 관리비·이자 제외",
+  "title": "소득 있는 청년의 기본 월세를 비교해 보세요.",
+  "unit": "원/월",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p14/report-dataset.json",
+    "sha256": "75ff603658bb8b319c3dd75b7da0ecf6d822ff97bbcab319613bd2d72f26a2df"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "chart": {
+    "reason": "금액·날짜 계약 항목 도식이 질문에 맞음. 다른 층 가격 비교는 제외 유지.",
+    "status": "NOT_APPLIED"
+  },
+  "copy_changes": 0,
+  "html_sha256": "fe6c702a8943cb0f2bc2aa2d63b78f7a2aaad1827da3edd343d37beae087690e",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "8ba957fa82e2dcf0e59417927d09ae89aef19b35d0cdd0f316422417682841ac",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P04",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "76ec6240311eacdf4e2babe0a19a6df006bc5e26aee4e0ba3bd7fdc2452179ba"
+}

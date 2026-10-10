@@ -1,0 +1,25 @@
+{
+  "basis_date": "2023-07-28",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "4a1742ed7b20fef5ddef39662aab0a5d10e46145c6469766d9d84518a9ed4fe5",
+  "display_divisor": 100000000,
+  "display_unit": "억원",
+  "kind": "bar",
+  "points": [
+    {
+      "label": "감정가격",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "당시 3차 최저가격",
+      "pointer": "/points/1/value"
+    }
+  ],
+  "scope": "2023년 공개 경매 안내 · 토지 1필지와 건물 1동 전체 · 낙찰가·현재 매매가격 아님",
+  "title": "감정가격과 당시 입찰 최저가격을 비교해 보세요.",
+  "unit": "원",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p12/evidence/P12-20261010-v01/source-records.json",
+    "sha256": "9efb4a412945d9e34c6fb9667b63809be75fd10e4344835bb262b3c3ed1beb29"
+  }
+}

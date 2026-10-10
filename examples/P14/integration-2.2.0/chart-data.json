@@ -1,0 +1,23 @@
+{
+  "basis_date": "2026-05-15",
+  "unit": "원/월",
+  "points": [
+    {
+      "label": "서울오류 16형",
+      "value": 214200
+    },
+    {
+      "label": "서울금천 16A",
+      "value": 102600
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p14/report-dataset.json",
+    "sha256": "75ff603658bb8b319c3dd75b7da0ecf6d822ff97bbcab319613bd2d72f26a2df",
+    "pointers": [
+      "/rows/0/rent_won",
+      "/rows/1/rent_won"
+    ]
+  }
+}

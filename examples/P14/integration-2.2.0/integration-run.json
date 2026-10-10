@@ -1,0 +1,49 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2026-05-15",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "75ff603658bb8b319c3dd75b7da0ecf6d822ff97bbcab319613bd2d72f26a2df",
+    "output_sha256": {
+      "png": "666a70cd0ec47a4f7bafbf4a571b36ae986260199c77b8d46e7e8424a36e117f",
+      "svg": "802e2b52f80b25b7d2bd5f06494e5bc1b48c98a7e82d267178e9126226c6e6a6"
+    },
+    "points": [
+      {
+        "label": "서울오류 16형",
+        "value": 214200
+      },
+      {
+        "label": "서울금천 16A",
+        "value": 102600
+      }
+    ],
+    "scope": "LH 2026.05.15 공고 · 오류 16.84㎡·금천 16.13㎡ · 기본 조건 · 관리비·이자 제외",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/rows/0/rent_won",
+      "/rows/1/rent_won"
+    ],
+    "status": "PASS",
+    "unit": "원/월"
+  },
+  "copy_changes": 1,
+  "html_sha256": "265064995f9f3124801bfab0abc751d2ce96073f62ac3642fc826b388c9a5fff",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "a484c6331a54c7dd2b50b7667e65bc5bfb9b1e3af76748ddee5f7ec285fd8c58",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P14",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "84478497220e1c2c816d6d00b4bb2d7fdf1c62043c4b47c9f599e14bc6de5ad8"
+}

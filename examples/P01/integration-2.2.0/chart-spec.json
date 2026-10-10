@@ -1,0 +1,25 @@
+{
+  "basis_date": "2026-10-09",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "6854d39beed4ac37685d186e5efb35b6b350730eca67b4033f02aceb295903f7",
+  "display_divisor": 100000000,
+  "display_unit": "억원",
+  "kind": "dot",
+  "points": [
+    {
+      "label": "잠실엘스",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "리센츠",
+      "pointer": "/points/1/value"
+    }
+  ],
+  "scope": "국토교통부 · 2026년 7~9월 · 각 13건 · 전용 84.80㎡와 84.99㎡ · 해제 제외 · 중앙값",
+  "title": "두 단지의 최근 거래 중간 가격을 비교해 보세요.",
+  "unit": "원",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p01/evidence/metrics.json",
+    "sha256": "18957c6d513f66f5acbd38de2e152254bab34914dfa8c63b82e42fb7d00f5f7d"
+  }
+}

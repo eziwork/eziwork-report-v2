@@ -22,7 +22,8 @@ try{
  await page.emulateMedia({media:'print'});
  const coverCount=await page.locator('[data-ezi-cover="V"]').count();
  if(coverCount&& (coverCount!==2 || await page.locator('[data-cover-side="front"]').count()!==1 || await page.locator('[data-cover-side="back"]').count()!==1))throw Error('COVER_PAIR_REQUIRED');
- const sheetCount=await page.locator('.sheet').count();
+ const naturalFlow=await page.locator('meta[name="eziwork-page-flow"][content="natural"]').count()>0;
+ const sheetCount=naturalFlow?0:await page.locator('.sheet').count();
  fs.mkdirSync(path.dirname(output),{recursive:true});
  if(sheetCount||coverCount){
   const {PDFDocument}=require('pdf-lib');const merged=await PDFDocument.create();

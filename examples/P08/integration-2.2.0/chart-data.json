@@ -1,0 +1,23 @@
+{
+  "basis_date": "2026-10-10",
+  "unit": "만원/월",
+  "points": [
+    {
+      "label": "가격표의 월세",
+      "value": 170
+    },
+    {
+      "label": "설명의 월세",
+      "value": 175
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p08/evidence/source-capture.json",
+    "sha256": "10d96a797cf62a8d36300597de19a7204e002757381c4a91feff66bd0968aa2d",
+    "pointers": [
+      "/advertised_fields/monthly_rent_table",
+      "/advertised_fields/monthly_rent_description"
+    ]
+  }
+}

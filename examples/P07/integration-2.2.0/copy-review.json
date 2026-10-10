@@ -1,0 +1,42 @@
+{
+  "changes": [
+    {
+      "after": "모든 장비를 넘겨받는 조건은 아닙니다.",
+      "before": "모든 장비를 넘겨받는 조건으로 읽으시면 안 됩니다.",
+      "reason": "고객 설명형으로 주어·비교 범위를 분명히 하고 제작 설명 또는 훈계형 표현을 정리; 사실과 조건 보존"
+    },
+    {
+      "after": "개업 전체 예산이나 카페의 월수익을 뜻하지 않습니다.",
+      "before": "개업 전체 예산이나 카페의 월수익으로 읽으시면 안 됩니다.",
+      "reason": "고객 설명형으로 주어·비교 범위를 분명히 하고 제작 설명 또는 훈계형 표현을 정리; 사실과 조건 보존"
+    }
+  ],
+  "commit": "14ec604e8ef925df53a29fda90d9332639610529",
+  "execution": "CODEX_APPLIED_ORIGINAL_INSTRUCTIONS",
+  "input_sha256": "7987cb17ad57f8a4de841ab37f9cacfd5a4d6994e37d5c8dc1da2f92f89a8969",
+  "output_sha256": "2e0ad8bb309dac4bf2dafc2627a25ced105fb10f7e510fc0e722e61e52b14ed2",
+  "protected": [
+    "금액·날짜·고유명사",
+    "정도·협의 가능·등록 안내",
+    "공고·가정·과거 시점",
+    "P03 방·욕실 도식",
+    "P04 다른 층 비교 제외"
+  ],
+  "read": [
+    "SKILL.md",
+    "references/ko-ai-signals.md",
+    "EZIWORK humanizer-profile"
+  ],
+  "reviewed_fields": [
+    "title",
+    "paragraphs",
+    "conclusion",
+    "tables",
+    "captions"
+  ],
+  "semantic_review": "CODEX_REVIEWED_NOT_AUTOMATIC_PROOF",
+  "skill": "korean-humanizer",
+  "unchanged_reason": "기존 선택 문장과 자연스러운 설명은 유지; 변경 개수를 채우지 않음",
+  "whole_report_user_approval": "UNCHANGED",
+  "layout_revision": "v03: footer grouping and P07 margins"
+}

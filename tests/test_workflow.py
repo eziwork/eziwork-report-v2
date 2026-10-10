@@ -22,6 +22,27 @@ class WorkflowTests(unittest.TestCase):
  def test_changed_dataset_fails(self):
   with (self.dir/'data.json').open('a') as f:f.write(' ')
   with self.assertRaisesRegex(ValueError,'DATASET_CHANGED'):e.check_contract(self.path)
+ def external_asset(self):
+  p=self.dir/'chart.svg';p.write_text('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="30"><text x="0" y="20">100</text></svg>',encoding='utf-8')
+  q=self.dir/'provenance.json';e.save(q,{'status':'PASS','points':[{'label':'가상 대상','value':100}],'unit':'만원','output_sha256':{'svg':e.sha(p)}})
+  a={'id':'external','kind':'chart','file':p.name,'sha256':e.sha(p),'provenance':q.name,'provenance_sha256':e.sha(q),'unit':'만원','points':[{'label':'가상 대상','claim_id':'A'}],'alt':'합성 금액','caption':'금액은 {{A}}만원입니다.'}
+  self.edit(lambda c:(c.update(assets=[a]),c['blocks'][0].update(asset_ids=['external'])))
+  return a,q
+ def test_external_asset_render_and_provenance(self):
+  a,q=self.external_asset();out=e.render_contract(self.path,self.dir/'external-output')
+  self.assertIn('data:image/svg+xml;base64,',out.read_text(encoding='utf-8'))
+  r=e.load(q);r['points'][0]['value']=999;e.save(q,r)
+  self.edit(lambda c:c['assets'][0].update(provenance_sha256=e.sha(q)))
+  with self.assertRaisesRegex(ValueError,'ASSET_DATA_MISMATCH'):e.check_contract(self.path)
+ def test_external_asset_unbound_text_and_units(self):
+  a,q=self.external_asset()
+  for field in ['caption','alt']:
+   self.edit(lambda c:c['assets'][0].update({field:'999만원'}))
+   with self.assertRaisesRegex(ValueError,'NUMERIC_TEXT_UNBOUND'):e.check_contract(self.path)
+   self.edit(lambda c:c['assets'][0].update({field:a[field]}))
+  d=e.load(self.dir/'data.json');d['records'][0]['units']={'price':'KRW','cost':'KRW'};e.save(self.dir/'data.json',d)
+  self.edit(lambda c:(c.update(dataset_sha256=e.sha(self.dir/'data.json')),c['figures'][0].update(unit='원')))
+  with self.assertRaisesRegex(ValueError,'ASSET_UNIT_MISMATCH'):e.check_contract(self.path)
  def test_wrong_chart_value_fails(self):
   self.edit(lambda c:c['figures'][0]['points'][0].update(value=999))
   with self.assertRaisesRegex(ValueError,'CHART_VALUE'):e.check_contract(self.path)

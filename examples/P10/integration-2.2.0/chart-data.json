@@ -1,0 +1,23 @@
+{
+  "basis_date": "2018-12",
+  "unit": "원",
+  "points": [
+    {
+      "label": "수입·지출 단순 차이",
+      "value": 276503809
+    },
+    {
+      "label": "현재가치 차이",
+      "value": -775898169
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p10/report-dataset.json",
+    "sha256": "423cd5985c3b3962df10cedde03bfb4b2931fc83b21571b1359a4a151e05a860",
+    "pointers": [
+      "/money/nominal",
+      "/money/npv"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "notice": "Export completed with explicit settings. This report does not establish visual, accessibility, scientific-integrity, or journal-submission compliance.",
+  "outputs": [
+    {
+      "format": "svg",
+      "kind": "vector-container",
+      "path": "figure.svg",
+      "size_bytes": 18574
+    },
+    {
+      "format": "png",
+      "kind": "raster",
+      "path": "figure.png",
+      "size_bytes": 21071
+    }
+  ],
+  "provenance": {
+    "basis_date": "2026-10-10",
+    "display_divisor": 1,
+    "input_sha256": "0913b58c305e1196bdf5b1c786d50358aedfe2ce8892bc497da805076973bf2f",
+    "missing": "gaps; never zero",
+    "points": [
+      {
+        "label": "30%안",
+        "value": 86
+      },
+      {
+        "label": "50%안",
+        "value": 65
+      },
+      {
+        "label": "70%안",
+        "value": 43
+      }
+    ],
+    "scope": "맹그로브 창천 특별공급 23.20㎡ · 월세와 예상 관리비 소계 · 보증금·공과금·금융비용 별도",
+    "unit": "만원/월"
+  },
+  "schema_version": "1.0",
+  "settings": {
+    "bbox_inches": null,
+    "dpi": 180.0,
+    "facecolor": "white",
+    "figure_size_inches": [
+      9.0,
+      2.2
+    ],
+    "font_mode": "paths",
+    "formats": [
+      "svg",
+      "png"
+    ],
+    "pad_inches": 0.1,
+    "tiff_rgb": false,
+    "transparent": false
+  },
+  "versions": {
+    "matplotlib": "3.10.7",
+    "pillow": "12.3.0"
+  },
+  "warnings": [],
+  "public_log_path_normalization": "absolute file locations replaced by basename; original execution logs retained locally"
+}

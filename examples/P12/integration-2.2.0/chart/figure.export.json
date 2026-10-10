@@ -1,0 +1,59 @@
+{
+  "notice": "Export completed with explicit settings. This report does not establish visual, accessibility, scientific-integrity, or journal-submission compliance.",
+  "outputs": [
+    {
+      "format": "svg",
+      "kind": "vector-container",
+      "path": "figure.svg",
+      "size_bytes": 22887
+    },
+    {
+      "format": "png",
+      "kind": "raster",
+      "path": "figure.png",
+      "size_bytes": 20334
+    }
+  ],
+  "provenance": {
+    "basis_date": "2023-07-28",
+    "display_divisor": 100000000,
+    "input_sha256": "9efb4a412945d9e34c6fb9667b63809be75fd10e4344835bb262b3c3ed1beb29",
+    "missing": "gaps; never zero",
+    "points": [
+      {
+        "label": "감정가격",
+        "value": 1547900000
+      },
+      {
+        "label": "당시 3차 최저가격",
+        "value": 758500000
+      }
+    ],
+    "scope": "2023년 공개 경매 안내 · 토지 1필지와 건물 1동 전체 · 낙찰가·현재 매매가격 아님",
+    "unit": "원"
+  },
+  "schema_version": "1.0",
+  "settings": {
+    "bbox_inches": null,
+    "dpi": 180.0,
+    "facecolor": "white",
+    "figure_size_inches": [
+      9.0,
+      2.2
+    ],
+    "font_mode": "paths",
+    "formats": [
+      "svg",
+      "png"
+    ],
+    "pad_inches": 0.1,
+    "tiff_rgb": false,
+    "transparent": false
+  },
+  "versions": {
+    "matplotlib": "3.10.7",
+    "pillow": "12.3.0"
+  },
+  "warnings": [],
+  "public_log_path_normalization": "absolute file locations replaced by basename; original execution logs retained locally"
+}

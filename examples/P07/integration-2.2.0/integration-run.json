@@ -1,0 +1,20 @@
+{
+  "chart": {
+    "reason": "보증금·권리금 및 월 비용의 기존 구성 도식이 질문에 맞음.",
+    "status": "NOT_APPLIED"
+  },
+  "copy_changes": 2,
+  "html_sha256": "2e0ad8bb309dac4bf2dafc2627a25ced105fb10f7e510fc0e722e61e52b14ed2",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "7987cb17ad57f8a4de841ab37f9cacfd5a4d6994e37d5c8dc1da2f92f89a8969",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P07",
+  "whole_report_user_approval": "UNCHANGED",
+  "layout_revision": "v03: footer grouping and P07 margins",
+  "pdf_sha256": "adbddcf924be49694176752250acccbbbc8f7e9996fcd9cdd94351a1ce17f577"
+}

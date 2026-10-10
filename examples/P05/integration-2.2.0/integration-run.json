@@ -1,0 +1,55 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2026-10-10",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "0913b58c305e1196bdf5b1c786d50358aedfe2ce8892bc497da805076973bf2f",
+    "output_sha256": {
+      "png": "f6467c35462a1faa2c75d68d28037d4c7fc216b7948de1470d33b41c2320df88",
+      "svg": "ed8899b02e69bb0f3a7a4b39a49a7be6c0c83b339173eabef3db612a1fad6202"
+    },
+    "points": [
+      {
+        "label": "30%안",
+        "value": 86
+      },
+      {
+        "label": "50%안",
+        "value": 65
+      },
+      {
+        "label": "70%안",
+        "value": 43
+      }
+    ],
+    "scope": "맹그로브 창천 특별공급 23.20㎡ · 월세와 예상 관리비 소계 · 보증금·공과금·금융비용 별도",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/options/0/monthly_subtotal",
+      "/options/1/monthly_subtotal",
+      "/options/2/monthly_subtotal"
+    ],
+    "status": "PASS",
+    "unit": "만원/월"
+  },
+  "copy_changes": 2,
+  "html_sha256": "96a0ec3ecb7324617ddc482df6c37e5cf04ac34f00674ca3da4325776b582db0",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "b0ceb949fd276c29d6193f5c9fcccd3abb9b1ce7e7cd7d927d90adeb62668535",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P05",
+  "whole_report_user_approval": "UNCHANGED",
+  "layout_revision": "v03: footer grouping and P07 margins",
+  "pdf_sha256": "f3f386fec6d39f8d46c17b49baf513ce037a10885221a7e48124fae6c6886e5b"
+}

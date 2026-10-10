@@ -1,0 +1,28 @@
+{
+  "basis_date": "2026-10-10",
+  "unit": "만원/월",
+  "points": [
+    {
+      "label": "30%안",
+      "value": 86
+    },
+    {
+      "label": "50%안",
+      "value": 65
+    },
+    {
+      "label": "70%안",
+      "value": 43
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p05/evidence/dataset-v01.json",
+    "sha256": "0913b58c305e1196bdf5b1c786d50358aedfe2ce8892bc497da805076973bf2f",
+    "pointers": [
+      "/options/0/monthly_subtotal",
+      "/options/1/monthly_subtotal",
+      "/options/2/monthly_subtotal"
+    ]
+  }
+}

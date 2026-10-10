@@ -1,0 +1,142 @@
+[
+  {
+    "id": "P01",
+    "pages": 12,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P01\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P02",
+    "pages": 7,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P02\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P03",
+    "pages": 8,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P03\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P04",
+    "pages": 6,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P04\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P05",
+    "pages": 8,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P05\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P06",
+    "pages": 9,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P06\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P07",
+    "pages": 8,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P07\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P08",
+    "pages": 7,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P08\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P09",
+    "pages": 8,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P09\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P10",
+    "pages": 9,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P10\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P11",
+    "pages": 8,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P11\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P12",
+    "pages": 5,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P12\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P13",
+    "pages": 7,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P13\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  },
+  {
+    "id": "P14",
+    "pages": 10,
+    "missing_long_text_count": 0,
+    "missing_long_text": [],
+    "pdf_text_layer": true,
+    "contact_sheet": "P14\\pdf-preview\\contact.png",
+    "visual_review": "CODEX_CONTACT_SHEET_REVIEWED",
+    "not_proof_of": "customer usefulness or legal/financial conclusions"
+  }
+]

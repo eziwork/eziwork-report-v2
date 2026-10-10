@@ -1,0 +1,51 @@
+{
+  "chart": {
+    "reason": "사용자가 선택한 빌라·방·욕실 도식과 거래 비교 시각화를 보존.",
+    "status": "NOT_APPLIED"
+  },
+  "copy_changes": 0,
+  "html_sha256": "c49303ca15e7a1331b950cf599b5abc0d321f5417ae0760e4c651becb512d72c",
+  "map": {
+    "calls": [
+      {
+        "address": "서울특별시 강서구 까치산로18나길 46",
+        "command": "geocode",
+        "status": "PASS"
+      },
+      {
+        "command": "staticmap",
+        "status": "PASS"
+      }
+    ],
+    "center": [
+      126.84987127131456,
+      37.545565336078255
+    ],
+    "execution": "upstream_cli",
+    "input_sha256": "daf4f81c71373c7624d53400007b85385a630dd73d0250e7d0eb37d81902e2d1",
+    "map_sha256": "c93a239a6d4c710f0f9993f821feb5810a8488cf87a7042845ee9546a365f7ea",
+    "points": [
+      {
+        "address": "서울특별시 강서구 까치산로18나길 46",
+        "label": "태원빌라 주소",
+        "lat": 37.545565336078255,
+        "location_kind": "address_lookup_point",
+        "lon": 126.84987127131456
+      }
+    ],
+    "queried_at": "2026-10-10T08:00:21.772295+00:00",
+    "scope": "address_and_background_only",
+    "skill": "vworld",
+    "source": "VWorld",
+    "status": "PASS",
+    "version": "0.3.5",
+    "zoom": 17
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "1521be3ae1c280886c0dae6d1fab6e30cc4a39bf8a197994691aa09aa543ebed",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P03",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "5c328b3303f6f72d71998efcbc46405dd689c9ed809f26f74a737581f4aae764"
+}

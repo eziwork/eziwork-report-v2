@@ -1,0 +1,29 @@
+{
+  "version": "2.2.0",
+  "network_called": false,
+  "vendor_integrity": "PASS",
+  "changed_files": [],
+  "vworld": {
+    "version": "0.3.5",
+    "verified": true
+  },
+  "libraries": {
+    "matplotlib": {
+      "required": "3.10.7",
+      "found": "3.10.7",
+      "match": true
+    },
+    "Pillow": {
+      "required": "12.3.0",
+      "found": "12.3.0",
+      "match": true
+    },
+    "pypdf": {
+      "required": "6.10.0",
+      "found": "6.10.0",
+      "match": true
+    }
+  },
+  "korean_font_found": true,
+  "ready": true
+}

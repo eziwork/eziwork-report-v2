@@ -1,0 +1,19 @@
+{
+  "chart": {
+    "reason": "기간 구분도와 감면 구성 도식을 보존. 실제 수납 추정 그래프를 만들지 않음.",
+    "status": "NOT_APPLIED"
+  },
+  "copy_changes": 0,
+  "html_sha256": "edd7bbaacf1a84e1443bee3359c0c88c4441d4a1c85efb4a84fc480928c3aec7",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "6f1937afba67792055890a62040fcc8c9daa691b21fdd952d716578f08021e34",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P11",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "5971c043051b496278f79dab5fbf42f126e83c55464dbd1e4953d83c7bf16a5a"
+}

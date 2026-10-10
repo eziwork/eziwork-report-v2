@@ -1,0 +1,38 @@
+{
+  "basis_date": "2026-10-10",
+  "unit": "원",
+  "points": [
+    {
+      "label": "2026-07-08 · 14층",
+      "value": 175000000
+    },
+    {
+      "label": "2026-07-09 · 13층",
+      "value": 164500000
+    },
+    {
+      "label": "2026-07-18 · 6층",
+      "value": 164000000
+    },
+    {
+      "label": "2026-08-06 · 3층",
+      "value": 188000000
+    },
+    {
+      "label": "2026-09-13 · 10층",
+      "value": 195000000
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p06/report-dataset.json",
+    "sha256": "3a07cd512557a0f061829267b3e704aeae77d432adf1bafda593154b06d307d0",
+    "pointers": [
+      "/included/T03/0/values/price_krw",
+      "/included/T03/1/values/price_krw",
+      "/included/T03/2/values/price_krw",
+      "/included/T03/3/values/price_krw",
+      "/included/T03/4/values/price_krw"
+    ]
+  }
+}

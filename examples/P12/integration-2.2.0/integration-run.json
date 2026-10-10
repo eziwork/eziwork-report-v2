@@ -1,0 +1,49 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2023-07-28",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "9efb4a412945d9e34c6fb9667b63809be75fd10e4344835bb262b3c3ed1beb29",
+    "output_sha256": {
+      "png": "f0196e4efcb9401095f6e5c0ebcb65f77b32f357a6af0912f4cab4bf5e5d7807",
+      "svg": "69df54e91ac7358562844e9ec28cb7812f020a851414b4595013db0b34fec29d"
+    },
+    "points": [
+      {
+        "label": "감정가격",
+        "value": 1547900000
+      },
+      {
+        "label": "당시 3차 최저가격",
+        "value": 758500000
+      }
+    ],
+    "scope": "2023년 공개 경매 안내 · 토지 1필지와 건물 1동 전체 · 낙찰가·현재 매매가격 아님",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/records/0/fields/appraisal_won",
+      "/records/0/fields/minimum_won"
+    ],
+    "status": "PASS",
+    "unit": "원"
+  },
+  "copy_changes": 0,
+  "html_sha256": "a309df8d360ec9cf39952d3b877a38712b4d72d9672165174575d085c9e21f21",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "e541fe1c7a2facbc34acf05157b7fa5469fa642caf85cfa5b6ad5f9f6ff62ffb",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P12",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "d1cbc53cf0326aebcc9097c43bed16fc058785ba08e9ac164ce8a85b63f52507"
+}

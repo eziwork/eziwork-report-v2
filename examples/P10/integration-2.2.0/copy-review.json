@@ -1,0 +1,37 @@
+{
+  "changes": [
+    {
+      "after": "원문 설계개요와 층별표에는 지하층 수가 서로 다르게 적혀 있습니다.",
+      "before": "원문 설계개요와 층별표의 지하층 표기가 달라 지하층 수는 도식에 넣지 않았습니다.",
+      "reason": "고객 설명형으로 주어·비교 범위를 분명히 하고 제작 설명 또는 훈계형 표현을 정리; 사실과 조건 보존"
+    }
+  ],
+  "commit": "14ec604e8ef925df53a29fda90d9332639610529",
+  "execution": "CODEX_APPLIED_ORIGINAL_INSTRUCTIONS",
+  "input_sha256": "66afd297c67bcb952e9e91aba8faffc34243167dbe877cb47b3f39f64452fbef",
+  "output_sha256": "ce4060e14d338cf27c04e72fef5624cd4e7c6f75a4465875b73aeea6a4ed48ed",
+  "protected": [
+    "금액·날짜·고유명사",
+    "정도·협의 가능·등록 안내",
+    "공고·가정·과거 시점",
+    "P03 방·욕실 도식",
+    "P04 다른 층 비교 제외"
+  ],
+  "read": [
+    "SKILL.md",
+    "references/ko-ai-signals.md",
+    "EZIWORK humanizer-profile"
+  ],
+  "reviewed_fields": [
+    "title",
+    "paragraphs",
+    "conclusion",
+    "tables",
+    "captions"
+  ],
+  "semantic_review": "CODEX_REVIEWED_NOT_AUTOMATIC_PROOF",
+  "skill": "korean-humanizer",
+  "unchanged_reason": "기존 선택 문장과 자연스러운 설명은 유지; 변경 개수를 채우지 않음",
+  "whole_report_user_approval": "UNCHANGED",
+  "layout_revision": "v03: footer grouping and P07 margins"
+}

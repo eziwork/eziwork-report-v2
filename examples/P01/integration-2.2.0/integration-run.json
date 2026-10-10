@@ -1,0 +1,93 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2026-10-09",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "18957c6d513f66f5acbd38de2e152254bab34914dfa8c63b82e42fb7d00f5f7d",
+    "output_sha256": {
+      "png": "80c829d37fe9193ba0bab911b88500c766ed4e3e9deae39e414d6fee8e397a80",
+      "svg": "024570fd38b3a876e7476de62e0041cc44b35d483cecaf55f6d3927be4f8ddc9"
+    },
+    "points": [
+      {
+        "label": "잠실엘스",
+        "value": 3380000000
+      },
+      {
+        "label": "리센츠",
+        "value": 3490000000
+      }
+    ],
+    "scope": "국토교통부 · 2026년 7~9월 · 각 13건 · 전용 84.80㎡와 84.99㎡ · 해제 제외 · 중앙값",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/properties/els/stats/quarter/median_krw",
+      "/properties/ricenz/stats/quarter/median_krw"
+    ],
+    "status": "PASS",
+    "unit": "원"
+  },
+  "copy_changes": 17,
+  "html_sha256": "ac715c0f0b3957922e5e728d578ec2591cdf0489f39f45fa9d409d46b08d7a42",
+  "map": {
+    "calls": [
+      {
+        "address": "서울특별시 송파구 올림픽로 99",
+        "command": "geocode",
+        "status": "PASS"
+      },
+      {
+        "address": "서울특별시 송파구 올림픽로 135",
+        "command": "geocode",
+        "status": "PASS"
+      },
+      {
+        "command": "staticmap",
+        "status": "PASS"
+      }
+    ],
+    "center": [
+      127.08587506364626,
+      37.51253216655243
+    ],
+    "execution": "upstream_cli",
+    "input_sha256": "0634ed392808a9281ecfdd70fc03191ff0f0ed2223b443b65db0cd892d2d9967",
+    "map_sha256": "d2bcb9cf02f964f184df5bc791cc9f5ca86eed07ab6c544b5b5dd9ad45912ad6",
+    "points": [
+      {
+        "address": "서울특별시 송파구 올림픽로 99",
+        "label": "잠실엘스",
+        "lat": 37.51234243966675,
+        "location_kind": "address_lookup_point",
+        "lon": 127.07986253183986
+      },
+      {
+        "address": "서울특별시 송파구 올림픽로 135",
+        "label": "리센츠",
+        "lat": 37.51272189343811,
+        "location_kind": "address_lookup_point",
+        "lon": 127.09188759545263
+      }
+    ],
+    "queried_at": "2026-10-10T07:57:24.212312+00:00",
+    "scope": "address_and_background_only",
+    "skill": "vworld",
+    "source": "VWorld",
+    "status": "PASS",
+    "version": "0.3.5",
+    "zoom": 16
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "1ef9bce3d0596d15480b9145a932efb803ecb7320027b771c301abd16ac65c84",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P01",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "6620c3c80eebf1e2045392a4fbdfd2759f02694c0b8eb6aad707eaad8920387c"
+}

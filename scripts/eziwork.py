@@ -4,9 +4,11 @@ import argparse, contextlib, getpass, hashlib, html, json, math, os, platform, r
 from importlib.metadata import version, PackageNotFoundError
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(Path(os.environ.get('EZIWORK_RUNTIME_DIR',ROOT/'runtime'))/'python'))
 sys.path.insert(0,str(ROOT/'scripts/collection'))
 import collector
 import covers
+import integrations
 from adapters import CollectionError
 ALLOWED=collector.ENV_NAMES
 def load(p):return json.loads(Path(p).read_text(encoding='utf-8-sig'))
@@ -130,6 +132,19 @@ def check_contract(path):
    if not isinstance(cover[field],str) or not cover[field].strip():raise ValueError('COVER_TEXT_REQUIRED')
    bound_text(cover[field],claims)
  if c.get('qa',{}).get('evidence_review')!='PASS' or c.get('qa',{}).get('copy_review')!='PASS':raise ValueError('CODEX_REVIEW_REQUIRED')
+ assets=c.get('assets',[])
+ if len({a['id'] for a in assets})!=len(assets):raise ValueError('DUPLICATE_ASSET')
+ for asset in assets:
+  bound_text(asset['caption'],claims);bound_text(asset['alt'],claims)
+  check_asset=dict(asset)
+  if asset['kind']=='chart':check_asset['points']=[{**pt,'label':bound_text(pt['label'],claims)} for pt in asset['points']]
+  integrations.verify_asset(check_asset,path.parent,claims)
+  if asset['kind']=='chart':
+   for point in asset['points']:
+    bound_text(point['label'],claims)
+    if claim_units[point['claim_id']] and canonical_unit(asset['unit'])!=claim_units[point['claim_id']]:raise ValueError('ASSET_UNIT_MISMATCH')
+ for b in c.get('blocks',[]):
+  if any(i not in {a['id'] for a in assets} for i in b.get('asset_ids',[])):raise ValueError('ASSET_REFERENCE')
  return c
 def esc(x):return html.escape(str(x))
 def canonical_unit(value):
@@ -182,7 +197,15 @@ def render_contract(path,out,branding=None):
    for h in sorted(b.get('highlights',[]),key=len,reverse=True):
     if h in rendered:text=text.replace(esc(h),'<mark>'+esc(h)+'</mark>')
    ps.append('<p>'+text+'</p>')
-  body+=f'<section data-block-id="{esc(b["id"])}"><h2>{esc(bound_text(b["title"],values))}</h2>'+''.join(ps)+''.join(fig_html(figs[i]) for i in b.get('figure_ids',[]))+'</section>'
+  external=''
+  for a in c.get('assets',[]):
+   if a['id'] not in b.get('asset_ids',[]):continue
+   import base64
+   ap=(Path(path).resolve().parent/a['file']).resolve();mime='image/png' if ap.suffix=='.png' else 'image/svg+xml'
+   external+='<figure><img style="width:100%;height:auto" alt="'+esc(bound_text(a['alt'],values))+'" src="data:'+mime+';base64,'+base64.b64encode(ap.read_bytes()).decode()+'"><figcaption>'+esc(bound_text(a['caption'],values))+'</figcaption>'
+   if a['kind']=='chart':external+='<table>'+''.join('<tr><th>'+esc(bound_text(pt['label'],values))+'</th><td>'+esc(values[pt['claim_id']])+' '+esc(a['unit'])+'</td></tr>' for pt in a['points'])+'</table>'
+   external+='</figure>'
+  body+=f'<section data-block-id="{esc(b["id"])}"><h2>{esc(bound_text(b["title"],values))}</h2>'+''.join(ps)+''.join(fig_html(figs[i]) for i in b.get('figure_ids',[]))+external+'</section>'
  logo=''
  if brand.get('logo'):
   import base64
@@ -207,6 +230,9 @@ def cover_metadata(c):
 def main():
  p=argparse.ArgumentParser();p.add_argument('--workspace',type=Path,default=Path.cwd()/'eziwork-output');sub=p.add_subparsers(dest='cmd',required=True)
  sub.add_parser('doctor');sub.add_parser('catalog')
+ a=sub.add_parser('integrations');a.add_argument('action',choices=['check','setup']);a.add_argument('--python',action='store_true',dest='install_python')
+ a=sub.add_parser('map');a.add_argument('--request',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
+ a=sub.add_parser('chart');a.add_argument('--spec',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('configure');a.add_argument('--name',required=True,choices=ALLOWED)
  a=sub.add_parser('privacy-check');a.add_argument('--file',type=Path,required=True)
  for n in ['preflight','collect','import','status']:
@@ -224,7 +250,14 @@ def main():
  args=p.parse_args()
  with environment() as redact:
   try:
-   if args.cmd=='cover':
+   if args.cmd=='integrations':
+    if args.action=='check' and args.install_python:raise ValueError('PYTHON_INSTALL_REQUIRES_SETUP')
+    result=integrations.setup(install_python=args.install_python) if args.action=='setup' else integrations.check()
+   elif args.cmd=='map':result=integrations.map_collect(load(args.request),args.output,credentials().get('VWORLD_API_KEY',''))
+   elif args.cmd=='chart':
+    from scientific_charts import chart
+    spec=load(args.spec);spec['dataset']=str((args.spec.resolve().parent/spec['dataset']).resolve());result=chart(spec,args.output)
+   elif args.cmd=='cover':
     c=check_contract(args.contract)
     if args.output.exists():raise ValueError('OUTPUT_EXISTS_USE_NEW_VERSION')
     if args.input.resolve().parent!=args.output.resolve().parent:raise ValueError('KEEP_CUSTOM_HTML_ASSET_BASE_USE_SAME_FOLDER')
@@ -239,6 +272,7 @@ def main():
     fonts=[Path(os.environ.get('WINDIR','C:/Windows'))/'Fonts/malgun.ttf',Path('/System/Library/Fonts/AppleSDGothicNeo.ttc'),Path('/System/Library/Fonts/Supplemental/AppleGothic.ttf')]
     result['korean_os_font_found']=any(f.is_file() for f in fonts)
     result['python_supported']=sys.version_info>=(3,11)
+    result['integrations']=integrations.check()
     if nd:
      check=subprocess.run([nd,str(ROOT/'scripts/render.mjs'),'--doctor'],capture_output=True,text=True,encoding='utf-8');result['renderer']=json.loads(check.stdout) if check.returncode==0 else {'status':'DEPENDENCIES_REQUIRED'}
    elif args.cmd=='catalog':result=load(ROOT/'references/report-types.json')
@@ -299,7 +333,10 @@ def main():
     result={'html':str(dest),'pdf':str(args.output/'report.pdf') if args.pdf else None}
    elif args.cmd=='pdf':
     subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(args.input),'--output',str(args.output)],check=True);result={'pdf':str(args.output)}
-   print(json.dumps(redact.data(result),ensure_ascii=False,indent=2));return 0
+   print(json.dumps(redact.data(result),ensure_ascii=False,indent=2))
+   if args.cmd=='map' and result.get('status')!='PASS':return 2
+   if args.cmd=='integrations' and not result.get('ready'):return 2
+   return 0
   except (CollectionError,OSError,ValueError,KeyError,TypeError,subprocess.CalledProcessError) as ex:
    code=ex.code if isinstance(ex,CollectionError) else (str(ex) if isinstance(ex,ValueError) else 'LOCAL_INPUT_OR_RUNTIME_ERROR')
    print(json.dumps(redact.data({'status':'ACTION_REQUIRED','code':code,'guide':'references/api-setup.md'}),ensure_ascii=False));return 2

@@ -20,7 +20,7 @@
         "비교 거래 부족",
         "현재 광고 또는 매물 조건 미확인"
       ],
-      "baseline": "examples/P01/report.html",
+      "baseline": "examples/P01/report-2.2.0.html",
       "source_version": "v06",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -145,7 +145,15 @@
         "현장 상태를 분석할 때 현장 자료",
         "대출·자금 시나리오를 요청할 때 실제 또는 명시된 가정 조건"
       ],
-      "cover_example": "examples/P01/report-v.html"
+      "cover_example": "examples/P01/report-v.html",
+      "previous_baselines": [
+        "examples/P01/report.html",
+        "examples/P01/report-v.html"
+      ],
+      "baseline_pdf": "examples/P01/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P01/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P02",
@@ -169,7 +177,7 @@
         "판매 기록 없이 부진 원인 진단",
         "경쟁 광고 없이 경쟁력 단정"
       ],
-      "baseline": "examples/P02/report.html",
+      "baseline": "examples/P02/report-2.2.0.html",
       "source_version": "v03",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -360,7 +368,15 @@
           "150동 입주 안내"
         ]
       },
-      "cover_example": "examples/P02/report-v.html"
+      "cover_example": "examples/P02/report-v.html",
+      "previous_baselines": [
+        "examples/P02/report.html",
+        "examples/P02/report-v.html"
+      ],
+      "baseline_pdf": "examples/P02/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P02/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P03",
@@ -384,7 +400,7 @@
         "서류 없이 권리·대지권 검토",
         "비교 사례의 물건 차이 미확인"
       ],
-      "baseline": "examples/P03/report.html",
+      "baseline": "examples/P03/report-2.2.0.html",
       "source_version": "v01",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -565,7 +581,15 @@
       "verified_example_scope": {},
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P03/report-v.html"
+      "cover_example": "examples/P03/report-v.html",
+      "previous_baselines": [
+        "examples/P03/report.html",
+        "examples/P03/report-v.html"
+      ],
+      "baseline_pdf": "examples/P03/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P03/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P04",
@@ -590,7 +614,7 @@
         "공개 거래로 기존 보증금 합계 추정",
         "공식 확인 없이 보증가입·반환 안전 확정"
       ],
-      "baseline": "examples/P04/report.html",
+      "baseline": "examples/P04/report-2.2.0.html",
       "source_version": "v04",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -772,7 +796,15 @@
         "질문과 무관한 지상 2층 전세 가격 비교",
         "그 가격에서 계산한 반지하 가격차"
       ],
-      "cover_example": "examples/P04/report-v.html"
+      "cover_example": "examples/P04/report-v.html",
+      "previous_baselines": [
+        "examples/P04/report.html",
+        "examples/P04/report-v.html"
+      ],
+      "baseline_pdf": "examples/P04/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P04/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P05",
@@ -797,7 +829,7 @@
         "관리비 내역 미확보",
         "가정을 실제 청구액으로 표시"
       ],
-      "baseline": "examples/P05/report.html",
+      "baseline": "examples/P05/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -904,7 +936,15 @@
       "verified_example_scope": {},
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P05/report-v.html"
+      "cover_example": "examples/P05/report-v.html",
+      "previous_baselines": [
+        "examples/P05/report.html",
+        "examples/P05/report-v.html"
+      ],
+      "baseline_pdf": "examples/P05/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P05/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P06",
@@ -927,7 +967,7 @@
         "운영 증빙 없이 실제 수익률 산출",
         "평균 금리를 개인 승인 금리로 사용"
       ],
-      "baseline": "examples/P06/report.html",
+      "baseline": "examples/P06/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -1060,7 +1100,15 @@
       },
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P06/report-v.html"
+      "cover_example": "examples/P06/report-v.html",
+      "previous_baselines": [
+        "examples/P06/report.html",
+        "examples/P06/report-v.html"
+      ],
+      "baseline_pdf": "examples/P06/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P06/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P07",
@@ -1086,7 +1134,7 @@
         "상권 추정매출을 해당 점포의 예상 실매출로 표시",
         "공개 업소 목록으로 신규 허가 확정"
       ],
-      "baseline": "examples/P07/report.html",
+      "baseline": "examples/P07/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -1206,7 +1254,15 @@
       },
       "attachment_policy": "references/attachments.md",
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P07/report-v.html"
+      "cover_example": "examples/P07/report-v.html",
+      "previous_baselines": [
+        "examples/P07/report.html",
+        "examples/P07/report-v.html"
+      ],
+      "baseline_pdf": "examples/P07/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P07/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P08",
@@ -1229,7 +1285,7 @@
         "임대 증빙 없이 실제 수익 산출",
         "개별 호실과 건물 전체 거래 혼합"
       ],
-      "baseline": "examples/P08/report.html",
+      "baseline": "examples/P08/report-2.2.0.html",
       "source_version": "v01",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [],
@@ -1308,7 +1364,15 @@
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
       "selection_summary": "세 부분 제목·본문 A",
-      "cover_example": "examples/P08/report-v.html"
+      "cover_example": "examples/P08/report-v.html",
+      "previous_baselines": [
+        "examples/P08/report.html",
+        "examples/P08/report-v.html"
+      ],
+      "baseline_pdf": "examples/P08/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P08/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P09",
@@ -1332,7 +1396,7 @@
         "지도만으로 경계·접도 확정",
         "전문 확인 없이 이용 가능 결론"
       ],
-      "baseline": "examples/P09/report.html",
+      "baseline": "examples/P09/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -1464,7 +1528,15 @@
       },
       "attachment_policy": "references/attachments.md",
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P09/report-v.html"
+      "cover_example": "examples/P09/report-v.html",
+      "previous_baselines": [
+        "examples/P09/report.html",
+        "examples/P09/report-v.html"
+      ],
+      "baseline_pdf": "examples/P09/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P09/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P10",
@@ -1488,7 +1560,7 @@
         "허가 기록을 확정 공급으로 사용",
         "평균 공사비로 실제 사업비 확정"
       ],
-      "baseline": "examples/P10/report.html",
+      "baseline": "examples/P10/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -1597,7 +1669,15 @@
       },
       "attachment_policy": "references/attachments.md",
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P10/report-v.html"
+      "cover_example": "examples/P10/report-v.html",
+      "previous_baselines": [
+        "examples/P10/report.html",
+        "examples/P10/report-v.html"
+      ],
+      "baseline_pdf": "examples/P10/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P10/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P11",
@@ -1621,7 +1701,7 @@
         "허가 확인 없이 사용 가능 단정",
         "공개 호가를 실제 체결 임대료로 사용"
       ],
-      "baseline": "examples/P11/report.html",
+      "baseline": "examples/P11/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [
@@ -1721,7 +1801,15 @@
       },
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
-      "cover_example": "examples/P11/report-v.html"
+      "cover_example": "examples/P11/report-v.html",
+      "previous_baselines": [
+        "examples/P11/report.html",
+        "examples/P11/report-v.html"
+      ],
+      "baseline_pdf": "examples/P11/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P11/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P12",
@@ -1745,7 +1833,7 @@
         "공개 전월세 거래로 해당 건물의 임대차 합계 추정",
         "건물 전체와 개별 호실 거래 혼합"
       ],
-      "baseline": "examples/P12/report.html",
+      "baseline": "examples/P12/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [],
@@ -1833,7 +1921,15 @@
         "전입자 기록으로 공실·인수 보증금·임대수입 추정",
         "그러한 미분석 주제의 자기 설명 문장"
       ],
-      "cover_example": "examples/P12/report-v.html"
+      "cover_example": "examples/P12/report-v.html",
+      "previous_baselines": [
+        "examples/P12/report.html",
+        "examples/P12/report-v.html"
+      ],
+      "baseline_pdf": "examples/P12/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P12/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P13",
@@ -1857,7 +1953,7 @@
         "미기록 항목을 0으로 처리",
         "차입 전 운영 순수입과 차입 후 현금흐름 혼합"
       ],
-      "baseline": "examples/P13/report.html",
+      "baseline": "examples/P13/report-2.2.0.html",
       "source_version": "v01",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [],
@@ -1950,7 +2046,15 @@
       "attachment_policy": "references/attachments.md",
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
       "selection_summary": "세 부분 제목·본문 A; 시각화는 개별 선택 미확정",
-      "cover_example": "examples/P13/report-v.html"
+      "cover_example": "examples/P13/report-v.html",
+      "previous_baselines": [
+        "examples/P13/report.html",
+        "examples/P13/report-v.html"
+      ],
+      "baseline_pdf": "examples/P13/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P13/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     },
     {
       "report_id": "P14",
@@ -1973,7 +2077,7 @@
         "다른 회차·기관 조건 혼합",
         "심사 전 자격·선정 확정"
       ],
-      "baseline": "examples/P14/report.html",
+      "baseline": "examples/P14/report-2.2.0.html",
       "source_version": "v02",
       "baseline_adoption": "USER_DIRECTED_14_TYPE_BASELINE",
       "selections": [],
@@ -2030,7 +2134,15 @@
       "attachment_policy": null,
       "missing_evidence_policy": "Preserve internal missing-data record; withhold only dependent analysis. Do not add an unknown-topics section.",
       "selection_summary": "세 부분 제목·본문 B",
-      "cover_example": "examples/P14/report-v.html"
+      "cover_example": "examples/P14/report-v.html",
+      "previous_baselines": [
+        "examples/P14/report.html",
+        "examples/P14/report-v.html"
+      ],
+      "baseline_pdf": "examples/P14/report-2.2.0.pdf",
+      "integration_version": "2.2.0",
+      "integration_record": "examples/P14/integration-2.2.0/integration-run.json",
+      "integration_adoption": "TECHNICALLY_REVIEWED_REPLAY; USER_WHOLE_REPORT_APPROVAL_UNCHANGED"
     }
   ],
   "selection_asset_policy": "selections의 원본 그림 파일명은 과거 선택 이력입니다. 배포 시각화는 각 baseline HTML에 내장되어 있으며 원래 작업 폴더에 의존하지 않습니다."

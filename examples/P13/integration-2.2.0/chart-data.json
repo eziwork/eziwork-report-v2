@@ -1,0 +1,23 @@
+{
+  "basis_date": "2026-08-31",
+  "unit": "%",
+  "points": [
+    {
+      "label": "7월 말",
+      "value": 2.2
+    },
+    {
+      "label": "8월 말",
+      "value": 2.5
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p13/evidence/report-dataset.json",
+    "sha256": "c3c0e13cc6fc0dd04f48d58917d81054ace8acb634371ebc1e42c3b7f189599e",
+    "pointers": [
+      "/monthly/0/vacancy_pct",
+      "/monthly/1/vacancy_pct"
+    ]
+  }
+}

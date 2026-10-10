@@ -39,3 +39,7 @@ python scripts/eziwork.py render --contract report.json --output 결과/v01 --br
 python scripts/eziwork.py pdf --input 검증된-맞춤.html --output 결과/v02.pdf
 ```
 기존 출력이 있으면 새 버전을 사용한다. 숫자 수정 시 데이터→claim→문장→시각화 순서로 갱신하고 검토도 다시 수행한다. 렌더러는 외부 리소스를 차단하므로 폰트·그림은 로컬/내장으로 구성한다. 페이지형 .sheet 문서는 각 페이지를 검증해 병합하며, 연속형은 자연스러운 페이지 흐름을 사용한다.
+
+## 2.2.0 추가 연결
+
+지도·외부 그래프의 선택 필드와 실행 순서는 [통합 안내](integrations.md)를 따른다. 맞춤 HTML이 연속형이면 `<meta name="eziwork-page-flow" content="natural">`을 넣는다. V 표지는 각각 한 장으로 출력하고 본문은 자연스럽게 나눈다. 본문 꼬리말이 별도 빈 장으로 넘어가지 않도록 마지막 설명과 묶고, PDF에서 좌우 여백과 한글 잘림을 확인한다.

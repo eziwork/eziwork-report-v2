@@ -1,0 +1,206 @@
+[
+  {
+    "check": "P01 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P02 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P03 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P04 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P05 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P05 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P05 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P05 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P06 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P06 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P06 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P06 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P07 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P08 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P08 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P08 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P08 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P09 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P10 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P10 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P10 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P10 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P11 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P12 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P12 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P12 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P12 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P13 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P13 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P13 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P13 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P14 original dataset hash",
+    "status": "PASS"
+  },
+  {
+    "check": "P14 chart points equal archived input",
+    "status": "PASS"
+  },
+  {
+    "check": "P14 graph labels and original tools",
+    "status": "PASS"
+  },
+  {
+    "check": "P14 cover pair",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 els median and comparable set",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 ricenz median and comparable set",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 budget remains approximate",
+    "status": "PASS"
+  },
+  {
+    "check": "P01 negotiation qualification retained",
+    "status": "PASS"
+  },
+  {
+    "check": "P05 monthly and 24 month totals",
+    "status": "PASS"
+  },
+  {
+    "check": "P10 nominal and discounted amounts",
+    "status": "PASS"
+  },
+  {
+    "check": "P03 selected villa SVGs preserved",
+    "status": "PASS"
+  },
+  {
+    "check": "P04 selected diagrams preserved",
+    "status": "PASS"
+  },
+  {
+    "check": "P04 no added other-floor comparison",
+    "status": "PASS"
+  },
+  {
+    "check": "All 14 PDF visible text retained",
+    "status": "PASS"
+  },
+  {
+    "check": "Bundled originals and libraries",
+    "status": "PASS"
+  },
+  {
+    "check": "36 workflow and integration tests",
+    "status": "PASS"
+  },
+  {
+    "check": "51 collector tests",
+    "status": "PASS"
+  }
+]

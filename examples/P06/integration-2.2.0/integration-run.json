@@ -1,0 +1,64 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2026-10-10",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "3a07cd512557a0f061829267b3e704aeae77d432adf1bafda593154b06d307d0",
+    "output_sha256": {
+      "png": "63532b7ff13d27ab06ce4028c4858605aa81d076df73c9b64dd9e7927c067906",
+      "svg": "2d38669dbf32f0194606aa317123c4da89e5978682d6608b2cd83627782f4bc3"
+    },
+    "points": [
+      {
+        "label": "2026-07-08 · 14층",
+        "value": 175000000
+      },
+      {
+        "label": "2026-07-09 · 13층",
+        "value": 164500000
+      },
+      {
+        "label": "2026-07-18 · 6층",
+        "value": 164000000
+      },
+      {
+        "label": "2026-08-06 · 3층",
+        "value": 188000000
+      },
+      {
+        "label": "2026-09-13 · 10층",
+        "value": 195000000
+      }
+    ],
+    "scope": "국토교통부 · 2026년 7~9월 · 전용 22.20㎡ · 매매 5건 · 현재 호가 아님",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/included/T03/0/values/price_krw",
+      "/included/T03/1/values/price_krw",
+      "/included/T03/2/values/price_krw",
+      "/included/T03/3/values/price_krw",
+      "/included/T03/4/values/price_krw"
+    ],
+    "status": "PASS",
+    "unit": "원"
+  },
+  "copy_changes": 1,
+  "html_sha256": "9ba48f9fc3e81f3fa176aca8d39f69b9d48bf52230588486757156592ddc519b",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "c151dda72bb79dc4b152db9c9d975aa11290332bbc3cdf3912ab220bd4e36854",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P06",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "0cf166f9abf66fa9e3f16c3cb42699a3c3117331a69cf1993990d640c9acd983"
+}

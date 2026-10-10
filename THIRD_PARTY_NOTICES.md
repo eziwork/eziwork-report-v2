@@ -10,3 +10,16 @@
 - 공개본에는 실제 인증값을 포함하지 않습니다. 각 사용자가 서비스 계정·활용승인·인증키를 설정하며 제공기관의 호출 한도와 이용 조건이 적용됩니다.
 
 - `assets/cover-v.png`: 본 프로젝트에서 OpenAI image generation 도구로 생성한 추상 건축 이미지. 실제 부동산 외관이나 조망 사진이 아니며 분석 근거로 사용하지 않습니다. V안 표지 장식용으로 포함합니다. 글꼴은 포함하지 않고 설치된 한국어 글꼴을 사용합니다.
+
+## 2.2.0에 포함한 원본 스킬
+
+- VWorld: https://github.com/clazic/vworld — MIT, `vendor/vworld/LICENSE`. 0.3.5 실행파일은 최초 설치 시 공식 릴리스에서 받으며 해시를 확인합니다. 배포 체크섬은 `vendor/vworld/release-0.3.5/SHA256SUMS`입니다.
+- korean-humanizer: 원본 저장소·고정 커밋·개별 파일 해시는 `references/integrations-lock.json`에 기록. MIT, `vendor/korean-humanizer/LICENSE`.
+- scientific-visualization: https://github.com/K-Dense-AI/claude-scientific-skills — MIT, `vendor/scientific-visualization/LICENSE.md`. 해당 스킬 폴더의 고정 원본을 포함합니다.
+- 위 MIT 구성요소에는 각각의 MIT 조건이 적용되며 EZIWORK의 스킬 재판매 제한을 덧씌우지 않습니다. 원본과 EZIWORK 어댑터는 별도 파일입니다.
+- Matplotlib 3.10.7: PSF 기반 Matplotlib License, https://matplotlib.org/stable/project/license.html
+- Pillow 12.3.0: MIT-CMU / HPND, https://pillow.readthedocs.io/en/stable/about.html
+- pypdf 6.10.0: BSD-3-Clause. 직접 의존성 버전을 고정하고 설치된 전이 의존성 버전은 검증 환경 목록에 기록합니다.
+- VWorld 지도와 좌표 응답은 VWorld의 데이터·지도 이용 조건이 별도로 적용됩니다. 지도 원본 출처 표시를 유지합니다. 이번 지도는 주소 조회점과 배경지도이며 동호실 위치·필지 경계를 증명하지 않습니다.
+
+scientific-visualization 원본이 요청하는 소프트웨어 문헌 표기: Timothy Kassis, Vinayak Agarwal, Yuhuan He, Darshil Patel, Aubrey M. Brueckner (2026), *Scientific Agent Skills: A Library of Procedural Knowledge for Research Agents*. https://doi.org/10.48550/arXiv.2609.00065 . 이는 스킬 라이브러리 출처이며 개별 부동산 분석의 검증 근거는 아닙니다.

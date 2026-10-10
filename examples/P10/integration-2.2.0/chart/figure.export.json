@@ -1,0 +1,59 @@
+{
+  "notice": "Export completed with explicit settings. This report does not establish visual, accessibility, scientific-integrity, or journal-submission compliance.",
+  "outputs": [
+    {
+      "format": "svg",
+      "kind": "vector-container",
+      "path": "figure.svg",
+      "size_bytes": 23054
+    },
+    {
+      "format": "png",
+      "kind": "raster",
+      "path": "figure.png",
+      "size_bytes": 18038
+    }
+  ],
+  "provenance": {
+    "basis_date": "2018-12",
+    "display_divisor": 100000000,
+    "input_sha256": "423cd5985c3b3962df10cedde03bfb4b2931fc83b21571b1359a4a151e05a860",
+    "missing": "gaps; never zero",
+    "points": [
+      {
+        "label": "수입·지출 단순 차이",
+        "value": 276503809
+      },
+      {
+        "label": "현재가치 차이",
+        "value": -775898169
+      }
+    ],
+    "scope": "국토교통부 2018년 계획 · 할인율 연 4% · 당시 계산이며 현재 사업 전망 아님",
+    "unit": "원"
+  },
+  "schema_version": "1.0",
+  "settings": {
+    "bbox_inches": null,
+    "dpi": 180.0,
+    "facecolor": "white",
+    "figure_size_inches": [
+      9.0,
+      2.2
+    ],
+    "font_mode": "paths",
+    "formats": [
+      "svg",
+      "png"
+    ],
+    "pad_inches": 0.1,
+    "tiff_rgb": false,
+    "transparent": false
+  },
+  "versions": {
+    "matplotlib": "3.10.7",
+    "pillow": "12.3.0"
+  },
+  "warnings": [],
+  "public_log_path_normalization": "absolute file locations replaced by basename; original execution logs retained locally"
+}

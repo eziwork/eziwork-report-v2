@@ -1,0 +1,19 @@
+{
+  "chart": {
+    "reason": "사용자가 선택한 가격·층 분포 도식을 보존. 동일 비교의 중복 그래프를 추가하지 않음.",
+    "status": "NOT_APPLIED"
+  },
+  "copy_changes": 0,
+  "html_sha256": "4da5a2c4e1898859386706c4debe297697ef6896541394d11bdc4a9cb29172a8",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "ea37189e6f75015d2fa6fab8e70584b4a12a5df86608e4b4e7556081e627825b",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P02",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "a1a54080199f1b315068d9e8d0b5e63da4e65901a026b60ff8759873d5f50515"
+}

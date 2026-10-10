@@ -1,0 +1,25 @@
+{
+  "basis_date": "2026-08-31",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "52bb99bffa181197cddb06313320300ea477422f902c7a222c1f4b16c40c401d",
+  "display_divisor": 1,
+  "display_unit": "%",
+  "kind": "bar",
+  "points": [
+    {
+      "label": "7월 말",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "8월 말",
+      "pointer": "/points/1/value"
+    }
+  ],
+  "scope": "신한알파리츠 공개 월간보고서 · 각 월 말 · 공실률이며 미수금 비율 아님",
+  "title": "공실률의 전월 차이를 같은 눈금에서 비교해 보세요.",
+  "unit": "%",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p13/evidence/report-dataset.json",
+    "sha256": "c3c0e13cc6fc0dd04f48d58917d81054ace8acb634371ebc1e42c3b7f189599e"
+  }
+}

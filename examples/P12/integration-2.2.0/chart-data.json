@@ -1,0 +1,23 @@
+{
+  "basis_date": "2023-07-28",
+  "unit": "원",
+  "points": [
+    {
+      "label": "감정가격",
+      "value": 1547900000
+    },
+    {
+      "label": "당시 3차 최저가격",
+      "value": 758500000
+    }
+  ],
+  "origin": {
+    "kind": "ARCHIVED_INPUT_PROJECTION",
+    "path": "reports/eziwork-v2-p12/evidence/P12-20261010-v01/source-records.json",
+    "sha256": "9efb4a412945d9e34c6fb9667b63809be75fd10e4344835bb262b3c3ed1beb29",
+    "pointers": [
+      "/records/0/fields/appraisal_won",
+      "/records/0/fields/minimum_won"
+    ]
+  }
+}

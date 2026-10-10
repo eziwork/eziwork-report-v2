@@ -1,0 +1,37 @@
+{
+  "basis_date": "2026-10-10",
+  "dataset": "chart-data.json",
+  "dataset_sha256": "2d1e5cf722f812d4cd4691e4db52ac551d92300989ee48c332a1d2567d9dd194",
+  "display_divisor": 100000000,
+  "display_unit": "억원",
+  "kind": "dot",
+  "points": [
+    {
+      "label": "2026-07-08 · 14층",
+      "pointer": "/points/0/value"
+    },
+    {
+      "label": "2026-07-09 · 13층",
+      "pointer": "/points/1/value"
+    },
+    {
+      "label": "2026-07-18 · 6층",
+      "pointer": "/points/2/value"
+    },
+    {
+      "label": "2026-08-06 · 3층",
+      "pointer": "/points/3/value"
+    },
+    {
+      "label": "2026-09-13 · 10층",
+      "pointer": "/points/4/value"
+    }
+  ],
+  "scope": "국토교통부 · 2026년 7~9월 · 전용 22.20㎡ · 매매 5건 · 현재 호가 아님",
+  "title": "같은 전용면적의 매매가격에도 차이가 있습니다.",
+  "unit": "원",
+  "original_dataset": {
+    "path": "reports/eziwork-v2-p06/report-dataset.json",
+    "sha256": "3a07cd512557a0f061829267b3e704aeae77d432adf1bafda593154b06d307d0"
+  }
+}

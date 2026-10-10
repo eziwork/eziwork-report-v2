@@ -1,0 +1,42 @@
+{
+  "changes": [
+    {
+      "after": "현재 신청 가능한 후보 목록은 아닙니다.",
+      "before": "현재 신청 가능한 후보 목록으로 보시지는 마세요.",
+      "reason": "고객 설명형으로 주어·비교 범위를 분명히 하고 제작 설명 또는 훈계형 표현을 정리; 사실과 조건 보존"
+    },
+    {
+      "after": "예상 관리비는 실제 청구액과 다를 수 있습니다.",
+      "before": "예상 관리비를 실제 청구액으로 보시지는 마세요.",
+      "reason": "고객 설명형으로 주어·비교 범위를 분명히 하고 제작 설명 또는 훈계형 표현을 정리; 사실과 조건 보존"
+    }
+  ],
+  "commit": "14ec604e8ef925df53a29fda90d9332639610529",
+  "execution": "CODEX_APPLIED_ORIGINAL_INSTRUCTIONS",
+  "input_sha256": "b0ceb949fd276c29d6193f5c9fcccd3abb9b1ce7e7cd7d927d90adeb62668535",
+  "output_sha256": "96a0ec3ecb7324617ddc482df6c37e5cf04ac34f00674ca3da4325776b582db0",
+  "protected": [
+    "금액·날짜·고유명사",
+    "정도·협의 가능·등록 안내",
+    "공고·가정·과거 시점",
+    "P03 방·욕실 도식",
+    "P04 다른 층 비교 제외"
+  ],
+  "read": [
+    "SKILL.md",
+    "references/ko-ai-signals.md",
+    "EZIWORK humanizer-profile"
+  ],
+  "reviewed_fields": [
+    "title",
+    "paragraphs",
+    "conclusion",
+    "tables",
+    "captions"
+  ],
+  "semantic_review": "CODEX_REVIEWED_NOT_AUTOMATIC_PROOF",
+  "skill": "korean-humanizer",
+  "unchanged_reason": "기존 선택 문장과 자연스러운 설명은 유지; 변경 개수를 채우지 않음",
+  "whole_report_user_approval": "UNCHANGED",
+  "layout_revision": "v03: footer grouping and P07 margins"
+}

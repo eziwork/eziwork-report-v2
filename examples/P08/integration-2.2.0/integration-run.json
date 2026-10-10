@@ -1,0 +1,49 @@
+{
+  "chart": {
+    "accessibility_certified": false,
+    "basis_date": "2026-10-10",
+    "commit": "92ace75ac21efe19a620434e0ca4e356081fe807",
+    "execution": [
+      "figure_export.export_figure",
+      "palette_audit.py",
+      "image_metadata.py"
+    ],
+    "input_sha256": "10d96a797cf62a8d36300597de19a7204e002757381c4a91feff66bd0968aa2d",
+    "output_sha256": {
+      "png": "9215a2c536f62f7f922718ab4058fa28ac05732ed5cea7f6335fb5d7cee97195",
+      "svg": "898a044c5decefba152b00a77be8dc037401cc7d8060d91bd7e658121ef3a3f8"
+    },
+    "points": [
+      {
+        "label": "가격표의 월세",
+        "value": 170
+      },
+      {
+        "label": "설명의 월세",
+        "value": 175
+      }
+    ],
+    "scope": "상가114 부평 122호 광고 · 가격표와 설명의 월세가 다름 · 확정 계약금액 아님",
+    "semantic_review": "REQUIRES_CODEX",
+    "skill": "scientific-visualization",
+    "source_pointers": [
+      "/advertised_fields/monthly_rent_table",
+      "/advertised_fields/monthly_rent_description"
+    ],
+    "status": "PASS",
+    "unit": "만원/월"
+  },
+  "copy_changes": 1,
+  "html_sha256": "fc7e6810c51813b498c4be826f3d69379d8762c99ad8f3a8b793d59f09afed8c",
+  "map": {
+    "reason": "고객 질문의 가격·계약·운영 비교에 추가 위치 지도가 필요하지 않거나 정확한 번지가 없는 사례",
+    "status": "NOT_APPLIED"
+  },
+  "market_new_collection": false,
+  "mode": "historical_replay",
+  "old_sha256": "958d2ac1c39ad8ad8fec8239ca6bb9b8500493933fa479fbab38115d75565396",
+  "pdf": "PDF_GENERATED",
+  "report_id": "P08",
+  "whole_report_user_approval": "UNCHANGED",
+  "pdf_sha256": "527440301100d5a28b993ed8dd095aa60294972536430ce725cc68631d4b32d5"
+}

@@ -1,0 +1,18 @@
+{
+  "version": "2.2.0",
+  "installed_manifest_match": "PASS",
+  "local_credentials_preserved": true,
+  "independent_cwd": "Korean and spaces",
+  "trial_pythonpath_removed": true,
+  "integration_check": "PASS_NO_API",
+  "doctor": "PASS",
+  "installed_graph_replay": "PASS",
+  "skill_manifest": "PASS",
+  "chart_values_krw": [
+    3380000000,
+    3490000000
+  ],
+  "network_api_calls": 0,
+  "mac_actual": "PENDING",
+  "mobile_browser": "PENDING"
+}

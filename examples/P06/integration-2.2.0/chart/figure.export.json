@@ -1,0 +1,71 @@
+{
+  "notice": "Export completed with explicit settings. This report does not establish visual, accessibility, scientific-integrity, or journal-submission compliance.",
+  "outputs": [
+    {
+      "format": "svg",
+      "kind": "vector-container",
+      "path": "figure.svg",
+      "size_bytes": 29035
+    },
+    {
+      "format": "png",
+      "kind": "raster",
+      "path": "figure.png",
+      "size_bytes": 42558
+    }
+  ],
+  "provenance": {
+    "basis_date": "2026-10-10",
+    "display_divisor": 100000000,
+    "input_sha256": "3a07cd512557a0f061829267b3e704aeae77d432adf1bafda593154b06d307d0",
+    "missing": "gaps; never zero",
+    "points": [
+      {
+        "label": "2026-07-08 · 14층",
+        "value": 175000000
+      },
+      {
+        "label": "2026-07-09 · 13층",
+        "value": 164500000
+      },
+      {
+        "label": "2026-07-18 · 6층",
+        "value": 164000000
+      },
+      {
+        "label": "2026-08-06 · 3층",
+        "value": 188000000
+      },
+      {
+        "label": "2026-09-13 · 10층",
+        "value": 195000000
+      }
+    ],
+    "scope": "국토교통부 · 2026년 7~9월 · 전용 22.20㎡ · 매매 5건 · 현재 호가 아님",
+    "unit": "원"
+  },
+  "schema_version": "1.0",
+  "settings": {
+    "bbox_inches": null,
+    "dpi": 180.0,
+    "facecolor": "white",
+    "figure_size_inches": [
+      9.0,
+      2.9
+    ],
+    "font_mode": "paths",
+    "formats": [
+      "svg",
+      "png"
+    ],
+    "pad_inches": 0.1,
+    "tiff_rgb": false,
+    "transparent": false
+  },
+  "versions": {
+    "matplotlib": "3.10.7",
+    "pillow": "12.3.0"
+  },
+  "warnings": [],
+  "public_log_path_normalization": "absolute file locations replaced by basename; original execution logs retained locally"
+}
