@@ -258,6 +258,7 @@ def main():
  a=sub.add_parser('official-document');a.add_argument('--file',type=Path,required=True);a.add_argument('--url',required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('catchment');a.add_argument('--spec',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
  a=sub.add_parser('pdf');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True)
+ a=sub.add_parser('delivery-check');a.add_argument('--html',type=Path,required=True);a.add_argument('--pdf',type=Path,required=True)
  a=sub.add_parser('cover');a.add_argument('--input',type=Path,required=True);a.add_argument('--output',type=Path,required=True);a.add_argument('--contract',type=Path,required=True);a.add_argument('--branding',type=Path)
  args=p.parse_args()
  # Before file-credential injection: local files must not appear to be OS variables.
@@ -382,16 +383,24 @@ def main():
     dest=render_contract(args.contract,args.output,args.branding)
     if args.pdf:
      subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(dest),'--output',str(args.output/'report.pdf')],check=True)
-    result={'html':str(dest),'pdf':str(args.output/'report.pdf') if args.pdf else None}
+    if args.pdf:
+     from delivery import check_delivery
+     result=check_delivery(dest,args.output/'report.pdf')
+    else:result={'status':'HTML_ONLY','html':str(dest),'pdf':None}
    elif args.cmd=='pdf':
-    subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(args.input),'--output',str(args.output)],check=True);result={'pdf':str(args.output)}
+    subprocess.run([node(),str(ROOT/'scripts/render.mjs'),'--input',str(args.input),'--output',str(args.output)],check=True)
+    from delivery import check_delivery
+    result=check_delivery(args.input,args.output)
+   elif args.cmd=='delivery-check':
+    from delivery import check_delivery
+    result=check_delivery(args.html,args.pdf)
    print(json.dumps(redact.data(result),ensure_ascii=False,indent=2))
    if args.cmd=='map' and result.get('status')!='PASS':return 2
    if args.cmd=='integrations' and not result.get('ready'):return 2
    return 0
   except (CollectionError,OSError,ValueError,KeyError,TypeError,subprocess.CalledProcessError) as ex:
    code=ex.code if isinstance(ex,CollectionError) else (str(ex) if isinstance(ex,ValueError) else 'LOCAL_INPUT_OR_RUNTIME_ERROR')
-   print(json.dumps(redact.data({'status':'ACTION_REQUIRED','code':code,'guide':'references/api-setup.md'}),ensure_ascii=False));return 2
+   print(json.dumps(redact.data({'status':'ACTION_REQUIRED','code':code,'guide':'references/workflow.md' if args.cmd in ('render','pdf','delivery-check') else 'references/api-setup.md'}),ensure_ascii=False));return 2
 if __name__=='__main__':
  if hasattr(sys.stdout,'reconfigure'):sys.stdout.reconfigure(encoding='utf-8')
  raise SystemExit(main())

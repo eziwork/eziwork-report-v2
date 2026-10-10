@@ -1,75 +1,33 @@
 {
-  "version": "2.3.0",
+  "version": "2.3.1",
   "checked_at": "2026-10-10",
-  "implementation": "LOCAL_IMPLEMENTED_TESTED",
-  "github_upload": "NOT_REQUESTED_IN_THIS_SCOPE",
+  "scope": "Report delivery completion fix",
   "tests": {
-    "collector_passed": 51,
-    "workflow_cover_integration_key_migration_passed": 78,
-    "total": 129,
-    "failed": 0
+    "workflow_cover_integration_key_migration_delivery_passed": 87,
+    "new_delivery_tests": 9,
+    "failed": 0,
+    "skill_quick_validate": "PASS"
   },
-  "reports": {
-    "historical_replay": 14,
-    "latest_pdf_text_unchanged": 14,
-    "mobile_390px_overflow": 0,
-    "new_market_collection": false,
-    "whole_report_user_approval": "UNCHANGED"
-  },
-  "live_samples": {
-    "VWorld_address": {
-      "usable": 1,
-      "scope": "road/parcel/address point; no cadastral boundary"
+  "actual_execution": {
+    "platform": "Windows",
+    "synthetic_render_pdf": {
+      "status": "PASS",
+      "pages": 3,
+      "covers": 2,
+      "korean_space_path": true,
+      "external_requests": 0
     },
-    "KOSIS": {
-      "usable": 3,
-      "table": "101/DT_1B040A3",
-      "item": "T20",
-      "region": "11",
-      "period": "202501-202503",
-      "unit": "명"
-    },
-    "RONE": {
-      "usable": 3,
-      "table": "A_2024_00903",
-      "item": "100001",
-      "region": "500001",
-      "period": "202501-202503",
-      "unit": "%"
-    },
-    "ECOS": {
-      "usable": 3,
-      "table": "722Y001",
-      "item": "0101000",
-      "period": "202501-202503",
-      "unit": "연%",
-      "metadata_checked": true
-    },
-    "school_location": {
-      "usable": 1,
-      "school_code": "B000002024",
-      "basis_date": "2026-10-01",
-      "assignment_verified": false
-    },
-    "law": {
-      "usable": 1,
-      "law": "국토의 계획 및 이용에 관한 법률",
-      "article": "제1조",
-      "effective_date": "2026-05-17",
-      "individual_parcel_use_verified": false
+    "existing_local_customer_files": {
+      "status": "PASS_FILE_READABILITY",
+      "pages": 8,
+      "new_collection": false,
+      "customer_data_packaged": false
     }
   },
-  "five_keys_registered": true,
-  "windows_actual": "PASS_WITH_RECORDED_SCOPE",
-  "mac_storage_branch": "MOCK_TESTED_ON_WINDOWS",
-  "macos_ci": "DEFINED_NOT_RUN",
-  "macos_actual": "PENDING_ENVIRONMENT",
-  "pending": [
-    "actual school catchment geometry + final annual notice combination",
-    "individual parcel use and local ordinance case",
-    "all 40 routes operational validation",
-    "new natural language requests across 14 types",
-    "macOS actual installation and rendering"
+  "limitations": [
+    "File checks do not prove HTML/PDF content equivalence, freshness, facts, visual quality, or future agent compliance.",
+    "macOS actual execution was not performed for this patch.",
+    "No new live API collection or 14-report regeneration was performed; renderer, data contracts and examples are unchanged."
   ],
-  "references": "migration-2.3.0.md"
+  "prior_validation": "release-status-2.3.0.json"
 }

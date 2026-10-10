@@ -1,5 +1,5 @@
 {
-  "version": "2.3.0",
+  "version": "2.3.1",
   "assembly": "EXPLICIT_ALLOWLIST",
   "default_credential_exception": null,
   "secret_scan": "PASS_KNOWN_LOCAL_CREDENTIAL_VALUES",
@@ -38,8 +38,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "bytes": 1595,
-      "sha256": "091c3c2fcf83968671f2923fa86d954b9de0e3b09f7c1dae9853f195f51b5d50"
+      "bytes": 2432,
+      "sha256": "489b6b9c14762e969ff522a8cd3e46971aa0ef1232e13d4dc4bae56b3c01b0ec"
     },
     {
       "path": "INSTALL.md",
@@ -53,13 +53,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 18642,
-      "sha256": "ec0139c8530e0676c235054bf4f5c947914cb94b7e049f982e1c8c2e918487a8"
+      "bytes": 19051,
+      "sha256": "43626373c0d6efb5f95f5df32eb1cf88dcd985cb6a3c58858fda4943cc7546d6"
     },
     {
       "path": "SKILL.md",
-      "bytes": 7752,
-      "sha256": "bab5ac9c028482b3356f8ba0f2cb340a9c94485b260d14179367d868556b0826"
+      "bytes": 9991,
+      "sha256": "0181a212fe920ef11a266324ccfb4df05e6b77213634493b1e7d353944423454"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -69,12 +69,12 @@
     {
       "path": "VERSION",
       "bytes": 7,
-      "sha256": "c3879c1c833bd46564c1040642f4a723bf7f77ceea45595fd8c77f68d2d959dd"
+      "sha256": "7ead4dba2ddfef2514583b89d64fa8d071c592c66a964511a30efdca78ddaf9d"
     },
     {
       "path": "agents/openai.yaml",
-      "bytes": 345,
-      "sha256": "922ba131cb468dd2aa50bb88b245b0ba0293e5723a3dda3ad353fc9b5ffdb4a0"
+      "bytes": 397,
+      "sha256": "48c47fe2188e1b2be504d4a434272e9a3ada12b1e4eb3609e627284b0aa670d5"
     },
     {
       "path": "assets/cover-v.css",
@@ -1194,12 +1194,12 @@
     {
       "path": "package-lock.json",
       "bytes": 3056,
-      "sha256": "f6d561c24cafae6c6ffd41fb01f8eebe4f974df90e5b52e76c3d4f17c4a7335e"
+      "sha256": "066b187bc69fdeffa490e09697d06541df5d31da75882addc79a905ef20e76c0"
     },
     {
       "path": "package.json",
       "bytes": 227,
-      "sha256": "ec7e2b8ecc96b31fdaf3e4c87692b896a02b5f2267303c260cefd8c535d0f616"
+      "sha256": "b342a50a31dd51e88edfbb15868f0ada035af6b3a0abc58465ceeed93b055474"
     },
     {
       "path": "qa/baseline-integrity.json",
@@ -1210,6 +1210,11 @@
       "path": "qa/cover-v-results.json",
       "bytes": 7063,
       "sha256": "f021354c1144cf9fb52fbea104645718a42e1ac1bffdd7671c31a4d616c2efac"
+    },
+    {
+      "path": "qa/delivery-2.3.1.md",
+      "bytes": 2347,
+      "sha256": "9f9d67c2f7a49c35839444a75a27784cdec6b1fc3456518f958cceaaff6483f1"
     },
     {
       "path": "qa/installed-validation-2.2.0.json",
@@ -1282,9 +1287,14 @@
       "sha256": "0640d898f62873c52799da4773fa0a5bb9d98045627c2299f3b1ffcb3af793df"
     },
     {
-      "path": "qa/release-status.json",
+      "path": "qa/release-status-2.3.0.json",
       "bytes": 2126,
       "sha256": "61208048b17aa9360ed9d06a3f62c42fe953e2ad532c19a0790e815cf6a59cff"
+    },
+    {
+      "path": "qa/release-status.json",
+      "bytes": 1046,
+      "sha256": "4d02c26a0f5fd59881dccea846401e4519ae463ee37cc5a5282807503bcc025b"
     },
     {
       "path": "qa/remaining-dependencies.md",
@@ -1388,8 +1398,8 @@
     },
     {
       "path": "references/workflow.md",
-      "bytes": 6562,
-      "sha256": "a58e7f2be5570e8048aa9bcff66a3f6609d141ea56afb3a1cd485736fdaf0181"
+      "bytes": 7959,
+      "sha256": "a610ebc4c3b87a72c248f27ab4a76197888f1ab3b26dde169dbad0a75e056927"
     },
     {
       "path": "references/writing-and-visuals.md",
@@ -1722,9 +1732,14 @@
       "sha256": "a8ca4e512fb25812ee752574facdf667e4ad19bf40d5833484b96fabc8977830"
     },
     {
+      "path": "scripts/delivery.py",
+      "bytes": 2846,
+      "sha256": "628d4ba5e8854e5effdcf17e37b67bf3ecfc268defd8d62679974a68c2e13fff"
+    },
+    {
       "path": "scripts/eziwork.py",
-      "bytes": 27664,
-      "sha256": "afa78507e8babbe226332d1ffd5d5ebbba54decae56aeebc3fef31ac3ff105c4"
+      "bytes": 28160,
+      "sha256": "b8313ac64943fdee8c8974a40646e526c5306c0af55451d34b7676fba595c102"
     },
     {
       "path": "scripts/integrations.py",
@@ -1760,6 +1775,11 @@
       "path": "tests/test_covers.py",
       "bytes": 2265,
       "sha256": "09c3ea0bdfa670608bc958a16fb273582de7aaf960afacd048d3691bb7ea9b2c"
+    },
+    {
+      "path": "tests/test_delivery.py",
+      "bytes": 6240,
+      "sha256": "3f2622d0f1e2ce3d81161e93ca32d9f55d40ea4e1edf8f2da03033e8f959c47c"
     },
     {
       "path": "tests/test_integrations.py",

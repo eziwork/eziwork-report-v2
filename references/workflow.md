@@ -48,3 +48,15 @@ python scripts/eziwork.py pdf --input 검증된-맞춤.html --output 결과/v02.
 새 고객 보고서 시작과 직접 preflight/collect/actual import/prepare/actual render/map은 5개 키 등록을 확인한다. sources는 필수이며 생략 시 전체 수집하지 않는다.
 공식 원문 추출은 official-document, 학구 판정은 catchment를 사용한다. [공식 자료](public-evidence.md)와 [통계 범위](statistics-scope.md)를 읽고 해당 양식을 채운다.
 리포트 계약 v1은 유지한다. 수집 데이터의 형식 v2·검증 규칙 2.3.0·경로 ID·제공기관·수집 경로·원문 해시는 별도로 기록한다. 기존 VERIFIED/usable만 복사하지 않는다.
+
+## 최종 파일 확인 (2.3.1)
+
+스킬을 통한 일반 매물 상담·후보 비교는 HTML과 PDF 전달까지 진행한다. 수집 결과나 채팅 요약만으로 종료하지 않는다. 명시적인 기획·부분 검토·단일 형식 요청은 요청 범위를 따른다.
+
+```text
+python scripts/eziwork.py delivery-check --html 결과/v01/report.html --pdf 결과/v01/report.pdf
+```
+
+`render --pdf`와 `pdf`는 출력 직후 같은 검사를 자동 실행한다. 맞춤 HTML/PDF를 다른 도구로 제작했을 때도 최종 전달 직전에 실행한다. 키나 네트워크 호출 없이 현재 파일을 읽으며 원본을 변경하지 않는다. HTML 본문 텍스트, PDF 해석 가능 여부·텍스트·페이지 수와 파일 해시를 확인한다. 누락·빈 파일·손상 PDF는 종료 코드 2이며 `ACTION_REQUIRED`로 반환한다. 정상 결과는 `DELIVERY_FILES_READY`이고 파일 링크에 사용할 절대 경로를 포함한다.
+
+이 검사는 두 파일의 내용 일치·최신성·사실·시각 품질을 증명하지 않는다. 본문 수정 후에는 PDF를 재출력하고 내용·페이지를 검토한다. 검사 결과는 내부 검수 기록에 보존하고 최종 답변에 실제 HTML·PDF 링크, 자료 기준일과 분석 범위를 함께 전달한다. 단일 형식만 요청받았다면 해당 파일을 검증하고 전달한다.

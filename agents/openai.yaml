@@ -1,6 +1,6 @@
 interface:
   display_name: "EZIWORK Report V2"
   short_description: "14종 부동산 고객 상담 리포트와 근거 시각화"
-  default_prompt: "Use $eziwork-report-v2 to answer this customer's property question with verified data, natural Korean explanation, matching visuals, and HTML/PDF."
+  default_prompt: "Use $eziwork-report-v2 to answer this customer's property question with verified data, natural Korean explanation, matching visuals, and actual verified HTML/PDF files; finish by linking both files."
 policy:
   allow_implicit_invocation: true
